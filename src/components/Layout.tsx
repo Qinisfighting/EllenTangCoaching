@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 export default function Layout() {
  return (
-    <div className="site-wrapper">
+    <div className="flex flex-col h-screen justify-between items-center">
      <Header />
      <main>
        <Outlet />
