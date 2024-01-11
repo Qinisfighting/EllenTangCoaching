@@ -97,7 +97,7 @@ export default function Header() {
       </div>
       
       {isMenu ? (
-        <div className="flex flex-col absolute z-10 bg-curiousBlue-200 w-max text-lg text-curiousBlue-800 p-4 gap-2 shadow-lg" ref={menuRef}>
+        <div className="flex flex-col absolute mx-auto my-4 z-10  w-full bg-curiousBlue-100 text-lg text-curiousBlue-900 p-4 gap-2" ref={menuRef}>
           <NavLink
             to="/"
             end
@@ -113,7 +113,7 @@ export default function Header() {
           </NavLink>
           
           <NavLink
-            to="story"
+            to="about"
             style={({
               isActive,
               isPending
@@ -122,49 +122,55 @@ export default function Header() {
               isPending: boolean;
             }) => (isActive && !isPending ? activeStyles : pendingStyles)}
           >
-            <details open={isDropdown} onClick={() => setIsDropdown(!isDropdown)}>
-                <summary>
+            <div  onClick={() => setIsDropdown(!isDropdown)}  className="relative">
+            <div className="flex justify-start items-center">
+                <button onClick={(e) => setClickedContent((e.target as HTMLElement).innerHTML)}>
                   About Me
-                </summary>
-                <div className="flex flex-col" ref={dropdownRef}>
-                <p>
+                </button>
+                <svg className={`fill-current opacity-75 w-6 h-6 pt-1 ${isDropdown && clickedContent === "About Me"?"rotate-90":"null"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg> 
+             </div> 
+                {
+                  isDropdown && clickedContent === "About Me" && (
+                    <div ref={dropdownRef} className="flex flex-col  float-center z-10 bg-curiousBlue-300 w-full font-normal text-md text-white my-1 shadow-lg">
+                <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link
-                      to="story"
+                      to="about"
                       onClick={handleMenu}
                     >
                       My Story
                     </Link>
                 </p>
-                <p>
+                <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link
-                      to="philosophy"
+                      to="about/philosophy"
                       onClick={handleMenu}
                     >
                       My Philosophy
                     </Link>
                 </p>
-                <p>
+                <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link
-                    to="misson"
+                    to="about/misson"
                     onClick={handleMenu}
                   >
                     My Mission
                     </Link>
                 </p>
-                <p>
+                <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link
-                      to="infp"
-                      onClick={handleMenu}
+                      to="about/infp"
                     >
                     Me as an INFP
                     </Link> 
                 </p>
-                </div>
+                </div>)
+                }
+                
                         
-              </details>
+              </div>
           </NavLink>
           <NavLink
-            to="service"
+            to="work"
             style={({
               isActive,
               isPending
@@ -173,38 +179,44 @@ export default function Header() {
               isPending: boolean;
             }) => (isActive && !isPending ? activeStyles : pendingStyles)}
           >
-            <details open={isDropdown} onClick={() => setIsDropdown(!isDropdown)}>
-                <summary>
-                  Work With Me
-                </summary>
-                <div className="infos--dropdown" ref={dropdownRef}>
-                <p>
+            <div  onClick={() => setIsDropdown(!isDropdown)}  className="relative">
+            <div className="flex justify-start items-center">
+               <button onClick={(e) => setClickedContent((e.target as HTMLElement).innerHTML)}>
+                  Work With Me      
+                </button>
+                <svg className={`fill-current opacity-75 w-6 h-6 pt-1 ${isDropdown && clickedContent === "Work With Me"?"rotate-90":"null"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>    
+                </div>
+                {
+                  isDropdown && clickedContent === "Work With Me" && (
+                    <div ref={dropdownRef} className="flex flex-col  float-center z-10 bg-curiousBlue-300 w-full font-normal text-md text-white my-1 shadow-lg">
+           
+                <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link
-                      to="service"
+                      to="work"
                       onClick={handleMenu}
                     >
                       Service
                     </Link>
                 </p>
-                <p>
+                <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link
-                      to="pricing"
+                      to="work/pricing"
                       onClick={handleMenu}
                     >
                       Pricing
                     </Link>
                 </p>
-                <p>
+                <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link
-                    to="booking"
+                    to="work/booking"
                     onClick={handleMenu}
                   >
                     Book Appointment
                     </Link>
                 </p>
                 </div>
-                        
-              </details>
+              )}
+              </div>
           </NavLink>
 
           <NavLink
@@ -244,7 +256,7 @@ export default function Header() {
             <div onClick={handleMenu}>Contact</div>
           </NavLink>
           <NavLink
-            to="wo"
+            to="cn"
             style={({
               isActive,
               isPending
@@ -253,38 +265,43 @@ export default function Header() {
               isPending: boolean;
             }) => (isActive && !isPending ? activeStyles : pendingStyles)}
           >
-            <details lang="zh-CN" open={isDropdown} onClick={() => setIsDropdown(!isDropdown)}>
-                <summary>
+            <div  lang="zh-CN" onClick={() => setIsDropdown(!isDropdown)}  className="relative">
+             <div className="flex flex-row justify-start items-center">
+                <button onClick={(e) => setClickedContent((e.target as HTMLElement).innerHTML)}>
                   中文心理咨询
-                </summary>
-                <div className="infos--dropdown" ref={dropdownRef}>
-                <p>
+                </button>
+                <svg className={`fill-current opacity-75 w-6 h-6 pt-1 ${isDropdown && clickedContent === "中文心理咨询"?"rotate-90":"null"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+                </div>
+                {
+                  isDropdown && clickedContent === "中文心理咨询" && (
+                    <div ref={dropdownRef} className="flex flex-col  float-center z-10 bg-curiousBlue-300 w-full font-normal text-md text-white my-1 shadow-lg">
+                <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link
-                      to="wo"
+                      to="cn"
                       onClick={handleMenu}
                     >
                       关于我
                     </Link>
                 </p>
-                <p>
+                <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link
-                      to="fuwu"
+                      to="cn/fuwu"
                       onClick={handleMenu}
                     >
                       理念和服务
                     </Link>
                 </p>
-                <p>
+                <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link
-                    to="yuyue"
+                    to="cn/yuyue"
                     onClick={handleMenu}
                   >
                     价格和预约
                     </Link>
                 </p>
                 </div>
-                        
-              </details>
+                )}        
+              </div>
           </NavLink>
         </div>
       ) : (
