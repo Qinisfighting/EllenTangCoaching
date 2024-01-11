@@ -39,15 +39,15 @@ export default function Header() {
 // when mouse click outside of menu(dropdown), close menu(dropdown).
 
   useEffect(() => {
-    const menuHandler = (e: MouseEvent) => {
-      if (
-        menuRef.current != null &&
-        !menuRef.current.contains(e.target as Node)
-      ) {
-        setIsMenu(false);
-        //  console.log(menuRef.current);
-      }
-    };
+    // const menuHandler = (e: MouseEvent) => {
+    //   if (
+    //     menuRef.current != null &&
+    //     !menuRef.current.contains(e.target as Node)
+    //   ) {
+    //     setIsMenu(false);
+    //     //  console.log(menuRef.current);
+    //   }
+    // };
 
     const dropdownHhandler = (e: MouseEvent) => {
       if (
@@ -58,12 +58,12 @@ export default function Header() {
       }
     };
 
-    document.addEventListener("mousedown", menuHandler);
+    // document.addEventListener("mousedown", menuHandler);
     document.addEventListener("mousedown", dropdownHhandler);
 
     return;
     () => {
-      document.removeEventListener("mousedown", menuHandler);
+      // document.removeEventListener("mousedown", menuHandler);
       document.removeEventListener("mousedown", dropdownHhandler);
     };
   });
@@ -87,24 +87,17 @@ export default function Header() {
       <Link to="/" className="site-logo">
         <img src={logo} alt="Logo" className="w-11/12 md:w-3/4 xl:w-1/2 mx-auto my-6 " />
       </Link>
-      <div ref={menuRef} className="md:hidden">
-        <img   
-          alt="menu"
-          className="menu"
-          onClick={() => setIsMenu(true)}
-        />   
+      <div ref={menuRef} className="md:hidden flex justify-center items-center">
+       
+        <button       
+          className="max-w-1/4 mx-auto my-2 bg-curiousBlue-300 text-white font-bold py-2 px-4 rounded-md shadow-lg hover:bg-curiousBlue-400 transition duration-300 ease-in-out"
+          onClick={() => setIsMenu(!isMenu)}
+        > {isMenu?"CLOSE":"MENU"}
+        </button>   
       </div>
-      <p className="md:hidden">MENÜ</p>
+      
       {isMenu ? (
-        <div className="md:hidden z-10 absolute" ref={menuRef}>
-          <div>
-            <img
-              className="closeMenu"
-              onClick={() => setIsMenu(false)}
-              
-              alt="back"
-            />
-          </div>
+        <div className="flex flex-col absolute z-10 bg-curiousBlue-200 w-max text-lg text-curiousBlue-800 p-4 gap-2 shadow-lg" ref={menuRef}>
           <NavLink
             to="/"
             end
