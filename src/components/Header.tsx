@@ -85,7 +85,7 @@ export default function Header() {
   return (
     <header>
       <Link to="/" className="site-logo">
-        <img src={logo} alt="Logo" className="w-3/4 mx-auto my-6 xl:w-1/2" />
+        <img src={logo} alt="Logo" className="w-11/12 md:w-3/4 xl:w-1/2 mx-auto my-6 " />
       </Link>
       <div ref={menuRef} className="md:hidden">
         <img   
