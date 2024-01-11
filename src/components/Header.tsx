@@ -68,7 +68,7 @@ export default function Header() {
           onClick={() => setIsMenu(!isMenu)}
         >
           {" "}
-          {isMenu ? "CLOSE" : "MENU"}
+          {isMenu ? "CLOSE ▲" : "MENU ▼"}
         </button>
       </div>
 

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";    
 import { Link } from "react-router-dom";
-//import upArrow from "../assets/upArrow.png";
+import upArrow from "../assets/upArrow.png";
 
 
 export default function Footer() {
     const [isTop, setIsTop] = useState<boolean>(false);
-  
+    console.log(isTop);
     useEffect(() => {
       window.addEventListener("scroll", () => {
         window.scrollY > 300 ? setIsTop(true) : setIsTop(false);
@@ -17,27 +17,25 @@ export default function Footer() {
     }
   
     return (
-      <footer>
+      <footer className="">
         {isTop && (
-          <img  className="go-top" onClick={goTop} alt="toTop" />
+          <img src={upArrow} className="w-8 z-20 fixed bottom-10 right-10 xl:right-17 xl:bottom-17 drop-shadow-lg hover:-translate-y-1" onClick={goTop} alt="toTop" />
         )}
-        <div className="flex sm:gap-8 gap-4">
-          <a
-            target="_blank"
-            href="https://www.google.com/localservices/prolist?g2lbs=ANTchaMBKOP70wdW_NYel6XIVMjxVUm80Ixqvuy_REJkq3JeUactpu90jK9ple4wfDoMVTYaU_82XQQd_Ki-ttzFkGGsoniQLuu-IjXylRkHma4-utMLK38-1TVSAitTqI78tDVEjJwr&hl=de-DE&gl=de&ssta=1&q=fahrschule%20am%20gymnasium&oq=fahrschule%20am%20gymnasium&src=2&serdesk=1&lrlstt=1699460244805&ved=2ahUKEwi0murh5rSCAxXCBzoCHZ_UBFkQwyx6BAgAEA0&spp=CgsvZy8xdGRjX3JiNDqIAVdoOFFBQkFCRUFJaUYyWmhhSEp6WTJoMWJHVWdZVzBnWjNsdGJtRnphWFZ0cWdGQUVBRXlIeEFCSWh1R1dHT0dkNVkzOWpfbXc2QWNzNUhnbi1ubWVzZTlPRGZqTW1ZeUd4QUNJaGRtWVdoeWMyTm9kV3hsSUdGdElHZDViVzVoYzJsMWJRPT0%3D&slp=MgBAAVIECAIgAGAAaAE%3D&scp=ChNnY2lkOmRyaXZpbmdfc2Nob29sEiUiDUthcnRlbmJlcmVpY2gqFA2tHEQgFcwVVQYdhm52ICV356gGGhdmYWhyc2NodWxlIGFtIGd5bW5hc2l1bSoKRmFocnNjaHVsZQ%3D%3D#ts=3"
-          >
-            <p>Privacy Policy</p>
-          </a>
-          <Link to="/impressum">
-            <p>Terms of Service </p>
+        <div className="text-center flex justify-center items-center text-sm">
+        
+          <Link to="/privacy">
+            <p className="pr-3">Privacy Policy</p>
           </Link>
-          <Link to="/datenschutz">
-            <p>Practice Policy</p>
+          <Link to="/terms">
+            <p className="px-3 border-x">Terms of Service</p>
+          </Link>
+          <Link to="/practice">
+            <p className="pl-3">Practice Policy</p>
           </Link>
         </div>
   
         <a href="https://www.yanqin.de" target="_blank">
-          <h4 className="text-center p-4">2023 © QIN's code</h4>
+          <h4 className="text-center bg-curiousBlue-300 w-fit text-curiousBlue-100  mx-auto my-4 rounded-full py-0 px-4 drop-shadow-md hover:translate-x-1">2024 © QIN's code</h4>
         </a>
       </footer>
     );
