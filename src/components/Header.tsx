@@ -27,7 +27,7 @@ export default function Header() {
   const activeStyles: ActiveStyles = {
   
     
-    fontSize: "1.2em",
+    fontSize: "1.12em",
     fontWeight: "600",
    
     
@@ -466,7 +466,7 @@ export default function Header() {
                 </div>
                 {
                   isDropdown && clickedContent === "中文心理咨询" && (
-                    <div ref={dropdownRef} className="flex flex-col absolute z-10 bg-curiousBlue-300 w-max font-normal text-md text-white my-1 shadow-lg">
+                    <div ref={dropdownRef} className="flex flex-col absolute z-10 bg-curiousBlue-300 w-max font-normal text-base text-white my-1 shadow-lg">
                 <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link
                       to="cn"
