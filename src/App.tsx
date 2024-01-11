@@ -29,19 +29,19 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />} errorElement={<Error />}>
       <Route index element={<Home />} />
-      <Route path="story" element={<Story />} />
-      <Route path="philosophy" element={<Philosophy />} />
-      <Route path="misson" element={<Mission />} />
-      <Route path="infp" element={<INFP />} />
-      <Route path="pricing" element={<Pricing />} />
-      <Route path="service" element={<Service />} />
-      <Route path="booking" element={<Booking />} />
+      <Route path="about" element={<Story />} />
+      <Route path="about/philosophy" element={<Philosophy />} />
+      <Route path="about/misson" element={<Mission />} />
+      <Route path="about/infp" element={<INFP />} />
+      <Route path="work" element={<Service />} />
+      <Route path="work/pricing" element={<Pricing />} /> 
+      <Route path="work/booking" element={<Booking />} />
       <Route path="blog" element={<Blog />} />
       <Route path="faq" element={<FAQ />} />
       <Route path="Contact" element={<Contact />} /> 
-      <Route path="wo" element={<Wo />} />   
-      <Route path="fuwu" element={<FuWu />} />  
-      <Route path="yuyue" element={<YuYue />} />   
+      <Route path="cn" element={<Wo />} />   
+      <Route path="cn/fuwu" element={<FuWu />} />  
+      <Route path="cn/yuyue" element={<YuYue />} />   
       <Route path="terms" element={<Terms />} />
       <Route path="privacy" element={<Privacy />} />
       <Route path="practice" element={<Practice />} />
