@@ -24,7 +24,7 @@ export default function Header() {
   const activeStyles: ActiveStyles = {
     fontSize: "1.15em",
     fontWeight: "600",
-    textShadow: "1px 1px 1px lightgray",
+    textShadow: ".7px .7px .7px lightgray",
     color:"#266ea3"
   };
   const pendingStyles: PendingStyles = {
