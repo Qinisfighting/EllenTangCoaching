@@ -81,7 +81,7 @@ export default function Header() {
 
       {isMenu ? (
         <div
-          className="flex flex-col absolute mx-auto my-4 z-10  w-full bg-curiousBlue-100 text-lg font-medium text-curiousBlue-800 p-4 gap-4"
+          className="flex flex-col absolute mx-auto my-4 z-10  w-full bg-curiousBlue-100 text-lg font-medium text-curiousBlue-800 p-4 gap-4 opacity-95"
          
         >
           <NavLink
@@ -368,7 +368,7 @@ export default function Header() {
               {isDropdown && clickedContent === "About Me" && (
                 <div
                   ref={dropdownRef}
-                  className="flex flex-col absolute z-10 bg-curiousBlue-300 w-max font-normal text-md text-white my-1 shadow-lg"
+                  className="flex flex-col absolute z-10 bg-curiousBlue-300 w-max font-normal text-md text-white my-1 shadow-lg opacity-95"
                 >
                   <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link to="about">My Story</Link>
@@ -424,7 +424,7 @@ export default function Header() {
               {isDropdown && clickedContent === "Work With Me" && (
                 <div
                   ref={dropdownRef}
-                  className="flex flex-col absolute z-10 bg-curiousBlue-300 w-max font-normal text-md text-white my-1 shadow-lg"
+                  className="flex flex-col absolute z-10 bg-curiousBlue-300 w-max font-normal text-md text-white my-1 shadow-lg opacity-95"
                 >
                   <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link to="work">Service</Link>
@@ -514,7 +514,7 @@ export default function Header() {
               {isDropdown && clickedContent === "中文心理咨询" && (
                 <div
                   ref={dropdownRef}
-                  className="flex flex-col absolute z-10 bg-curiousBlue-300 w-max font-normal text-base text-white my-1 shadow-lg"
+                  className="flex flex-col absolute z-10 bg-curiousBlue-300 w-max font-normal text-base text-white my-1 shadow-lg opacity-95"
                 >
                   <p className="hover:bg-curiousBlue-400 w-full px-3 py-2">
                     <Link to="cn">关于我</Link>
