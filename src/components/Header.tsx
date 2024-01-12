@@ -7,6 +7,8 @@ import logo from "../../src/assets/logo.png";
 interface ActiveStyles {
   fontSize?: string;
   fontWeight?: string;
+  textShadow?: string;
+  color?: string;
 }
 
 interface PendingStyles {
@@ -17,21 +19,22 @@ export default function Header() {
   const [isMenu, setIsMenu] = useState<boolean>(false);
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
   const [clickedContent, setClickedContent] = useState<string>("");
-  const menuRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const activeStyles: ActiveStyles = {
-    fontSize: "1.12em",
-    fontWeight: "600"
+    fontSize: "1.15em",
+    fontWeight: "600",
+    textShadow: "2px 2px 2px lightgray",
+    color:"#266ea3"
   };
   const pendingStyles: PendingStyles = {
-    color: "var(--textColor)"
+    color: "#1e405c"
   };
 
   // when mouse click outside of dropdown, close dropdown.
 
   useEffect(() => {
-    const dropdownHhandler = (e: MouseEvent) => {
+    const dropdownHandler = (e: MouseEvent) => {
       if (
         dropdownRef.current != null &&
         !dropdownRef.current.contains(e.target as Node)
@@ -40,11 +43,15 @@ export default function Header() {
       }
     };
 
-    document.addEventListener("mousedown", dropdownHhandler);
+   
+
+    document.addEventListener("mousedown", dropdownHandler);
+
 
     return;
     () => {
-      document.removeEventListener("mousedown", dropdownHhandler);
+      document.removeEventListener("mousedown", dropdownHandler);
+
     };
   });
 
@@ -62,7 +69,7 @@ export default function Header() {
           className="w-11/12 md:w-3/4 xl:w-1/2 mx-auto my-6 "
         />
       </Link>
-      <div ref={menuRef} className="md:hidden flex justify-center items-center">
+      <div className="md:hidden flex justify-center items-center">
         <button
           className="max-w-1/4 mx-auto my-2 bg-curiousBlue-300 text-white font-bold py-2 px-4 rounded-md shadow-lg hover:bg-curiousBlue-400 transition duration-300 ease-in-out"
           onClick={() => setIsMenu(!isMenu)}
@@ -74,8 +81,8 @@ export default function Header() {
 
       {isMenu ? (
         <div
-          className="flex flex-col absolute mx-auto my-4 z-10  w-full bg-curiousBlue-100 text-lg text-curiousBlue-900 p-4 gap-2"
-          ref={menuRef}
+          className="flex flex-col absolute mx-auto my-4 z-10  w-full bg-curiousBlue-100 text-lg font-medium text-curiousBlue-800 p-4 gap-4"
+         
         >
           <NavLink
             to="/"
@@ -105,7 +112,7 @@ export default function Header() {
               onClick={() => setIsDropdown(!isDropdown)}
               className="relative"
             >
-              <div className="flex justify-start items-center">
+              <div className="flex justify-start items-center ">
                 <button
                   onClick={(e) =>
                     setClickedContent((e.target as HTMLElement).innerHTML)
@@ -308,7 +315,7 @@ export default function Header() {
           </NavLink>
         </div>
       ) : (
-        <nav className="hidden md:flex xl:w-1/2 w-3/4 justify-between items-center mx-auto">
+        <nav className="hidden md:flex xl:w-1/2 w-3/4 justify-between items-center mx-auto font-medium text-curiousBlue-900">
           <NavLink
             to="/"
             end
@@ -320,7 +327,7 @@ export default function Header() {
               isPending: boolean;
             }) => (isActive && !isPending ? activeStyles : pendingStyles)}
           >
-            <div>Home</div>
+            <div className="hover:text-curiousBlue-400">Home</div>
           </NavLink>
 
           <NavLink
@@ -337,11 +344,12 @@ export default function Header() {
               onClick={() => setIsDropdown(!isDropdown)}
               className="relative"
             >
-              <div className="flex flex-row justify-center items-center">
+              <div className="flex flex-row justify-center items-center hover:text-curiousBlue-400">
                 <button
                   onClick={(e) =>
                     setClickedContent((e.target as HTMLElement).innerHTML)
                   }
+                  
                 >
                   About Me
                 </button>
@@ -392,11 +400,12 @@ export default function Header() {
               onClick={() => setIsDropdown(!isDropdown)}
               className="relative"
             >
-              <div className="flex flex-row justify-center items-center">
+              <div className="flex flex-row justify-center items-center hover:text-curiousBlue-400">
                 <button
                   onClick={(e) =>
                     setClickedContent((e.target as HTMLElement).innerHTML)
                   }
+                  
                 >
                   Work With Me
                 </button>
@@ -441,7 +450,7 @@ export default function Header() {
               isPending: boolean;
             }) => (isActive && !isPending ? activeStyles : pendingStyles)}
           >
-            <div onClick={() => setIsDropdown(false)}>Blog</div>
+            <div onClick={() => setIsDropdown(false)} className="hover:text-curiousBlue-400">Blog</div>
           </NavLink>
           <NavLink
             to="faq"
@@ -453,7 +462,7 @@ export default function Header() {
               isPending: boolean;
             }) => (isActive && !isPending ? activeStyles : pendingStyles)}
           >
-            <div onClick={() => setIsDropdown(false)}>FAQ</div>
+            <div onClick={() => setIsDropdown(false)} className="hover:text-curiousBlue-400">FAQ</div>
           </NavLink>
           <NavLink
             to="contact"
@@ -465,7 +474,7 @@ export default function Header() {
               isPending: boolean;
             }) => (isActive && !isPending ? activeStyles : pendingStyles)}
           >
-            <div onClick={() => setIsDropdown(false)}>Contact</div>
+            <div onClick={() => setIsDropdown(false)} className="hover:text-curiousBlue-400">Contact</div>
           </NavLink>
           <NavLink
             to="cn"
@@ -482,7 +491,7 @@ export default function Header() {
               onClick={() => setIsDropdown(!isDropdown)}
               className="relative"
             >
-              <div className="flex flex-row justify-center items-center">
+              <div className="flex flex-row justify-center items-center hover:text-curiousBlue-400">
                 <button
                   onClick={(e) =>
                     setClickedContent((e.target as HTMLElement).innerHTML)
