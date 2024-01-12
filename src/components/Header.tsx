@@ -81,7 +81,7 @@ export default function Header() {
 
       {isMenu ? (
         <div
-          className="flex flex-col absolute mx-auto my-4 z-10  w-full bg-curiousBlue-100 text-lg font-medium text-curiousBlue-800 p-4 gap-4 opacity-95"
+          className="flex flex-col absolute mx-auto my-4 z-10  w-full bg-curiousBlue-100 text-lg font-medium text-curiousBlue-800 p-4 gap-5 opacity-95"
          
         >
           <NavLink
