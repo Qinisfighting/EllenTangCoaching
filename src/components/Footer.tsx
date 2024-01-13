@@ -27,7 +27,7 @@ export default function Footer() {
             <p className="pr-2 hover:text-curiousBlue-400">Privacy Policy</p>
           </Link>
           <Link to="/terms">
-            <p className="px-2 border-x hover:text-curiousBlue-400">Terms of Service</p>
+            <p className="px-2 border-x hover:text-curiousBlue-400  py-0">Terms of Service</p>
           </Link>
           <Link to="/practice">
             <p className="pl-2 hover:text-curiousBlue-400">Practice Policy</p>
