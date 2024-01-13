@@ -20,8 +20,24 @@
       @apply text-xl;
       @apply py-4;
       @apply font-medium;
+      @apply text-left;
+
     }
 
-   
+    p{
+      @apply py-2;
+      @apply text-justify;
+    }
+
+    ul{
+      @apply text-left;
+      @apply pl-4;
+    }
     /* ... */
+  }
+
+  @layer components {
+    .btn-next {
+      @apply py-2 px-4 bg-curiousBlue-300 text-white font-semibold rounded-lg shadow-md hover:bg-curiousBlue-400 focus:outline-none focus:ring-1 focus:ring-curiousBlue-500 focus:ring-opacity-75  transition duration-300 ease-in-out;
+    }
   }
