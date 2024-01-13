@@ -4,7 +4,7 @@ import profil from "../assets/profil.png";
 
 export default function Home() {
     return (
-      <div className="flex flex-col w-11/12 md:w-4/5 mx-auto my-16 lg:flex-row gap-8 justify-between text-myblue-800">
+      <div className="flex flex-col p-4 w-11/12 md:w-4/5 mx-auto my-16 lg:flex-row gap-8 justify-between text-myblue-800">
          <img src={profil} alt="me" className="w-full h-auto lg:w-1/3 object-cover shadow-lg"/>
          <div className="flex flex-col justify-between items-end gap-16">
             <div className="text-center text-xl">
