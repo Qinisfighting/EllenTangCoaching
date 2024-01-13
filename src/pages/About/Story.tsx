@@ -17,7 +17,7 @@ export default function Story() {
   
   
     return (
-      <div className="w-3/4 mx-auto xl:w-2/3 my-20">       
+      <div className="w-4/5 mx-auto xl:w-2/3 my-20">       
            <h1 className="w-3/4 text-myblue-300 md:text-5xl border-y mx-auto my-20">My Story</h1>
            <p className="text-lg xl:text-xl">Born and raised in China, I grew up in a southern city called Kunming. Even though I was brought up in a very close-knit family that valued the connection and comradeship between relatives more than anything else, I always felt like the outcast, the ‘extra’ person who doesn’t belong. In a way, I was. Born as the second child amid the enforcement of China’s one-child policy, my very existence was threatened by the government crackdown on couples trying to grow their families.</p>
            <div>
