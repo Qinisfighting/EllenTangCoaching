@@ -123,14 +123,19 @@ export default function Header() {
                 <svg
                   className={`fill-current opacity-75 w-6 h-6 pt-1 ${
                     isDropdown && clickedContent === "About Me"
-                      ? "rotate-90"
-                      : "null"
-                  }`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
-                </svg>
+                    ? "-rotate-180"
+                    : "null"
+                } transition-transform duration-200 ease-in-out`}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
               </div>
               {isDropdown && clickedContent === "About Me" && (
                 <div
@@ -184,14 +189,19 @@ export default function Header() {
                 <svg
                   className={`fill-current opacity-75 w-6 h-6 pt-1 ${
                     isDropdown && clickedContent === "Work With Me"
-                      ? "rotate-90"
-                      : "null"
-                  }`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
-                </svg>
+                    ? "-rotate-180"
+                    : "null"
+                } transition-transform duration-200 ease-in-out`}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
               </div>
               {isDropdown && clickedContent === "Work With Me" && (
                 <div
@@ -280,14 +290,19 @@ export default function Header() {
                 <svg
                   className={`fill-current opacity-75 w-6 h-6 pt-1 ${
                     isDropdown && clickedContent === "中文心理咨询"
-                      ? "rotate-90"
-                      : "null"
-                  }`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
-                </svg>
+                    ? "-rotate-180"
+                    : "null"
+                } transition-transform duration-200 ease-in-out`}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
               </div>
               {isDropdown && clickedContent === "中文心理咨询" && (
                 <div
@@ -356,13 +371,18 @@ export default function Header() {
                 <svg
                   className={`fill-current opacity-75 w-6 h-6 pt-1 ${
                     isDropdown && clickedContent === "About Me"
-                      ? "rotate-90"
+                      ? "-rotate-180"
                       : "null"
-                  }`}
+                  } transition-transform duration-200 ease-in-out`}
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
                 >
-                  <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
+                  <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
               </div>
               {isDropdown && clickedContent === "About Me" && (
@@ -412,14 +432,19 @@ export default function Header() {
                 <svg
                   className={`fill-current opacity-75 w-6 h-6 pt-1 ${
                     isDropdown && clickedContent === "Work With Me"
-                      ? "rotate-90"
-                      : "null"
-                  }`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
-                </svg>
+                    ? "-rotate-180"
+                    : "null"
+                } transition-transform duration-200 ease-in-out`}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
               </div>
               {isDropdown && clickedContent === "Work With Me" && (
                 <div
@@ -502,14 +527,19 @@ export default function Header() {
                 <svg
                   className={`fill-current opacity-75 w-6 h-6 pt-1 ${
                     isDropdown && clickedContent === "中文心理咨询"
-                      ? "rotate-90"
-                      : "null"
-                  }`}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" />
-                </svg>
+                    ? "-rotate-180"
+                    : "null"
+                } transition-transform duration-200 ease-in-out`}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
               </div>
               {isDropdown && clickedContent === "中文心理咨询" && (
                 <div
