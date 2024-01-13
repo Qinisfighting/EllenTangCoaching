@@ -9,7 +9,6 @@ import Error from "./components/Error";
 import Home from "./pages/Home";
 import Story from "./pages/About/Story";
 import Philosophy from "./pages/About/Philosophy";
-import Mission from "./pages/About/Mission";
 import INFP from "./pages/About/INFP";
 import Pricing from "./pages/Work/Pricing";
 import Service from "./pages/Work/Service";
@@ -25,13 +24,13 @@ import Privacy from "./pages/Privacy";
 import Practice from "./pages/Practice";
 
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />} errorElement={<Error />}>
       <Route index element={<Home />} />
       <Route path="about" element={<Story />} />
       <Route path="about/philosophy" element={<Philosophy />} />
-      <Route path="about/misson" element={<Mission />} />
       <Route path="about/infp" element={<INFP />} />
       <Route path="work" element={<Service />} />
       <Route path="work/pricing" element={<Pricing />} /> 

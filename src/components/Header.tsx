@@ -153,11 +153,6 @@ export default function Header() {
                     </Link>
                   </p>
                   <p className="hover:bg-myblue-400 w-full px-3 py-2">
-                    <Link to="about/misson" onClick={handleMenu}>
-                      My Mission
-                    </Link>
-                  </p>
-                  <p className="hover:bg-myblue-400 w-full px-3 py-2">
                     <Link to="about/infp">Me as an INFP</Link>
                   </p>
                 </div>
@@ -395,9 +390,6 @@ export default function Header() {
                   </p>
                   <p className="hover:bg-myblue-400 w-full px-3 py-2">
                     <Link to="about/philosophy">My Philosophy</Link>
-                  </p>
-                  <p className="hover:bg-myblue-400 w-full px-3 py-2">
-                    <Link to="about/misson">My Mission</Link>
                   </p>
                   <p className="hover:bg-myblue-400 w-full px-3 py-2">
                     <Link to="about/infp">Me as an INFP</Link>

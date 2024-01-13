@@ -7,12 +7,13 @@
     h1 {
       @apply text-4xl;
       @apply my-4;
-      @apply pb-10;
+      @apply py-6;
       @apply font-semibold;
       @apply text-center;
+
     }
     h2 {
-      @apply text-2xl;
+      @apply text-4xl;
       @apply py-4;
       @apply font-medium;
     }
