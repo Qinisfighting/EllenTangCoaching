@@ -1,6 +1,6 @@
 export default function Practice() {
   return (
-    <div className="mx-auto my-20 px-6 w-11/12 text-curiousBlue-900">
+    <div className="mx-auto my-20 px-6 w-11/12 text-myblue-900">
       <h1>Practice Policy</h1>
 
       <h3>Types of personal development service available:</h3>
@@ -87,7 +87,7 @@ export default function Practice() {
         am highly attentive to the online technology in use, but technological
         quality cannot be guaranteed.
       </p>
-      <address className="text-curiousBlue-500 text-lg px-6 my-6 border-l">
+      <address className="text-myblue-500 text-lg px-6 my-6 border-l">
         <p className="font-semibold">
           Ellen Tang Coaching <br />
           Email:{" "}

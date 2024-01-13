@@ -1,12 +1,12 @@
 export default function Terms() {
   return (
-    <div className="mx-auto my-20 px-6 text-justify w-11/12 text-curiousBlue-900">
+    <div className="mx-auto my-20 px-6 text-justify w-11/12 text-myblue-900">
       <h1>Terms of Service</h1>
 
       <p>
         The following terms and conditions govern all use of the{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/"
         >
           Ellen Tang Coaching Website
@@ -18,7 +18,7 @@ export default function Terms() {
         contained herein and all other operating rules, policies (including,
         without limitation, Ellen Tang’s{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/practice"
         >
           Privacy Policy
@@ -40,7 +40,7 @@ export default function Terms() {
       <h3>
         Your{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/"
         >
           Ellen Tang Coaching Website
@@ -172,7 +172,7 @@ export default function Terms() {
         Services. “Priority” means that support takes priority over support for
         users of the standard or free{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/"
         >
           Ellen Tang Coaching Website
@@ -203,14 +203,14 @@ export default function Terms() {
         cannot review, all of the material, including computer software, made
         available through the websites and webpages to which{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/"
         >
           Ellen Tang Coaching Website
         </a>{" "}
         links, and that link to{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/"
         >
           Ellen Tang Coaching Website
@@ -231,7 +231,7 @@ export default function Terms() {
         it respects the intellectual property rights of others. If you believe
         that material located on or linked to by{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/"
         >
           Ellen Tang Coaching Website
@@ -255,14 +255,14 @@ export default function Terms() {
         in and to such property will remain (as between the parties) solely with
         Ellen Tang. Ellen Tang,{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/"
         >
           Ellen Tang Coaching Website
         </a>
         , the{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/"
         >
           Ellen Tang Coaching Website
@@ -270,7 +270,7 @@ export default function Terms() {
         logo, and all other trademarks, service marks, graphics and logos used
         in connection with{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/"
         >
           Ellen Tang Coaching Website
@@ -291,7 +291,7 @@ export default function Terms() {
         Ellen Tang reserves the right to display attribution links such as ‘Blog
         at{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/"
         >
           Ellen Tang Coaching Website
@@ -330,7 +330,7 @@ export default function Terms() {
         at any time, with or without cause, with or without notice, effective
         immediately. If you wish to terminate this Agreement or your{" "}
         <a
-          className="text-curiousBlue-400 underline hover:text-curiousBlue-600"
+          className="text-myblue-400 underline hover:text-myblue-600"
           href="/"
         >
           Ellen Tang Coaching Website

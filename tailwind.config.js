@@ -7,7 +7,7 @@ export default {
   theme: {
     colors: {
       'white': '#ffffff',
-      'curiousBlue': {
+      'myblue': {
           '50': '#f3f7fc',
           '100': '#e6f0f8',
           '200': '#c6def1',
@@ -20,7 +20,7 @@ export default {
           '900': '#1e405c',
           '950': '#142a3d',
   },
-        'cosmos': {
+        'myrouge': {
           '50': '#fdf3f4',
           '100': '#fbe8ea',
           '200': '#f6d3d8',

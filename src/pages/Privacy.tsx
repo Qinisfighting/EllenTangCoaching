@@ -1,6 +1,6 @@
 export default function Privacy() {
   return (
-    <div className="mx-auto my-20 px-6 text-justify w-11/12 text-curiousBlue-900">
+    <div className="mx-auto my-20 px-6 text-justify w-11/12 text-myblue-900">
       <h1>Privacy Policy</h1>
       <p>
         Ellen Lei Tang (“Ellen Tang”) operates ellentangcoaching.com and may

@@ -24,18 +24,18 @@ export default function Footer() {
         <div className="text-center flex justify-center items-center text-sm">
         
           <Link to="/privacy">
-            <p className="pr-2 hover:text-curiousBlue-400">Privacy Policy</p>
+            <p className="pr-2 hover:text-myblue-400">Privacy Policy</p>
           </Link>
           <Link to="/terms">
-            <p className="px-2 border-x hover:text-curiousBlue-400  py-0">Terms of Service</p>
+            <p className="px-2 border-x hover:text-myblue-400  py-0">Terms of Service</p>
           </Link>
           <Link to="/practice">
-            <p className="pl-2 hover:text-curiousBlue-400">Practice Policy</p>
+            <p className="pl-2 hover:text-myblue-400">Practice Policy</p>
           </Link>
         </div>
   
         <a href="https://www.yanqin.de" target="_blank">
-          <h4 className="text-center bg-curiousBlue-300 w-fit text-curiousBlue-100  mx-auto my-4 rounded-full py-0 px-4 drop-shadow-md hover:translate-x-1">2024 © QIN's code</h4>
+          <h4 className="text-center bg-myblue-300 w-fit text-myblue-100  mx-auto my-4 rounded-full py-0 px-4 drop-shadow-md hover:translate-x-1">2024 © QIN's code</h4>
         </a>
       </footer>
     );
