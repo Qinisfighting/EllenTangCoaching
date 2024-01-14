@@ -1,5 +1,6 @@
 // import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { StoryBanner } from "../../components/Banners";
 import pain from "../../assets/pain.png";
 import growth from "../../assets/growth.webp";
 import discovery from "../../assets/discovery.webp";
@@ -17,6 +18,7 @@ export default function Story() {
   
   
     return (
+      <div className="w-full">
       <div className="w-4/5 mx-auto xl:w-2/3 my-20">       
            <h1 className="w-3/4 text-myblue-300 md:text-5xl border-y mx-auto my-20">My Story</h1>
            <p className="text-lg xl:text-xl">Born and raised in China, I grew up in a southern city called Kunming. Even though I was brought up in a very close-knit family that valued the connection and comradeship between relatives more than anything else, I always felt like the outcast, the ‘extra’ person who doesn’t belong. In a way, I was. Born as the second child amid the enforcement of China’s one-child policy, my very existence was threatened by the government crackdown on couples trying to grow their families.</p>
@@ -99,14 +101,14 @@ export default function Story() {
               <div className="max-w-60 m-2">
                 <img src={icf} alt="icf" className="p-1"></img>
                 <img src={aclogo} alt="aclogo" className="p-1"></img>
-                <img src={achologylogo} alt="achologylogo" className="p-1"></img>
-                
+                <img src={achologylogo} alt="achologylogo" className="p-1"></img>         
                 <img src={centreofexcellence} alt="centreofexcellence" className="p-1"></img>
-                <img src={oulogo} alt="oulogo" className="p-1"></img>
-                
+                <img src={oulogo} alt="oulogo" className="p-1"></img>      
                 <img src={tongjilogo} alt="tongjilogo" className="p-1"></img>
-              </div>
-           </div>
+              </div>   
+           </div>         
+         </div>
+           <StoryBanner />
       </div>
     );
   }

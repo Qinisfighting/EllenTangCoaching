@@ -7,6 +7,7 @@ export default {
   theme: {
     colors: {
       'white': '#ffffff',
+      "transparent": "transparent",
       'myblue': {
           '50': '#f3f7fc',
           '100': '#e6f0f8',

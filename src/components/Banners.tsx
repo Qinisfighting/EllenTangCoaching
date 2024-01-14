@@ -1,22 +1,23 @@
 import { Link } from "react-router-dom";
 import homebanner from "../assets/homebanner.jpg";
+import storybanner from "../assets/storybanner.jpg";
 
  function HomeBanner(){
     return (
         
         <div  className="xl:relative my-24 text-mystone-100">
         <img className="brightness-50" src={homebanner} />  
-            <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-evenly items-start xl:items-center gap-4 xl:gap:16  bg-mystone-600 xl:bg-opacity-0">
+            <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-evenly items-start xl:items-center gap-4 xl:gap:16  bg-myblue-700 xl:bg-opacity-0">
                 <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Ellen Tang</h1>
                   <p className="text-xl  text-left">Life coach, therapist, thought partner, artist, investor, auditor, law graduate, astronomy enthusiast</p>
-                  <Link to="/about"><button className="btn-next my-6">More About Me ➣</button></Link>
+                  <Link to="/about"><button className="btn-trans my-6">More About Me ➣</button></Link>
                 </div>
                 <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-500 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Partnering with</h1>
                   <p className="text-xl  text-left">Personal Growth from <a className="underline text-white" href="https://www.selfgrowth.com/" target="_blank">SelfGrowth.com</a></p>
                   <p className="text-xl"><a className="underline text-white" href="https://www.bodymindspiritdirectory.org/" target="_blank">Mind Body Spirit Directory</a></p>
-                  <Link to="/work"><button className="btn-next my-6">About My Work ➣</button></Link>
+                  <Link to="/work"><button className="btn-trans my-6">About My Work ➣</button></Link>
                 </div>
                 <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-500 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Contact & Hours</h1>
@@ -24,11 +25,24 @@ import homebanner from "../assets/homebanner.jpg";
                   <p className="text-xl">Call: (UK) +44 7753137614 / (US) +1 917-982-2022</p>
                   <p className="text-xl">Mon – Fri: 17:00 – 20:00 (UK)</p>
                   <p className="text-xl">Sat – Sun: 10:00 – 18:00 (UK)</p>
-                  <Link to="/work/booking"><button className="btn-next my-6">Schedule Appointment ➣</button></Link>
+                  <Link to="/work/booking"><button className="btn-trans my-6">Schedule Appointment ➣</button></Link>
                 </div>            
             </div>
     </div>
     )
 }
 
-export {HomeBanner}
+function StoryBanner(){
+    return (
+        
+        <div  className="relative my-24 text-mystone-100">
+        <img className="brightness-50" src={storybanner} />  
+            <div className="gap-0 text-center absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16">             
+                  <h1 className="text-2xl lg:text-5xl lg:my-12 xl:my-16 font-semibold py-0 my-2 ">Want to tell me your story?</h1>             
+                  <Link to="/work/booking"><button className="btn-trans md:my-6 my-2">Schedule Appointment ➣</button></Link>                  
+            </div>
+    </div>
+    )
+}
+
+export {HomeBanner, StoryBanner}
