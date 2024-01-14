@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import homebanner from "../assets/homebanner.jpg";
 import storybanner from "../assets/storybanner.jpg";
+import philobanner from "../assets/philobanner.jpg";
 
  function HomeBanner(){
     return (
         
         <div  className="xl:relative my-24 text-mystone-100">
-        <img className="brightness-50" src={homebanner} />  
+        <img className="brightness-50 w-full" src={homebanner} />  
             <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-evenly items-start xl:items-center gap-4 xl:gap:16  bg-myblue-700 xl:bg-opacity-0">
                 <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Ellen Tang</h1>
@@ -36,7 +37,7 @@ function StoryBanner(){
     return (
         
         <div  className="xl:relative my-24 text-mystone-100">
-        <img className="brightness-50" src={storybanner} />  
+        <img className="brightness-50 w-full" src={storybanner} />  
             <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
                   <h1 className="text-2xl lg:text-5xl xl:my-16 font-semibold">Want to tell me your story?</h1>             
                   <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
@@ -45,4 +46,17 @@ function StoryBanner(){
     )
 }
 
-export {HomeBanner, StoryBanner}
+function PhiloBanner(){
+    return (
+        
+        <div  className="xl:relative my-24 text-mystone-100">
+        <img className="brightness-50 w-full" src={philobanner} />  
+            <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
+                  <h1 className="text-2xl lg:text-5xl xl:my-16 font-semibold">Let’s start the journey together.</h1>             
+                  <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
+            </div>
+    </div>
+    )
+}
+
+export {HomeBanner, StoryBanner, PhiloBanner}

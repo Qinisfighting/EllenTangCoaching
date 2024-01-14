@@ -24,7 +24,7 @@ export default function Story() {
       <div className="w-4/5 mx-auto xl:w-2/3 my-20">
            <div className="">
               <img src={story} alt="story" className="md:w-1/3 object-cover float-left"/>  
-              <p className="text-lg xl:text-xl">Born and raised in China, I grew up in a southern city called Kunming. Even though I was brought up in a very close-knit family that valued the connection and comradeship between relatives more than anything else, I always felt like the outcast, the ‘extra’ person who doesn’t belong. In a way, I was. Born as the second child amid the enforcement of China’s one-child policy, my very existence was threatened by the government crackdown on couples trying to grow their families.</p>
+              <p className="text-lg xl:text-xl"><span className="font-semibold text-4xl text-myblue-500">B</span>orn and raised in China, I grew up in a southern city called Kunming. Even though I was brought up in a very close-knit family that valued the connection and comradeship between relatives more than anything else, I always felt like the outcast, the ‘extra’ person who doesn’t belong. In a way, I was. Born as the second child amid the enforcement of China’s one-child policy, my very existence was threatened by the government crackdown on couples trying to grow their families.</p>
            </div>
            <br /> 
            <div>
@@ -82,7 +82,7 @@ export default function Story() {
                
                <div className="mt-8">
                      <img src={mission} alt="misson" className="md:w-1/3 object-cover p-2 float-left"/> 
-                     <p className="text-lg xl:text-xl">Now, I want to combine my experiences as a wounded child, a first-generation immigrant, a corporate professional and a human being who has witnessed a lot of life’s pain and beauty, with my love for humanity and belief in peace and actualisation as a natural result of self acceptance. I want to form strong partnerships with those longing for a heightened understanding of themselves and others around them, so that they can live the best life that could ever be imagined. Because the more of us are living a fulfilling life, the more kindness and less need to hurt there will be. Together, we can indeed shift the world.</p>
+                     <p className="text-lg xl:text-xl"><span className="font-semibold text-4xl text-myblue-500">N</span>ow, I want to combine my experiences as a wounded child, a first-generation immigrant, a corporate professional and a human being who has witnessed a lot of life’s pain and beauty, with my love for humanity and belief in peace and actualisation as a natural result of self acceptance. I want to form strong partnerships with those longing for a heightened understanding of themselves and others around them, so that they can live the best life that could ever be imagined. Because the more of us are living a fulfilling life, the more kindness and less need to hurt there will be. Together, we can indeed shift the world.</p>
                </div> 
            </div> 
            <button className="btn-next float-right my-10"><Link to="/about/philosophy">MY PHILOSOPHY ➣</Link></button> 
