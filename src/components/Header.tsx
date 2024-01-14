@@ -325,7 +325,7 @@ export default function Header() {
           </NavLink>
         </div>
       ) : (
-        <nav className="hidden md:flex xl:w-1/2 w-3/4 justify-between items-center mx-auto font-medium text-myblue-900">
+        <nav className="hidden md:flex xl:w-1/2 w-3/4 justify-between items-center mx-auto text-lg font-medium text-myblue-900">
           <NavLink
             to="/"
             end
