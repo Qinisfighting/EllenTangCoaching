@@ -8,7 +8,7 @@ import philobanner from "../assets/philobanner.jpg";
         
         <div  className="xl:relative my-24 text-mystone-100">
         <img className="brightness-50 w-full" src={homebanner} />  
-            <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-evenly items-start xl:items-center gap-4 xl:gap:16  bg-myblue-700 xl:bg-opacity-0">
+            <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-center items-start xl:items-center gap-4 bg-myblue-700 xl:bg-opacity-0">
                 <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Ellen Tang</h1>
                   <p className="text-xl  text-left">Life coach, therapist, thought partner, artist, investor, auditor, law graduate, astronomy enthusiast</p>
