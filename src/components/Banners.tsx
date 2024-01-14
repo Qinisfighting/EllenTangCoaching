@@ -35,11 +35,11 @@ import storybanner from "../assets/storybanner.jpg";
 function StoryBanner(){
     return (
         
-        <div  className="relative my-24 text-mystone-100">
+        <div  className="xl:relative my-24 text-mystone-100">
         <img className="brightness-50" src={storybanner} />  
-            <div className="gap-0 text-center absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16">             
-                  <h1 className="text-2xl lg:text-5xl lg:my-12 xl:my-16 font-semibold py-0 my-2 ">Want to tell me your story?</h1>             
-                  <Link to="/work/booking"><button className="btn-trans md:my-6 my-2">Schedule Appointment ➣</button></Link>                  
+            <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
+                  <h1 className="text-2xl lg:text-5xl xl:my-16 font-semibold">Want to tell me your story?</h1>             
+                  <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
             </div>
     </div>
     )
