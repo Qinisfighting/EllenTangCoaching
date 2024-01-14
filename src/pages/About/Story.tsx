@@ -1,6 +1,8 @@
 // import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { StoryBanner } from "../../components/Banners";
+import story from "../../assets/story.webp";
+import mission from "../../assets/mission.webp";
 import pain from "../../assets/pain.png";
 import growth from "../../assets/growth.webp";
 import discovery from "../../assets/discovery.webp";
@@ -18,12 +20,15 @@ export default function Story() {
   
   
     return (
-      <div className="w-full">
-      <div className="w-4/5 mx-auto xl:w-2/3 my-20">       
-           <h1 className="w-3/4 text-myblue-300 md:text-5xl border-y mx-auto my-20">My Story</h1>
-           <p className="text-lg xl:text-xl">Born and raised in China, I grew up in a southern city called Kunming. Even though I was brought up in a very close-knit family that valued the connection and comradeship between relatives more than anything else, I always felt like the outcast, the ‘extra’ person who doesn’t belong. In a way, I was. Born as the second child amid the enforcement of China’s one-child policy, my very existence was threatened by the government crackdown on couples trying to grow their families.</p>
+      <div className="w-full">      
+      <div className="w-4/5 mx-auto xl:w-2/3 my-20">
+           <div className="">
+              <img src={story} alt="story" className="md:w-1/3 object-cover float-left"/>  
+              <p className="text-lg xl:text-xl">Born and raised in China, I grew up in a southern city called Kunming. Even though I was brought up in a very close-knit family that valued the connection and comradeship between relatives more than anything else, I always felt like the outcast, the ‘extra’ person who doesn’t belong. In a way, I was. Born as the second child amid the enforcement of China’s one-child policy, my very existence was threatened by the government crackdown on couples trying to grow their families.</p>
+           </div>
+           <br /> 
            <div>
-               <h2 className="text-center my-8">Pain</h2>
+               <h2 className="text-center my-8 mx-auto">Pain</h2>
                <div className="flex flex-col xl:flex-row">
                   <div className="text-lg order-2 xl:text-xl xl:order-1">
                      <p>My parents’ determination to have a second child cost them financially and emotionally. In turn, I had a lot of pressure to live up to the societal standards of ‘excellence’. After all, why would anyone go through all the hardship and ridicule to just have an ‘ordinary’ kid? Fortunately, I did well at school and most excelled academically in my mid-teens even though I was struggling desperately with my emotional world. I kept my despair and horror hidden behind my academic achievements so that others would leave me alone and not ask questions. In a society where parents often valued children’s potential to impress friends and neighbours more than his or her emotional wellbeing, my effort worked ‘well’. I was truly left alone to resolve my own excruciating pain and confusion that often result from the unpredictable behaviours of teenagers.</p>
@@ -71,15 +76,14 @@ export default function Story() {
                      </p> 
                      <p>
                      London is one of my favourite cities in the world. So lively, cultural, full of possibilities. My relocation here not only opened the door to a huge amount of career opportunities, but also significantly expanded my mindset, which is the most valuable thing that can happen on a person’s path to actualisation. My desire to continuously learn and develop led me into two more corporate jobs in the City of London, each with better outlook and intellectual stimulation than the last. My jobs involved, sometimes very delicate, communications with people at all levels, from senior executives to colleagues and external partners. The dynamics between different personalities, genders, positions and working styles in the corporate world are fascinating. I have had both very distressing and very rewarding experiences dealing with such dynamics, all of which taught me a lot about myself and about the unique characteristics of corporate life. I complement the highly logical and analytical nature of my job with my love for the theatre and for drawing and painting as a way to express feelings that could not always be articulated in words.
-
-
                     </p>      
-                  </div>
-                  <h2 className="text-center my-8">My Mission</h2>
-               <p className="text-lg xl:text-xl">
-               Now, I want to combine my experiences as a wounded child, a first-generation immigrant, a corporate professional and a human being who has witnessed a lot of life’s pain and beauty, with my love for humanity and belief in peace and actualisation as a natural result of self acceptance. I want to form strong partnerships with those longing for a heightened understanding of themselves and others around them, so that they can live the best life that could ever be imagined. Because the more of us are living a fulfilling life, the more kindness and less need to hurt there will be. Together, we can indeed shift the world.
-                  </p >
+                  </div>       
                </div>
+               
+               <div className="mt-8">
+                     <img src={mission} alt="misson" className="md:w-1/3 object-cover p-2 float-left"/> 
+                     <p className="text-lg xl:text-xl">Now, I want to combine my experiences as a wounded child, a first-generation immigrant, a corporate professional and a human being who has witnessed a lot of life’s pain and beauty, with my love for humanity and belief in peace and actualisation as a natural result of self acceptance. I want to form strong partnerships with those longing for a heightened understanding of themselves and others around them, so that they can live the best life that could ever be imagined. Because the more of us are living a fulfilling life, the more kindness and less need to hurt there will be. Together, we can indeed shift the world.</p>
+               </div> 
            </div> 
            <button className="btn-next float-right my-10"><Link to="/about/philosophy">MY PHILOSOPHY ➣</Link></button> 
            <h2 className="mt-40 mb-4 text-3xl">Training & Qualifications</h2>
