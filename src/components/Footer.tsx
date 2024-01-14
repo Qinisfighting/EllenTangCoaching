@@ -5,7 +5,7 @@ import upArrow from "../assets/upArrow.png";
 
 export default function Footer() {
     const [isTop, setIsTop] = useState<boolean>(false);
-    console.log(isTop);
+    //console.log(isTop);
     useEffect(() => {
       window.addEventListener("scroll", () => {
         window.scrollY > 300 ? setIsTop(true) : setIsTop(false);

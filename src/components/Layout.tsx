@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 export default function Layout() {
  return (
-    <div className="flex flex-col h-screen justify-between items-center text-myblue-900">
+    <div className="flex flex-col justify-between items-center text-myblue-900">
      <Header />
      <main>
        <Outlet />

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import ellen from "../assets/ellen.webp";
-//import homebanner from "../assets/homebanner.jpg";
+import { HomeBanner } from "../components/Banners";
 
 
 export default function Home() {
     return (
-      <div className="max-w-full">
+      <div className="">
         <div className="flex flex-col px-4 w-11/12 md:w-4/5 mx-auto my-16 lg:flex-row gap-8 justify-between text-myblue-800">
           <img src={ellen} alt="me" className="w-full h-auto lg:w-1/3 object-cover shadow-lg"/>
           <div className="flex flex-col justify-between items-end gap-16">
@@ -17,28 +17,8 @@ export default function Home() {
               </div>
               <Link to="/about"><button className="btn-next">GET TO KNOW ME ➣</button></Link>
           </div>
-        </div>
-        <div className="flex flex-col relative mb-12 md:py-12 bg-[url()] w-full h-1/2 object-cover">
-         
-{/*               
-              <div className="flex flex-col md:flex-row absolute bottom-44 right-0 mx-auto justify-evenly items-center gap-8">
-                <div className="w-1/4 text-center">
-                  <h1 className="text-4xl md:text-6xl text-myblue-100 font-semibold">I am here to help you</h1>
-                  <p className="text-xl md:text-3xl text-myblue-100 font-semibold">to live a fulfilled life.</p>
-                  <Link to="/work"><button className="btn-next">BOOK A SESSION ➣</button></Link>
-                </div>
-                <div className="w-1/4 text-center">
-                  <h1 className="text-4xl md:text-6xl text-myblue-100 font-semibold">I am here to help you</h1>
-                  <p className="text-xl md:text-3xl text-myblue-100 font-semibold">to live a fulfilled life.</p>
-                  <Link to="/work"><button className="btn-next">BOOK A SESSION ➣</button></Link>
-                </div>
-                <div className="w-1/4 text-center">
-                  <h1 className="text-4xl md:text-6xl text-myblue-100 font-semibold">I am here to help you</h1>
-                  <p className="text-xl md:text-3xl text-myblue-100 font-semibold">to live a fulfilled life.</p>
-                  <Link to="/work"><button className="btn-next">BOOK A SESSION ➣</button></Link>
-                </div>
-              </div> */}
-        </div>
+        </div>      
+        <HomeBanner />
       </div>    
     );
   }
