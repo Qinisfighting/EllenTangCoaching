@@ -7,7 +7,6 @@ import logo from "../../src/assets/logo.png";
 interface ActiveStyles {
   fontSize?: string;
   fontWeight?: string;
-  textShadow?: string;
   color?: string;
 }
 
@@ -24,7 +23,6 @@ export default function Header() {
   const activeStyles: ActiveStyles = {
     fontSize: "1.15em",
     fontWeight: "600",
-    textShadow: ".7px .7px .7px lightgray",
     color:"#3c91c8"
   };
   const pendingStyles: PendingStyles = {
