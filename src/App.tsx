@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Story from "./pages/About/Story";
 import Philosophy from "./pages/About/Philosophy";
 import INFP from "./pages/About/INFP";
+import General from "./pages/Work/General";
 import Pricing from "./pages/Work/Pricing";
 import Service from "./pages/Work/Service";
 import Booking from "./pages/Work/Booking";
@@ -32,7 +33,8 @@ const router = createBrowserRouter(
       <Route path="about" element={<Story />} />
       <Route path="about/philosophy" element={<Philosophy />} />
       <Route path="about/infp" element={<INFP />} />
-      <Route path="work" element={<Service />} />
+      <Route path="work" element={<General />} />
+      <Route path="work/service" element={<Service />} />
       <Route path="work/pricing" element={<Pricing />} /> 
       <Route path="work/booking" element={<Booking />} />
       <Route path="blog" element={<Blog />} />

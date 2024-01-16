@@ -202,7 +202,7 @@ export default function Header() {
                   className="flex flex-col  float-center z-10 bg-myblue-300 w-full font-normal text-md text-white my-1 shadow-lg"
                 >
                   <p className="hover:bg-myblue-400 w-full px-3 py-2">
-                    <Link to="work" onClick={handleMenu}>
+                    <Link to="work/service" onClick={handleMenu}>
                       Service
                     </Link>
                   </p>
@@ -442,7 +442,7 @@ export default function Header() {
                   className="flex flex-col absolute z-10 bg-myblue-300 w-max font-normal text-md text-white my-1 shadow-lg opacity-95"
                 >
                   <p className="hover:bg-myblue-400 w-full px-3 py-2">
-                    <Link to="work">Service</Link>
+                    <Link to="work/service">Service</Link>
                   </p>
                   <p className="hover:bg-myblue-400 w-full px-3 py-2">
                     <Link to="work/pricing">Pricing</Link>
