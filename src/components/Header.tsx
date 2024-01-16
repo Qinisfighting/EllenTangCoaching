@@ -151,7 +151,7 @@ export default function Header() {
                     </Link>
                   </p>
                   <p className="hover:bg-myblue-400 w-full px-3 py-2">
-                    <Link to="about/infp">Me as an INFP</Link>
+                    <Link to="about/infp" onClick={handleMenu} >Me as an INFP</Link>
                   </p>
                 </div>
               )}
