@@ -6,11 +6,11 @@ import infp3 from '../../assets/infp3.svg';
 export default function INFP() {
     
     return (
-      <div className='w-5/6 mt-8 mx-auto flex flex-col md:flex-row lg:w-4/5 md:items-start md:mt-16 mb-28'>
+      <div className='w-5/6 mt-6 mx-auto flex flex-col md:flex-row lg:w-4/5 md:items-start md:mt-16 mb-28'>
         <div className='md:pr-4 xl:pr-12'>
-          <h1 className='md:text-5xl'>Me as an INFP</h1>
-          <p className='text-center text-lg font-medium'>Credit: <a className='text-myblue-400 underline'>16 Personalities</a></p>
-          <img className="mx-auto mt-12 mb-8 md:my-12 w-full "  src={infp}/>  
+          <h1 className='md:text-5xl pb-0'>Me as an INFP</h1>
+          <p className='text-center text-lg'>Credit: <a className='text-myblue-400 underline'>16 Personalities</a></p>
+          <img className="mx-auto mt-8 mb-4 md:my-8 w-full "  src={infp}/>  
           <h2 className='text-3xl md:text-4xl'>Introduction</h2>
           <div>
              <p className='text-lg'>INFP personalities are true idealists, always looking for the hint of good in even the worst of people and events, searching for ways to make things better. While they may be perceived as calm, reserved, or even shy, INFPs have an inner flame and passion that can truly shine. Comprising just 4% of the population, the risk of feeling misunderstood is unfortunately high for the INFP personality type – but when they find like-minded people to spend their time with, the harmony they feel will be a fountain of joy and inspiration.</p>
@@ -30,7 +30,7 @@ export default function INFP() {
           <p className='text-lg'>Luckily, like the flowers in spring, Mediator’s affection, creativity, altruism and idealism will always come back, rewarding them and those they love perhaps not with logic and utility, but with a world view that inspires compassion, kindness and beauty wherever they go.</p>
           <p className='text-lg'>Read the full result <a  className='text-myblue-400 underline' href='https://www.16personalities.com/infp-personality' target="_blank">here</a>.</p>
         </div>
-        <img src={infp2}  className="mt-16 md:pl-12 mb-20 md:mt-48 md:pt-7 w-3/4 md:w-1/3 mx-auto"/>
+        <img src={infp2}  className="mt-16 md:pl-12 mb-20 md:mt-40 md:pt-5 w-3/4 md:w-1/3 mx-auto"/>
       </div>
     );
   }
