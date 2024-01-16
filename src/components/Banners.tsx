@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import homebanner from "../assets/homebanner.jpg";
 import storybanner from "../assets/storybanner.jpg";
 import philobanner from "../assets/philobanner.jpg";
+import servicebanner from "../assets/servicebanner.jpg";
 
  function HomeBanner(){
-    return (
-        
+    return (      
         <div  className="xl:relative my-24 text-mystone-100">
         <img className="brightness-50 w-full" src={homebanner} />  
             <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-center items-start xl:items-center gap-4 bg-myblue-700 xl:bg-opacity-0">
@@ -34,8 +34,7 @@ import philobanner from "../assets/philobanner.jpg";
 }
 
 function StoryBanner(){
-    return (
-        
+    return (       
         <div  className="xl:relative my-24 text-mystone-100">
         <img className="brightness-50 w-full" src={storybanner} />  
             <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
@@ -47,8 +46,7 @@ function StoryBanner(){
 }
 
 function PhiloBanner(){
-    return (
-        
+    return (      
         <div  className="xl:relative my-24 text-mystone-100">
         <img className="brightness-50 w-full" src={philobanner} />  
             <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
@@ -59,4 +57,17 @@ function PhiloBanner(){
     )
 }
 
-export {HomeBanner, StoryBanner, PhiloBanner}
+
+function ServiceBanner(){
+    return (      
+        <div  className="xl:relative my-24 text-mystone-100">
+        <img className="brightness-50 w-full" src={servicebanner} />  
+            <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
+                  <h1 className="text-2xl lg:text-5xl xl:my-16 font-semibold">Let’s start the journey together.</h1>             
+                  <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
+            </div>
+    </div>
+    )
+}
+
+export {HomeBanner, StoryBanner, PhiloBanner, ServiceBanner}

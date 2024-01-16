@@ -21,16 +21,16 @@ export default function Footer() {
         {isTop && (
           <img src={upArrow} className="w-8 z-20 fixed bottom-10 right-10 xl:right-17 xl:bottom-17 drop-shadow-lg hover:-translate-y-1" onClick={goTop} alt="toTop" />
         )}
-        <div className="text-center flex justify-center items-center text-sm">
+        <div className="text-center flex justify-center items-center">
         
           <Link to="/privacy">
-            <p className="pr-2 hover:text-myblue-400">Privacy Policy</p>
+            <p className="pr-2 hover:text-myblue-400 text-sm">Privacy Policy</p>
           </Link>
           <Link to="/terms">
-            <p className="px-2 border-x hover:text-myblue-400  py-0">Terms of Service</p>
+            <p className="px-2 border-x hover:text-myblue-400  py-0 text-sm">Terms of Service</p>
           </Link>
           <Link to="/practice">
-            <p className="pl-2 hover:text-myblue-400">Practice Policy</p>
+            <p className="pl-2 hover:text-myblue-400 text-sm">Practice Policy</p>
           </Link>
         </div>
   
