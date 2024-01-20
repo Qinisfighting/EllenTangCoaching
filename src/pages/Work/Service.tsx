@@ -7,7 +7,7 @@ export default function Service() {
   return (
     <div className="w-full">
         <h1 className="text-myblue-400 border-y w-4/5 my-12 md:w-1/3 md:my-20 mx-auto">My Service</h1>
-        <div className="w-full mx-auto mb-10 flex flex-col justify-evenly items-center lg:flex-row">           
+        <div className="w-full mx-auto flex flex-col justify-evenly items-center lg:flex-row">           
            <ul className="list-disc p-8 text-left order-2 lg:order-1">
               <p className="text-xl text-left font-semibold">I offer the following coaching services:</p>
               <li className="ml-10 py-1">Personal life coaching</li>
