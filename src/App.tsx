@@ -34,6 +34,7 @@ const router = createBrowserRouter(
       <Route path="about/philosophy" element={<Philosophy />} />
       <Route path="about/infp" element={<INFP />} />
       <Route path="work" element={<General />} />
+      <Route path="work/general" element={<General />} />
       <Route path="work/service" element={<Service />} />
       <Route path="work/pricing" element={<Pricing />} /> 
       <Route path="work/booking" element={<Booking />} />
