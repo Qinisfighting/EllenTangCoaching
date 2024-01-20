@@ -202,11 +202,6 @@ export default function Header() {
                   className="flex flex-col  float-center z-10 bg-myblue-300 w-full font-normal text-md text-white my-1 shadow-lg"
                 >  
                   <p className="hover:bg-myblue-400 w-full px-3 py-2">
-                    <Link to="work" onClick={handleMenu}>
-                      What To Expect
-                    </Link> 
-                  </p>
-                  <p className="hover:bg-myblue-400 w-full px-3 py-2">
                     <Link to="work/service" onClick={handleMenu}>
                       My Service
                     </Link>
@@ -446,9 +441,6 @@ export default function Header() {
                   ref={dropdownRef}
                   className="flex flex-col absolute z-10 bg-myblue-300 w-max font-normal text-md text-white my-1 shadow-lg opacity-95"
                 >
-                  <p className="hover:bg-myblue-400 w-full px-3 py-2">
-                    <Link to="work">What To Expect</Link>
-                  </p>
                   <p className="hover:bg-myblue-400 w-full px-3 py-2">
                     <Link to="work/service">My Service</Link>
                   </p>
