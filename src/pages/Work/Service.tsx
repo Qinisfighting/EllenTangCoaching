@@ -1,10 +1,37 @@
 
+import { Link } from "react-router-dom";
 import { ServiceBanner } from "../../components/Banners";
+import fullfill from "../../assets/fullfill.webp";
 
 export default function Service() { 
   return (
     <div className="w-full">
         <h1 className="text-myblue-400 border-y w-4/5 my-12 md:w-1/3 md:my-20 mx-auto">My Service</h1>
+        <div className="w-full mx-auto mb-10 flex flex-col justify-evenly items-center lg:flex-row">           
+           <ul className="list-disc p-8 text-left order-2 lg:order-1">
+              <p className="text-xl text-left font-semibold">I offer the following coaching services:</p>
+              <li className="ml-10 py-1">Personal life coaching</li>
+              <li className="ml-10 py-1">Professional life coaching</li>
+              <li className="ml-10 py-1">Confidence coaching</li>
+              <li className="ml-10 py-1">Self-esteem coaching</li>
+              <li className="ml-10 py-1">Emotional intelligence coaching</li>
+              <li className="ml-10 py-1">Depression coaching</li>
+              <li className="ml-10 py-1">Money mindset coaching</li>
+              <li className="ml-10 py-1">Career development coaching</li>
+              <li className="ml-10 py-1">Career change coaching</li>
+              <li className="ml-10 py-1">Self-awareness coaching</li>
+              <li className="ml-10 py-1">Relationship coaching</li>
+           </ul>
+           <img src={fullfill} className="order-1 lg:order-2 w-3/5 lg:w-1/3"></img>
+           
+        </div>
+        <div  className="w-5/6 mx-auto mb-20 pb-4">  
+           <p className="text-xl">50 mins per session. Appointments outside these hours may be available. Please <Link to="/contact" className="underline text-myblue-400">contact me</Link> directly. Online appointments are available on Skype, Zoom or over the phone. Face-to-face appointments are available in London (UK).</p>
+           <p className="text-xl">The relationship between you and me is key to the effectiveness of life coaching. So before you invest for the long term, you can take advantage of the  <Link to="/work/booking" className="underline text-myblue-400">discovery session</Link> to find out more about me.</p>
+           <p className="text-xl">See <Link to="/work/pricing" className="underline text-myblue-400">Pricing</Link> and <Link to="/faq" className="underline text-myblue-400">FAQ</Link> pages for more detail.</p>
+           <button className="btn-next float-right my-16 text-xl ">Book Your Discovery Session ➣</button>
+        </div>
+           
         <div className="w-5/6  mx-auto flex flex-col gap-10 mb-20 justify-center items-center xl:flex-row xl:justify-between xl:items-start ">
            <div className="w-full xl:w-1/3">
               <h2 className="text-3xl text-center">Career</h2>
