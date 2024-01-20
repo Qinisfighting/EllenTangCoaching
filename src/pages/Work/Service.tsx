@@ -22,8 +22,7 @@ export default function Service() {
               <li className="ml-10 py-1">Self-awareness coaching</li>
               <li className="ml-10 py-1">Relationship coaching</li>
            </ul>
-           <img src={fullfill} className="order-1 lg:order-2 w-3/5 lg:w-1/3"></img>
-           
+           <img src={fullfill} className="order-1 lg:order-2 w-3/5 lg:w-1/3"></img>        
         </div>
         <div  className="w-5/6 mx-auto mb-20 pb-4">  
            <p className="text-xl">50 mins per session. Appointments outside these hours may be available. Please <Link to="/contact" className="underline text-myblue-400">contact me</Link> directly. Online appointments are available on Skype, Zoom or over the phone. Face-to-face appointments are available in London (UK).</p>
