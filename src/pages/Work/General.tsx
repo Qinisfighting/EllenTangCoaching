@@ -1,8 +1,8 @@
 import workingme from '../../assets/workingme.webp';
-import depth from '../../assets/depth.webp';
-import trust from '../../assets/trust.webp';
-import connet from '../../assets/connet.webp';
-import partner from '../../assets/partner.webp';
+// import depth from '../../assets/depth.webp';
+// import trust from '../../assets/trust.webp';
+// import connet from '../../assets/connet.webp';
+// import partner from '../../assets/partner.webp';
 
 export default function General() {
     
