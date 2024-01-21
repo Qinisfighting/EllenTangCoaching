@@ -65,7 +65,7 @@ function ServiceBanner(){
         <div  className="xl:relative my-24 text-mystone-100">
         <img className="brightness-50 w-full" src={servicebanner} />  
             <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
-                  <h1 className="text-2xl px-6 lg:text-5xl xl:my-16 font-semibold">"What I am is good enough if only I would be it openly." </h1>             
+                  <h1 className="text-2xl px-4 lg:text-5xl xl:my-16 font-semibold">"What I am is good enough if only I would be it openly." </h1>             
                   <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
             </div>
     </div>
@@ -90,7 +90,7 @@ function FaqBanner(){
         <div  className="xl:relative my-24 text-mystone-100">
         <img className="brightness-50 w-full" src={faqbanner} />  
             <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
-                  <h1 className="text-2xl px-6 lg:text-5xl xl:my-16 font-semibold">Success is easy, once you find the motivation.</h1>             
+                  <h1 className="text-2xl px-4 lg:text-5xl xl:my-16 font-semibold">Success is easy, once you find the motivation.</h1>             
                   <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
             </div>
     </div>
