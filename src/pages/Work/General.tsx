@@ -32,7 +32,7 @@ export default function General() {
             </div>
             <div className="mx-auto flex flex-col justify-between items-top gap-4 lg:gap-8 lg:flex-row">             
               <div className="order-2 lg:order-1 lg:w-2/3 w-11/12 mx-auto">
-                <h2 className='pl-4 text-3xl lg:text-4xl lg:pl-0'>Trust</h2>
+                <h2 className='text-3xl lg:text-4xl lg:pl-0'>Trust</h2>
                 <p className="text-xl">Trust is a multi-layered concept. Whilst you may trust someone with your money, you wouldn’t necessarily trust them with your vulnerability. It is in those to whom we can show our true selves that we place the deepest trust.</p>
                 <p className="text-xl">Genuine trust stands the test of time. As trust is the foundation of our coaching relationship, I will do everything in my power to build the trust between us. As the trust grows and solidifies, our relationship will become more powerful for your growth and development.</p>
                 <p className="text-xl">I assign no blame or judgement on any human behaviours and desires. Anything that you feel is significant can be explored with complete confidentiality and acceptance from me. I know this quality can only be demonstrated, not told. So if we haven’t met before, please feel free to take up my offer of a <Link to="/work/booking" className="underline text-myblue-400">discovery session</Link> and decide whether you could trust me.</p>
@@ -51,7 +51,7 @@ export default function General() {
             </div>
             <div className="mx-auto flex flex-col justify-between items-top gap-4 lg:gap-8 lg:flex-row ">             
               <div className="order-2 lg:order-1 lg:w-2/3 w-11/12 mx-auto">
-                <h2 className='pl-4 text-3xl lg:text-4xl lg:pl-0'>Partnership</h2>
+                <h2 className='text-3xl lg:text-4xl lg:pl-0'>Partnership</h2>
                 <p className="text-xl">The power of partnering is at the centre of everything I do.</p>
                 <p className="text-xl">To an extent, I don’t like the term ‘coach’ because it is not always clear as to exactly what it means to each person, and sometimes it can be seen as a role in which one is holding themselves out as more skilled or knowledgeable than the other.</p>
                 <p className="text-xl">My mission is all about providing a relationship which you can use for your benefit. Within our relationship as partners, you as a whole are understood, supported, and accepted unconditionally. I believe that this is the most powerful way in which every individual can grow to love their authentic selves and find creative and effective solutions for any problems standing in their way.</p>
