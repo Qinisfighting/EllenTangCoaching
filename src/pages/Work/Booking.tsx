@@ -78,15 +78,16 @@ export default function Booking() {
         <div className="w-11/12 mb-10 px-4 lg:w-full mx-auto lg:mb-16">       
            <h2 className="text-xl">Standard Appointment Hours: </h2>
            <i className="text-xl underline">Mon – Fri: 17:00 – 20:00 (UK)</i>
-           <p className="text-xl">50 mins per session. Appointments outside these hours may be available. Please fill in the form below to ask me directly.</p>           
+           <p className="text-xl mt-4 text-left">50 mins per session. Appointments outside these hours may be available. Please fill in the form below to ask me directly.</p>           
         </div>
         <form className="w-11/12 p-8 lg:w-full mx-auto bg-mystone-100 lg:p-20 mb-28" onSubmit={handleSubmit}>
+          
           <div className="flex flex-col mb-4">
-            <label htmlFor="name" className="text-myblue-900 text-xl">Name*</label>
+            <label htmlFor="name" className="text-myblue-900 text-lg">Name*</label>
             <input
               type="text"
               placeholder=""
-              className="h-12 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300 my-2"
+              className="h-12 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300"
               name="name"
               value={formData.name}
               onChange={handleChange}
@@ -95,11 +96,11 @@ export default function Booking() {
             />
           </div>
           <div className="flex flex-col mb-4">
-            <label htmlFor="email" className="text-myblue-900 text-xl">Email*</label>
+            <label htmlFor="email" className="text-myblue-900 text-lg">Email*</label>
             <input
               type="email"
               placeholder=""
-              className="h-12 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300 my-2"
+              className="h-12 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300"
               name="email"
               value={formData.email}
               onChange={handleChange}
@@ -108,11 +109,11 @@ export default function Booking() {
             />
           </div>
           <div className="flex flex-col mb-4">
-            <label htmlFor="mobile" className="text-myblue-900 text-xl">Mobile*</label>
+            <label htmlFor="mobile" className="text-myblue-900 text-lg">Mobile*</label>
             <input
               type="text"
               placeholder=""
-              className="h-12 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300 my-2"
+              className="h-12 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300"
               name="mobile"
               value={formData.mobile}
               onChange={handleChange}
@@ -121,11 +122,11 @@ export default function Booking() {
             />
             </div>
             <div className="flex flex-col mb-4">
-            <label htmlFor="location" className="text-myblue-900 text-xl">Your location (This would help us work out the time difference.)*</label>
+            <label htmlFor="location" className="text-myblue-900 text-lg">Your location (This would help us work out the time difference.)*</label>
             <input
               type="text"
               placeholder=""
-              className="h-12 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300 my-2"
+              className="h-12 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300"
               name="location"
               value={formData.location}
               onChange={handleChange}
@@ -134,48 +135,47 @@ export default function Booking() {
             />
             </div>
             <div className="flex flex-col mb-4">
-              <label htmlFor="when" className="text-myblue-900 text-xl">When would you like to book an appointment?</label>
+              <label htmlFor="when" className="text-myblue-900 text-lg">When would you like to book an appointment?</label>
               <input
                 type="date"
                 placeholder=""
-                className="h-12 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300 my-2"
+                className="w-full h-12 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300"
                 name="when"
                 value={formData.when}
                 onChange={handleChange}
               />
             </div>
             <div className="flex flex-col mb-4">
-              <label htmlFor="message" className="text-myblue-900 text-xl">Anything else you would like me to know?</label>
+              <label htmlFor="message" className="text-myblue-900 text-lg">Anything else you would like me to know?</label>
               <textarea     
                 placeholder=""
-                className="h-40 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300 my-2"
+                className="h-40 p-4 text-xl border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
                 onFocus={(e) => (e.target.value = "")} 
               />
-              <div>
+              <div className="my-4">
                 <input
                   type="checkbox"
-                  className="h-4 w-4 mr-2 text-myblue-900 border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300 my-2"
+                  className="h-4 w-4 mr-2 text-myblue-900 border-2 border-mystone-200 rounded-md focus:outline-none focus:border-mystone-300"
                   name="privacy"
                   checked={formData.privacy}
                   onChange={handleChange}
                   required
                   />
                   <label htmlFor="privacy">
-                    <span className="text-myblue-900 text-xl">I have read and agree to the <Link to="/privacy" className="text-myblue-400 underline">Privacy Policy</Link> and <Link to="/terms" className="text-myblue-400 underline">Terms of Service</Link>.</span>
+                    <span className="text-myblue-900 text-lg">I have read and agree to the <Link to="/privacy" className="text-myblue-400 underline">Privacy Policy</Link> and <Link to="/terms" className="text-myblue-400 underline">Terms of Service</Link>.</span>
                   </label>
               </div>
+          
               <button 
-              className="btn-next mt-8 lg:mt-16 text-lg"
+              className="btn-next mt-8 lg:mt-16 text-lg w-full"
               disabled={loading}
               >
                 Submit
             </button>
-            </div>
-           
-            
+            </div>    
         </form>
       </div>
     );
