@@ -67,15 +67,15 @@ export default function Contact() {
 
   return (
     <div className="w-full">
-      <h1 className="text-4xl lg:text-5xl text-myblue-400  w-1/2 my-12 lg:w-1/2 lg:mt-20 mx-auto">Contact</h1> 
+      <h1 className="text-4xl lg:text-5xl text-myblue-400  w-1/2 mt-8 lg:w-1/2 lg:mt-20 mx-auto">Contact</h1> 
       <div className="flex flex-col justify-center items-center xl:flex-row xl:items-start mx-auto xl:bg-mystone-100 mb-20">
         <div className="w-screen xl:p-16 xl:relative xl:w-1/2 mt-10">
             <img src={contact} className="w-screen brightness-50"></img>
             <div className="p-10 xl:p-0 xl:absolute top-40 left-60 xl:text-mystone-100">
                 <h2>Contact & Hours</h2>  
                 <br />      
-                <a className="text-myblue-400 text-xl" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">Greenwich, London, United Kingdom</a>
-                <p className="text-xl text-left">Email: <a className="text-myblue-400 underline" href="mailto:">ellen@ellentangcoaching.com</a></p>
+                <a className="text-myblue-300 text-xl" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">Greenwich, London, United Kingdom</a>
+                <p className="text-xl text-left">Email: <a className="text-myblue-300 underline" href="mailto:">ellen@ellentangcoaching.com</a></p>
                 <p className="text-xl text-left">Call: (UK) +44 7753137614 / (US) +1 917-982-2022</p>
                 <p className="text-xl text-left">Mon – Fri: 17:00 – 20:00 (UK)</p>
                 <p className="text-xl text-left">Sat – Sun: 10:00 – 18:00 (UK)</p>
