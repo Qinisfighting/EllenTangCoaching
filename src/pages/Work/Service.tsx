@@ -27,7 +27,7 @@ export default function Service() {
         <div  className="w-5/6 mx-auto lg:mb-10 pb-4">  
            <p className="text-xl">50 mins per session. Appointments outside these hours may be available. Please <Link to="/contact" className="underline text-myblue-400">contact me</Link> directly. Online appointments are available on Skype, Zoom or over the phone. Face-to-face appointments are available in London (UK).</p>
            <p className="text-xl">The relationship between you and me is key to the effectiveness of life coaching. So before you invest for the long term, you can take advantage of the  <Link to="/work/booking" className="underline text-myblue-400">discovery session</Link> to find out more about me.</p>
-           <p className="text-xl">See <Link to="/work/pricing" className="underline text-myblue-400">Pricing</Link> and <Link to="/faq" className="underline text-myblue-400">FAQ</Link> pages for more detail.</p>
+           <p className="text-xl">See <Link to="/work/pricing" className="underline text-myblue-400">Pricing</Link> and <Link to="/faq" className="underline text-myblue-400">FAQ</Link> pages for more details.</p>
            <button className="btn-next float-right my-12 lg:my-16 text-md ">Book Your Discovery Session ➣</button>
         </div>
            
