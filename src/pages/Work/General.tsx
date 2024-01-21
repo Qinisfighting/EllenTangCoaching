@@ -8,9 +8,9 @@ export default function General() {
     
     return (
       <div className="w-full">
-        <h1 className="text-myblue-400 border-y w-4/5 my-12 md:w-1/3 md:my-20 mx-auto">Work With Me</h1>
+        <h1 className="text-3xl lg:text-5xl text-myblue-400 border-y w-4/5 my-12 md:w-1/3 md:my-20 mx-auto">Work With Me</h1>
         <div className="w-11/12 lg:w-3/4 mx-auto mb-36">
-            <h2>What is it like to work with me?</h2>
+            <h2 className='pl-4 text-3xl lg:text-4xl lg:pl-0'>What is it like to work with me?</h2>
             <div className="mx-auto flex flex-col justify-between items-center gap-4 lg:flex-row">
               <div className="order-2 lg:order-1 lg:w-2/3 w-11/12">
                 <p className="text-xl">The absolute key to effective coaching is the relationship between you and me. The quality of our relationship is therefore more important than the techniques or principles embedded in the process itself.</p>

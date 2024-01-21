@@ -5,7 +5,7 @@
 
 @layer base {
     h1 {
-      @apply text-4xl;
+      @apply text-5xl;
       @apply my-4;
       @apply py-6;
       @apply font-semibold;
