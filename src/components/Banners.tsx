@@ -4,6 +4,7 @@ import storybanner from "../assets/storybanner.jpg";
 import philobanner from "../assets/philobanner.jpg";
 import servicebanner from "../assets/servicebanner.jpg";
 import pricingbanner from "../assets/pricingbanner.jpg";
+import faqbanner from "../assets/faqbanner.jpg";
 
  function HomeBanner(){
     return (      
@@ -83,4 +84,17 @@ function PricingBanner(){
     )
 }
 
-export { HomeBanner, StoryBanner, PhiloBanner, ServiceBanner, PricingBanner }
+
+function FaqBanner(){
+    return (      
+        <div  className="xl:relative my-24 text-mystone-100">
+        <img className="brightness-50 w-full" src={faqbanner} />  
+            <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
+                  <h1 className="text-2xl px-4 lg:text-5xl xl:my-16 font-semibold">Success is easy, once you find the motivation.</h1>             
+                  <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
+            </div>
+    </div>
+    )
+}
+
+export { HomeBanner, StoryBanner, PhiloBanner, ServiceBanner, PricingBanner, FaqBanner }
