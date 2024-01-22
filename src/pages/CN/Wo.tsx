@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ellen2 from "../../assets/ellen2.webp";
 import reachout from "../../assets/reachout.webp";  
+import { HomeBannerCN } from "../../components/Banners";
 
 export default function Wo() {
     
@@ -16,7 +17,7 @@ export default function Wo() {
                   <p className="text-lg">我提供线上（电话或者Skype/Zoom）和面对面咨询，所以无论你在哪里都可以<Link to="/contact" className="underline text-myblue-400 ">联系我</Link>。</p>
               </div>          
           </div>
-          <div className="w-11/12 lg:w-full mx-auto mb-32 flex flex-col gap-8">
+          <div className="w-11/12 lg:w-full mx-auto flex flex-col gap-8">
               <h2>做本来的自己</h2>
               <div className="flex flex-col lg:inline">
                  <p className="text-lg">心理咨询师，也可以叫做<strong>人生教练(Life Coaching),</strong> 是通过研究咨询心理学以及自己的亲身经历，来帮助他人更深入地认识自己以及实现个人目标，让生活变得更加美好的职业。我的使命是让更多的人可以自由地“做本来的自己”。纯粹的幸福来源于本质。只有当我们可以坦荡地做那个本来的自己，真正的幸福才会随之而来。因为你本来的样子，就是最好的。</p>
@@ -27,12 +28,10 @@ export default function Wo() {
                  <p className="text-lg">我一直相信，要成为一位好的咨询师远远不是拿到证书和学位就足够了。咨询师本人对各种复杂情感的亲身体验，以及不断深入的自我观察和分析，才是衡量一个咨询师能力最有权威的标准。虽然我在国内外都接受过咨询师培训，但是毫无疑问的是，我个人的经历和我多年来在与咨询教练的合作下所达到的自我认知以及对人性的理解，才是我最宝贵的资质。如今，我仍然有自己稳定的咨询教练。这既帮助我继续更深入和清晰地了解自己，也让我在给他人咨询的过程中能做到更有效的分析和觉察，不轻易被自己的感情色彩所影响。</p>
                  <p className="text-lg">我相信，越多人学会做本来的自己，这个世界就会越美好。因为人越爱自己本来的样子就会越幸福，越幸福就越不会想要伤害他人或者自己。我希望能和你一起，幸福地做本来的自己。</p>
               </div>
-              <button className="btn-next float-right w-48 my-6 lg:my-6 text-md">我的服务 ➣</button>
+              <Link to="/cn/fuwu"><button className="btn-next float-right w-48 my-6 lg:my-6 text-md">我的服务 ➣</button></Link>
+          </div>    
           </div>
-          
-          
-          </div>
-          
+          <HomeBannerCN/> 
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import homebanner from "../assets/homebanner.jpg";
+import homebannercn from "../assets/homebannercn.jpg";
 import storybanner from "../assets/storybanner.jpg";
 import philobanner from "../assets/philobanner.jpg";
 import servicebanner from "../assets/servicebanner.jpg";
@@ -113,4 +114,47 @@ function FaqBanner(){
     )
 }
 
-export { HomeBanner, StoryBanner, PhiloBanner, ServiceBanner, PricingBanner, FaqBanner }
+function HomeBannerCN(){
+  return (      
+      <div  className="xl:relative my-24 text-mystone-100">
+      <img className="brightness-50 w-full" src={homebannercn} />  
+          <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-center items-start xl:items-center gap-4 bg-myblue-700 xl:bg-opacity-0">
+              <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
+                <h1 className="text-left text-3xl md:text-4xl font-semibold">关于我</h1>        
+                <div className="socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" title="Facebook"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" title="Youtube"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a></span></div> 
+                <p className="text-xl  text-left">心理咨询师，个人成长教练，画家，法律学士，审计经理，投资人，天文爱好者</p>
+                <Link to="/cn/fuwu"><button className="btn-trans my-6">我的服务 ➣</button></Link>
+              </div>
+              <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
+                <h1 className="text-left text-3xl md:text-4xl font-semibold">合作伙伴</h1>
+                <p className="text-xl  text-left">Personal Growth from <a className="underline text-white" href="https://www.selfgrowth.com/" target="_blank">SelfGrowth.com</a></p>
+                <p className="text-xl"><a className="underline text-white" href="https://www.bodymindspiritdirectory.org/" target="_blank">Mind Body Spirit Directory</a></p>
+                <Link to="/cn/wenti"><button className="btn-trans my-6">常见问题 ➣</button></Link>
+              </div>
+              <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
+                <h1 className="text-left text-3xl md:text-4xl font-semibold">与我联系</h1>
+                <div className="flex items-center">
+                <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={navi} alt="navi"/>
+                <a className="text-lg md:text-xl underline" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">Greenwich, London, United Kingdom</a>
+              </div>
+              <div className="flex items-center">
+                <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={phone} alt="phone"/>
+                <p className="md:text-xl text-left">(英) +44 7753137614 / (美) +1 917-982-2022</p>     
+              </div>
+              <div className="flex items-center">
+                <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={time} alt="time"/>
+                <p className="md:text-xl text-left">周一 – 周五: 17:00 – 20:00 (英)</p>
+              </div>
+              <div className="flex items-center">
+                <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={time} alt="time"/>
+                <p className="md:text-xl text-left">周六 – 周日: 10:00 – 18:00 (英)</p>
+              </div>
+                <Link to="/cn/yuyue"><button className="btn-trans my-6">预约咨询 ➣</button></Link>
+              </div>            
+          </div>
+  </div>
+  )
+}
+
+
+export { HomeBanner, StoryBanner, PhiloBanner, ServiceBanner, PricingBanner, FaqBanner, HomeBannerCN }
