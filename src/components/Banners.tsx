@@ -29,7 +29,7 @@ import phone from "../assets/phone.png";
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Contact & Hours</h1>
                   <div className="flex items-center">
                   <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={navi} alt="navi"/>
-                  <a className="text-lg md:text-xl" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">Greenwich, London, United Kingdom</a>
+                  <a className="text-lg md:text-xl underline" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">Greenwich, London, United Kingdom</a>
                 </div>
                 <div className="flex items-center">
                   <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={phone} alt="phone"/>
