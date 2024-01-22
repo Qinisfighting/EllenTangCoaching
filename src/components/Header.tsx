@@ -309,12 +309,17 @@ export default function Header() {
                   </p>
                   <p className="hover:bg-myblue-400 w-full px-3 py-2">
                     <Link to="cn/fuwu" onClick={handleMenu}>
-                      理念和服务
+                      我的服务
+                    </Link>
+                  </p>
+                  <p className="hover:bg-myblue-400 w-full px-3 py-2">
+                    <Link to="cn/wenti" onClick={handleMenu}>
+                      常见问题
                     </Link>
                   </p>
                   <p className="hover:bg-myblue-400 w-full px-3 py-2">
                     <Link to="cn/yuyue" onClick={handleMenu}>
-                      价格和预约
+                      预约咨询
                     </Link>
                   </p>
                 </div>
@@ -534,16 +539,19 @@ export default function Header() {
               {isDropdown && clickedContent === "中文心理咨询" && (
                 <div
                   ref={dropdownRef}
-                  className="flex flex-col absolute z-10 bg-myblue-300 w-max font-normal text-base text-white my-1 shadow-lg opacity-95"
+                  className="py-1 flex flex-col absolute z-10 bg-myblue-300 w-max font-normal text-base text-white my-1 shadow-lg opacity-95"
                 >
-                  <p className="hover:bg-myblue-400 w-full px-3 py-2">
+                  <p className="hover:bg-myblue-400 w-full px-5 py-2">
                     <Link to="cn">关于我</Link>
                   </p>
-                  <p className="hover:bg-myblue-400 w-full px-3 py-2">
-                    <Link to="cn/fuwu">理念和服务</Link>
+                  <p className="hover:bg-myblue-400 w-full px-5 py-2">
+                    <Link to="cn/fuwu">我的服务</Link>
                   </p>
-                  <p className="hover:bg-myblue-400 w-full px-3 py-2">
-                    <Link to="cn/yuyue">价格和预约</Link>
+                  <p className="hover:bg-myblue-400 w-full px-5 py-2">
+                    <Link to="cn/wenti">常见问题</Link>
+                  </p>
+                  <p className="hover:bg-myblue-400 w-full px-5 py-2">
+                    <Link to="cn/yuyue">预约咨询</Link>
                   </p>
                 </div>
               )}

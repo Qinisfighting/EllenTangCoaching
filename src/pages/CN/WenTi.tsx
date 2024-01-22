@@ -1,8 +1,8 @@
-export default function FuWu() {
+export default function WenTi() {
     
     return (
       <div  lang="zh-CN" className="">
-        我的服务
+        常见问题
       </div>
     );
   }
