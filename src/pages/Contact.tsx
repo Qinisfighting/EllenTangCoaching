@@ -76,7 +76,8 @@ export default function Contact() {
         <div className="w-screen xl:p-16 xl:relative xl:w-1/2 mt-4 xl:mt-10">      
             <img src={contact} className="w-screen h-auto object-cover brightness-50 drop-shadow-xl"></img>
             <Link to="/work/booking"><button className="w-screen rounded-none xl:w-max xl:absolute xl:bottom-28 xl:right-32 btn-next xl:btn-trans">Schedule Appointment ➣</button></Link>    
-            <div className="p-10 xl:p-0 xl:absolute bottom-1/3 left-1/4 xl:text-mystone-100">    
+            <div className="p-10 xl:p-0 xl:absolute bottom-1/3 left-1/4 xl:text-mystone-100"> 
+                <div className="pl-1 socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" title="Facebook"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" title="Youtube"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a></span></div> 
                 <h2 className="pl-1">Contact & Hours</h2>  
                 <br />       
                 <div className="flex items-center">
