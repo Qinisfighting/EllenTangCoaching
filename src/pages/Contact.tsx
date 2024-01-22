@@ -69,9 +69,10 @@ export default function Contact() {
     <div className="w-full">
       <h1 className="text-4xl lg:text-5xl text-myblue-400  w-1/2 mt-8 lg:w-1/2 lg:mt-20 mx-auto">Contact</h1> 
       <div className="flex flex-col justify-center items-center xl:flex-row xl:items-start mx-auto xl:bg-mystone-100 mb-20">
-        <div className="w-screen xl:p-16 xl:relative xl:w-1/2 mt-10">
+        <div className="w-screen xl:p-16 xl:relative xl:w-1/2 mt-10">      
             <img src={contact} className="w-screen h-auto object-cover brightness-50 drop-shadow-xl"></img>
-            <div className="p-10 xl:p-0 xl:absolute top-1/4 left-1/4 xl:text-mystone-100">
+            <Link to="/work/booking"><button className="w-screen rounded-none xl:w-max xl:absolute xl:bottom-28 xl:right-32 btn-next xl:btn-trans">Schedule Appointment ➣</button></Link>    
+            <div className="p-10 xl:p-0 xl:absolute bottom-1/3 left-1/4 xl:text-mystone-100">    
                 <h2 className="pl-1">Contact & Hours</h2>  
                 <br />      
                 <a className="text-myblue-300 text-lg md:text-xl" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">📍Greenwich, London, United Kingdom</a>
@@ -80,6 +81,7 @@ export default function Contact() {
                 <p className="md:text-xl text-left">📅 Mon – Fri: 17:00 – 20:00 (UK)</p>
                 <p className="md:text-xl text-left">📅 Sat – Sun: 10:00 – 18:00 (UK)</p>
             </div>
+            
         </div>
   
         <form className="w-full p-10 mx-auto mb-8 xl:w-1/2 xl:py-20 xl:pr-10 bg-mystone-100" onSubmit={handleSubmit}>      
