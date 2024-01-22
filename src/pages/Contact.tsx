@@ -74,10 +74,10 @@ export default function Contact() {
             <Link to="/work/booking"><button className="w-screen rounded-none xl:w-max xl:absolute xl:bottom-28 xl:right-32 btn-next xl:btn-trans">Schedule Appointment ➣</button></Link>    
             <div className="p-10 xl:p-0 xl:absolute bottom-1/3 left-1/4 xl:text-mystone-100">    
                 <h2 className="pl-1">Contact & Hours</h2>  
-                <br /> 
-                <p className="md:text-xl text-left">☎️: (UK) +44 7753137614 / (US) +1 917-982-2022</p>     
+                <br />       
                 <a className="text-myblue-300 text-lg md:text-xl" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">📍Greenwich, London, United Kingdom</a>
                 <p className="md:text-xl text-left">✉️: <a className="text-myblue-300 underline" href="mailto:">ellen@ellentangcoaching.com</a></p>   
+                <p className="md:text-xl text-left">☎️: (UK) +44 7753137614 / (US) +1 917-982-2022</p>     
                 <p className="md:text-xl text-left">🕒 Mon – Fri: 17:00 – 20:00 (UK)</p>
                 <p className="md:text-xl text-left">🕒 Sat – Sun: 10:00 – 18:00 (UK)</p>
             </div>
