@@ -21,6 +21,7 @@ export default function Service() {
               <li className="ml-10 py-1">Career change coaching</li>
               <li className="ml-10 py-1">Self-awareness coaching</li>
               <li className="ml-10 py-1">Relationship coaching</li>
+              <li className="ml-10 py-1">Past trauma coaching</li>
            </ul>
            <img src={fullfill} className="order-1 lg:order-2 w-3/5 lg:w-1/3"></img>        
         </div>
