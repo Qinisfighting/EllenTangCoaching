@@ -9,7 +9,7 @@ export default function FAQ() {
       <div className="w-screen">
         <div className="w-11/12 mx-auto xl:w-5/6">
           <h1 className="text-myblue-400 border-y w-4/5 my-12 md:w-1/3 md:my-20 mx-auto">FAQ</h1>
-          <div className="w-5/6 mx-auto lg:mb-10 pb-4">  
+          <div className="w-11/12 mx-auto lg:mb-10 pb-4">  
               <h3>Do you offer coaching face-to-face or online?</h3>
               <p>I primarily offer coaching sessions over the phone or online via Skype/Zoom. However, face-to-face coaching is also available in the Greenwich (London) area for an additional fee to cover venue hiring costs.</p>
               <h3>How much do you charge?</h3>
