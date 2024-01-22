@@ -20,13 +20,13 @@ import phone from "../assets/phone.png";
                   <p className="text-xl  text-left">Life coach, therapist, thought partner, artist, investor, auditor, law graduate, astronomy enthusiast</p>
                   <Link to="/about"><button className="btn-trans my-6">More About Me ➣</button></Link>
                 </div>
-                <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-500 pb-8 border-white xl:border-none">
+                <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Partnering with</h1>
                   <p className="text-xl  text-left">Personal Growth from <a className="underline text-white" href="https://www.selfgrowth.com/" target="_blank">SelfGrowth.com</a></p>
                   <p className="text-xl"><a className="underline text-white" href="https://www.bodymindspiritdirectory.org/" target="_blank">Mind Body Spirit Directory</a></p>
                   <Link to="/work"><button className="btn-trans my-6">About My Work ➣</button></Link>
                 </div>
-                <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-500 pb-8 border-white xl:border-none">
+                <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Contact & Hours</h1>
                   <div className="flex items-center">
                   <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={navi} alt="navi"/>
