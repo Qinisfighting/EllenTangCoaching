@@ -25,7 +25,7 @@ import faqbanner from "../assets/faqbanner.jpg";
                 <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-500 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Contact & Hours</h1>
                   <p className="text-xl  text-left"><a className="text-white" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">📍Greenwich, London, United Kingdom</a></p>
-                  <p className="text-lg">🕿: (UK) +44 7753137614 / (US) +1 917-982-2022</p>
+                  <p className="text-lg pl-1">🕿: (UK) +44 7753137614 / (US) +1 917-982-2022</p>
                   <p className="text-lg">🕒 Mon – Fri: 17:00 – 20:00 (UK)</p>
                   <p className="text-lg">🕒 Sat – Sun: 10:00 – 18:00 (UK)</p>
                   <Link to="/work/booking"><button className="btn-trans my-6">Schedule Appointment ➣</button></Link>
