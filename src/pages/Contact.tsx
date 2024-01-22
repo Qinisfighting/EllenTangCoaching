@@ -2,6 +2,10 @@ import { useState, useEffect, ChangeEvent, FormEvent } from "react"
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import contact from "../assets/contact.jpg";
+import email from "../assets/email.png";
+import navi from "../assets/navi.png";
+import time from "../assets/time.png";
+import phone from "../assets/phone.png";
 
 
 
@@ -75,11 +79,26 @@ export default function Contact() {
             <div className="p-10 xl:p-0 xl:absolute bottom-1/3 left-1/4 xl:text-mystone-100">    
                 <h2 className="pl-1">Contact & Hours</h2>  
                 <br />       
-                <a className="text-myblue-300 text-lg md:text-xl" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">📍Greenwich, London, United Kingdom</a>
-                <p className="md:text-xl text-left">✉️: <a className="text-myblue-300 underline" href="mailto:">ellen@ellentangcoaching.com</a></p>   
-                <p className="md:text-xl text-left">☎️: (UK) +44 7753137614 / (US) +1 917-982-2022</p>     
-                <p className="md:text-xl text-left">🕒 Mon – Fri: 17:00 – 20:00 (UK)</p>
-                <p className="md:text-xl text-left">🕒 Sat – Sun: 10:00 – 18:00 (UK)</p>
+                <div className="flex items-center">
+                  <img className="w-7 h-7 p-1 mr-2 xl:bg-mystone-100 xl:rounded-full" src={navi} alt="navi"/>
+                  <a className="text-myblue-300 text-lg md:text-xl" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">Greenwich, London, United Kingdom</a>
+                </div>
+                <div className="flex items-center">
+                  <img className="w-7 h-7 p-1 mr-2 xl:bg-mystone-100 xl:rounded-full" src={email} alt="email"/>
+                  <p className="md:text-xl text-left"><a className="text-myblue-300 underline" href="mailto:">ellen@ellentangcoaching.com</a></p>  
+                </div>
+                <div className="flex items-center">
+                  <img className="w-7 h-7 p-1 mr-2 xl:bg-mystone-100 xl:rounded-full" src={phone} alt="phone"/>
+                  <p className="md:text-xl text-left">(UK) +44 7753137614 / (US) +1 917-982-2022</p>     
+                </div>
+                <div className="flex items-center">
+                  <img className="w-7 h-7 p-1 mr-2 xl:bg-mystone-100 xl:rounded-full" src={time} alt="time"/>
+                  <p className="md:text-xl text-left">Mon – Fri: 17:00 – 20:00 (UK)</p>
+                </div>
+                <div className="flex items-center">
+                  <img className="w-7 h-7 p-1 mr-2 xl:bg-mystone-100 xl:rounded-full" src={time} alt="time"/>
+                  <p className="md:text-xl text-left">Sat – Sun: 10:00 – 18:00 (UK)</p>
+                </div>
             </div>
             
         </div>
