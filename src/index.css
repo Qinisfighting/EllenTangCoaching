@@ -36,13 +36,14 @@
       @apply py-2;
       @apply text-justify;
       @apply text-lg;
+      @apply md:text-xl
     }
 
     ul{
       @apply text-left;
       @apply pl-4;
       @apply text-lg;
-      @apply text-justify;
+      
     }
     /* ... */
   }
