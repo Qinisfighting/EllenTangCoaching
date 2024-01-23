@@ -90,17 +90,17 @@ export default function Story() {
            <div className="flex flex-col border-y py-4 justify-center items-center gap-8 xl:flex-row xl:justify-between xl:items-center">
            
               <div className="flex flex-col gap-2 text-xl">
-                 <p>- Continuous experiential training in Personal Development & Life Coaching (since 2012)</p>
-                 <p>- MSc in Psychology, London Metropolitan University (expected 2022)</p>
-                 <p>- Occupational Qualification in Coaching & Counselling (Chinese Ministry of Labour and Social Security)</p>
-                 <p>- Certified life coach by Achology, The Academy of Modern Applied Psychology</p>
-                 <p>- Diploma in Jungian Archetypes, Distinction, Centre of Excellence</p>
-                 <p>- Diploma in Depression Counselling, Distinction, Centre of Excellence</p>
-                 <p>- Associate member of the Association for Coaching</p>
-                 <p>- Member of International Coaching Federation</p>
-                 <p>- BSc in Automated Technology</p>
-                 <p>- LLB (Hons) Open, Distinction in Law, Open University UK</p>
-                 <p>- Chartered Financial Analyst (passed level 2 exam)</p>
+                 <p className="text-left">- Continuous experiential training in Personal Development & Life Coaching (since 2012)</p>
+                 <p className="text-left">- MSc in Psychology, London Metropolitan University (expected 2022)</p>
+                 <p className="text-left">- Occupational Qualification in Coaching & Counselling (Chinese Ministry of Labour and Social Security)</p>
+                 <p className="text-left">- Certified life coach by Achology, The Academy of Modern Applied Psychology</p>
+                 <p className="text-left">- Diploma in Jungian Archetypes, Distinction, Centre of Excellence</p>
+                 <p className="text-left">- Diploma in Depression Counselling, Distinction, Centre of Excellence</p>
+                 <p className="text-left">- Associate member of the Association for Coaching</p>
+                 <p className="text-left">- Member of International Coaching Federation</p>
+                 <p className="text-left">- BSc in Automated Technology</p>
+                 <p className="text-left">- LLB (Hons) Open, Distinction in Law, Open University UK</p>
+                 <p className="text-left">- Chartered Financial Analyst (passed level 2 exam)</p>
               </div>
               <div className="max-w-60 m-2">
                 <img src={icf} alt="icf" className="p-1"></img>
