@@ -35,15 +35,15 @@ import phone from "../assets/phone.png";
                 </div>
                 <div className="flex items-center">
                   <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={phone} alt="phone"/>
-                  <p className="md:text-xl text-left">(UK) +44 7753137614 / (US) +1 917-982-2022</p>     
+                  <p className="text-left">(UK) +44 7753137614 / (US) +1 917-982-2022</p>     
                 </div>
                 <div className="flex items-center">
                   <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={time} alt="time"/>
-                  <p className="md:text-xl text-left">Mon – Fri: 17:00 – 20:00 (UK)</p>
+                  <p className="text-left">Mon – Fri: 17:00 – 20:00 (UK)</p>
                 </div>
                 <div className="flex items-center">
                   <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={time} alt="time"/>
-                  <p className="md:text-xl text-left">Sat – Sun: 10:00 – 18:00 (UK)</p>
+                  <p className="text-left">Sat – Sun: 10:00 – 18:00 (UK)</p>
                 </div>
                   <Link to="/work/booking"><button className="btn-trans my-6">Schedule Appointment ➣</button></Link>
                 </div>            
@@ -139,15 +139,15 @@ function HomeBannerCN(){
               </div>
               <div className="flex items-center">
                 <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={phone} alt="phone"/>
-                <p className="md:text-xl text-left">(英) +44 7753137614 / (美) +1 917-982-2022</p>     
+                <p className="text-left">(英) +44 7753137614 / (美) +1 917-982-2022</p>     
               </div>
               <div className="flex items-center">
                 <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={time} alt="time"/>
-                <p className="md:text-xl text-left">周一 – 周五: 17:00 – 20:00 (英)</p>
+                <p className="text-left">周一 – 周五: 17:00 – 20:00 (英)</p>
               </div>
               <div className="flex items-center">
                 <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={time} alt="time"/>
-                <p className="md:text-xl text-left">周六 – 周日: 10:00 – 18:00 (英)</p>
+                <p className="text-left">周六 – 周日: 10:00 – 18:00 (英)</p>
               </div>
                 <Link to="/cn/yuyue"><button className="btn-trans my-6">预约咨询 ➣</button></Link>
               </div>            

@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import ellen2 from "../../assets/ellen2.webp";
 import reachout from "../../assets/reachout.webp";  
 import { HomeBannerCN } from "../../components/Banners";
+import aclogo from "../../assets/aclogo.webp";
+import achologylogo from "../../assets/achologylogo.webp";
+import centreofexcellence from "../../assets/centreofexcellence.webp";
+import icf from "../../assets/icf.webp";
+import oulogo from "../../assets/oulogo.webp";
+import tongjilogo from "../../assets/tongjilogo.webp";
 
 export default function Wo() {
     
@@ -29,7 +35,30 @@ export default function Wo() {
                  <p>我相信，越多人学会做本来的自己，这个世界就会越美好。因为人越爱自己本来的样子就会越幸福，越幸福就越不会想要伤害他人或者自己。我希望能和你一起，幸福地做本来的自己。</p>
               </div>
               <Link to="/cn/fuwu"><button className="btn-next float-right w-48 my-6 lg:my-6 text-md">我的服务 ➣</button></Link>
-          </div>    
+          </div>
+          <h2 className="lg:mt-8 mb-4 text-3xl px-4">资格证明</h2>
+           <div className="w-11/12 mx-auto lg:w-full flex flex-col border-y py-4 justify-center items-center gap-8 xl:flex-row xl:justify-between xl:items-center">         
+              <div className="flex flex-col gap-2 text-xl">
+                 <p className="text-left">- 长期体验式心理咨询以及个人成长培训（自2012年至今）</p>
+                 <p className="text-left">- 心理咨询师高级资格证书 （由中国国家劳动和社会保障部颁发）</p>
+                 <p className="text-left">- 英国伦敦城市大学心理学硕士学位（完成第一学期）</p>
+                 <p className="text-left">- 国际人生教练联合会(ICF)认证教练会员</p>
+                 <p className="text-left">- 荣格心理人格原型培训毕业证书（Centre of Excellence）</p>
+                 <p className="text-left">- 现代应用心理学学院（Achology）认证心理咨询师</p>
+                 <p className="text-left">- 人生教练协会（Association for Coaching）成员</p>
+                 <p className="text-left">- 上海同济大学自动化本科学士学位</p>
+                 <p className="text-left">- 英国开放大学（Open University）一等法律学士学位</p>
+                 <p className="text-left">- 通过特许金融分析师二级考试</p>
+              </div>
+              <div className="max-w-60 m-2">
+                <img src={icf} alt="icf" className="p-1"></img>
+                <img src={aclogo} alt="aclogo" className="p-1"></img>
+                <img src={achologylogo} alt="achologylogo" className="p-1"></img>         
+                <img src={centreofexcellence} alt="centreofexcellence" className="p-1"></img>
+                <img src={oulogo} alt="oulogo" className="p-1"></img>      
+                <img src={tongjilogo} alt="tongjilogo" className="p-1"></img>
+              </div>   
+           </div>             
           </div>
           <HomeBannerCN/> 
       </div>
