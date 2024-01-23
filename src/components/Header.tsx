@@ -539,7 +539,7 @@ export default function Header() {
               {isDropdown && clickedContent === "中文心理咨询" && (
                 <div
                   ref={dropdownRef}
-                  className="py-1 flex flex-col absolute z-10 bg-myblue-300 w-max font-normal text-base text-white my-1 shadow-lg opacity-95"
+                  className="flex flex-col absolute z-10 bg-myblue-300 w-max font-normal text-base text-white my-1 shadow-lg opacity-95"
                 >
                   <p className="hover:bg-myblue-400 w-full px-5 py-2">
                     <Link to="cn">关于我</Link>
