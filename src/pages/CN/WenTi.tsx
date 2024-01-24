@@ -6,7 +6,7 @@ export default function WenTi() {
       <div  lang="zh-CN" className="">
        
         <div className="w-11/12 mx-auto xl:w-5/6">
-          <h1 className="text-myblue-400 border-y w-4/5 my-12 md:w-1/3 md:my-20 mx-auto">常见问题</h1>
+          <h1 className="text-3xl lg:text-4xl text-myblue-400 border-y w-4/5 my-12 md:w-1/3 md:my-20 mx-auto">常见问题</h1>
           <div className="w-11/12 mx-auto lg:mb-10 pb-4">  
               <h3 className="text-xl font-bold">心理咨询师是不是一定比来访者更有智慧和经验？</h3>
               <p>不是。心理咨询和人生教练的目的，是帮助来访者提高自我意识和自我实现感。绝大部分人，没有自我实现感的原因正是自我意识还没有完全觉醒。在心理咨询的过程当中，我们会一起关注你个人的本质特征，信仰，价值观，人生观等等跟你“本来的自己”息息相关的属性。从这里开始，你会越来越了解自己，尊重自己，倾听自己。当我们可以真正地接受自己了，满足感，成就感，幸福感就更容易找到。</p>    

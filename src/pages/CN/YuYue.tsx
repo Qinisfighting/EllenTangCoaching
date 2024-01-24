@@ -82,7 +82,7 @@ export default function YuYue() {
     return (
      
       <div lang="zh-CN" className="w-full">
-      <h1 className="text-4xl lg:text-5xl text-myblue-400  w-1/2 mt-8 lg:w-1/2 lg:mt-20 mx-auto">预约咨询</h1> 
+      <h1 className="text-3xl lg:text-4xl text-myblue-400  w-1/2 mt-8 lg:w-1/2 lg:mt-20 mx-auto">预约咨询</h1> 
       <div className="flex flex-col justify-center items-center xl:flex-row xl:items-start mx-auto xl:bg-mystone-100 mb-20">
         <div className="w-screen xl:p-16 xl:relative xl:w-1/2 mt-4 xl:mt-10">      
             <img src={contact} className="w-screen h-auto object-cover brightness-50 drop-shadow-xl"></img>
