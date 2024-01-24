@@ -6,11 +6,11 @@ export default function Pricing() {
     return (
       <div className="w-full">
         <h1 className="text-myblue-400 border-y w-4/5 my-12 lg:w-1/3 lg:my-20 mx-auto">Pricing</h1>
-        <div className='w-5/6  mx-auto my-10 gap-10 lg:mb-24 flex flex-col lg:gap-20 lg:flex-row justify-center items-center'>
-            <img className="w-5/6 lg:w-1/4 rounded-full" src={pricing}/>
-            <div className='w-5/6 lg:w-1/2'>
-              <h2 className='text-2xl md:text-3xl md:leading-relaxed  xl:leading-loose text-justify'>Invest in a partner who wholeheartedly supports and commits to your journey towards a happier, more fulfilling life.</h2>
-              <button className='btn-next mt-10 float-right lg:mt-20'>Book Your Discovery Session ➣</button>
+        <div className='mx-auto my-10 gap-10 lg:mb-24 flex flex-col lg:gap-20 lg:flex-row justify-center items-center'>
+            <img className="w-2/3 lg:w-1/4 rounded-full" src={pricing}/>
+            <div className='w-5/6 lg:w-1/2 flex flex-col justify-center items-center lg:block'>
+              <h2 className='text-center lg:text-justify text-xl lg:text-2xl xl:text-3xl md:leading-relaxed  xl:leading-loose'>Invest in a partner who wholeheartedly supports and commits to your journey towards a happier, more fulfilling life.</h2>
+              <button className='flex btn-next mt-10 lg:float-right lg:mt-15'>Book Your Discovery Session ➣</button>
             </div>
         </div>
         <div className=" w-5/6  mx-auto flex flex-col gap-10 mb-20 justify-center items-center lg:flex-row lg:justify-between lg:items-start ">
