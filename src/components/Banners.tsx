@@ -6,6 +6,7 @@ import philobanner from "../assets/philobanner.jpg";
 import servicebanner from "../assets/servicebanner.jpg";
 import pricingbanner from "../assets/pricingbanner.jpg";
 import faqbanner from "../assets/faqbanner.jpg";
+import blogbanner from "../assets/blogbanner.jpg";
 import navi from "../assets/navi.png";
 import time from "../assets/time.png";
 import phone from "../assets/phone.png";
@@ -156,5 +157,16 @@ function HomeBannerCN(){
   )
 }
 
+function BlogBanner(){
+  return (      
+      <div  className="relative my-12 text-mystone-100">
+      <img className="brightness-50 w-full" src={blogbanner} />  
+          <div className="text-center absolute bottom-0 right-0 top-0 left-0 mx-auto">             
+                <h1 className="tracking-widest text-lg md:text-2xl px-4 lg:text-5xl my-2 md:my-14 lg:my-20 2xl:my-48 font-semibold">Thoughts. Ideas. Inspiration.</h1>                              
+          </div>
+  </div>
+  )
+}
 
-export { HomeBanner, StoryBanner, PhiloBanner, ServiceBanner, PricingBanner, FaqBanner, HomeBannerCN }
+
+export { HomeBanner, StoryBanner, PhiloBanner, ServiceBanner, PricingBanner, FaqBanner, HomeBannerCN, BlogBanner }

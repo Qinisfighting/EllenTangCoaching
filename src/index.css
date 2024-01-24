@@ -5,7 +5,8 @@
 
 @layer base {
     h1 {
-      @apply text-5xl;
+      @apply text-4xl;
+      @apply md:text-5xl;
       @apply my-4;
       @apply py-6;
       @apply font-semibold;
@@ -14,6 +15,7 @@
     }
     h2 {
       @apply text-3xl;
+      @apply md:text-4xl;
       @apply py-4;
       @apply font-medium;
     }
