@@ -73,12 +73,12 @@ export default function Contact() {
     <div className="w-full">
       <h1 className="text-4xl lg:text-5xl text-myblue-400  w-1/2 mt-8 lg:w-1/2 lg:mt-20 mx-auto">Contact</h1> 
       <div className="flex flex-col justify-center items-center xl:flex-row xl:items-start mx-auto xl:bg-mystone-100 mb-20">
-        <div className="w-screen xl:p-16 xl:relative xl:w-1/2 mt-4 xl:mt-10">      
+        <div className="w-screen xl:p-8 2xl:p-16 xl:relative xl:w-2/3 2xl:w-1/2 mt-4 xl:mt-20 2xl:mt-10">      
             <img src={contact} className="w-screen h-auto object-cover brightness-50 drop-shadow-xl"></img>
-            <Link to="/work/booking"><button className="w-screen rounded-none xl:w-max xl:absolute xl:bottom-28 xl:right-32 btn-next xl:btn-trans">Schedule Appointment ➣</button></Link>    
-            <div className="p-10 xl:p-0 xl:absolute bottom-1/3 left-1/4 xl:text-mystone-100"> 
-                <div className="pl-1 socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" title="Facebook"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" title="Youtube"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a></span></div> 
-                <h2 className="pl-1">Contact & Hours</h2>  
+            <Link to="/work/booking"><button className="w-screen rounded-none xl:w-max xl:absolute xl:bottom-16 2xl:bottom-32 xl:right-32 btn-next xl:btn-trans">Schedule Appointment ➣</button></Link>    
+            <div className="p-10 xl:p-0 xl:absolute bottom-1/4 2xl:bottom-1/3 left-1/4 xl:text-mystone-100"> 
+                <div className="pl-1 xl:mt-4 socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" title="Facebook"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" title="Youtube"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a></span></div> 
+                <h2 className="pl-1 text-3xl 2xl:text-4xl">Contact & Hours</h2>  
                 <br />       
                 <div className="flex items-center">
                   <img className="w-7 h-7 p-1 mr-2 xl:bg-mystone-100 xl:rounded-full" src={navi} alt="navi"/>
