@@ -35,8 +35,10 @@ export default {
           '950': '#262626',
       },
 
+
 },  
-          extend: {},
+          extend: {
+          },
         },
         plugins: [],
 }

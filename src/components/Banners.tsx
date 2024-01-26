@@ -159,8 +159,13 @@ function HomeBannerCN(){
 
 function BlogBanner(){
   return (      
-    <div  className="my-12">
-      <img className="w-full" src={blogbanner} />      
+    <div  className="md:relative my-12 text-mystone-100">
+      
+      <div className="h-10 text-center md:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center md:gap-16  bg-myblue-700 md:bg-opacity-0 md:h-auto">             
+                  <h1 className="text-xl md:text-4xl xl:text-5xl xl:my-16 font-semibold">Thoughts. Ideas. Inspiration.</h1>             
+                                  
+      </div>
+      <img className="w-full" src={blogbanner}></img>     
     </div>
   )
 }
