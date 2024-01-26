@@ -26,7 +26,7 @@ export default function Blog() {
           </div>
           <div className="my-10 flex flex-col justify-center items-center lg:gap-16 lg:flex-row lg:justify-between lg:items-start">
              <img src={godates} className="w-3/4 md:w-2/3 lg:w-1/4 p-4" />
-             <div className="flex flex-col justify-center items-end gap-4">
+             <div className="flex flex-col justify-center items-center lg:items-end gap-4">
                  <a className="text-myblue-400 underline w-11/12 lg:w-auto" href="https://www.godates.co/relationships/steps-to-codependency-recovery/" target="_blank"><p>12 Steps To Codependency Recovery</p></a>
                  <a className="text-myblue-400 underline w-11/12 lg:w-auto" href="https://www.godates.co/relationships/how-to-be-more-vulnerable-in-a-relationship/" target="_blank"><p>How To Be More Vulnerable In A Relationship: 7 Steps</p></a>
                  <a className="text-myblue-400 underline w-11/12 lg:w-auto" href="https://www.godates.co/life/how-to-forgive-yourself-for-cheating/" target="_blank"><p>How To Forgive Yourself For Cheating</p></a>
