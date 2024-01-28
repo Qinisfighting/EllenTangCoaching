@@ -3,7 +3,7 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import { Timestamp,collection, addDoc } from "firebase/firestore"; 
 import { storage, db } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { toast } from "react-toastify";
+
 
 
 interface FormData {
@@ -78,11 +78,11 @@ export default function AddArticle(){
                   content: formData.content,
                 })
                   .then(() => {
-                    toast("Article added successfully", { type: "success" });
+                    alert("Blog added successfully!")
                     setProgress(0);
                   })
                   .catch((err) => {
-                    toast("Error adding article", { type: err });
+                    console.log(err);
                   });
               });
             }
