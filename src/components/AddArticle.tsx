@@ -1,20 +1,30 @@
 
 import { useState, ChangeEvent, FormEvent } from "react";
-import { Timestamp } from "firebase/firestore"; 
-// import { db } from "../firebase";
+import { Timestamp,collection, addDoc } from "firebase/firestore"; 
+import { storage, db } from "../firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { toast } from "react-toastify";
 
 
+interface FormData {
+    title: string;
+    tags: string;
+    image?: any;
+    content: string;
+    createdOn?: Date;
+  }
 
 
 
 export default function AddArticle(){
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormData>({
         title: "",
         tags: "",
         image: "",
         content: "",
         createdOn: Timestamp.now().toDate(),
     });
+    const [progress, setProgress] = useState(0);
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData((prev) => ({
             ...prev,
@@ -33,8 +43,53 @@ export default function AddArticle(){
     const handleSubmit = (e:FormEvent) => {
         e.preventDefault();
       
-        // const articleRef = collection(db, "Articles");
-        // addDoc(articleRef, formData);
+        const storageRef = ref(
+            storage,
+            `/images/${Date.now()}${formData.image.name}`
+          );
+        const imageBlob = new Blob([formData.image]);
+        const uploadImage = uploadBytesResumable(storageRef, imageBlob);
+        uploadImage.on(
+            "state_changed",
+            (snapshot) => {
+              const progressPercent = Math.round(
+                (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+              );
+              setProgress(progressPercent);
+            },
+            (err) => {
+              console.log(err);
+            },
+            () => {
+              setFormData({
+                title: "",
+                tags: "",
+                image: "",
+                content: "",
+              });
+      
+              getDownloadURL(uploadImage.snapshot.ref).then((url) => {
+                const articleRef = collection(db, "Articles");
+                addDoc(articleRef, {
+                  title: formData.title,
+                  catalog: formData.tags,
+                  imageUrl: url,
+                  createdOn: Timestamp.now().toDate(),
+                  content: formData.content,
+                })
+                  .then(() => {
+                    toast("Article added successfully", { type: "success" });
+                    setProgress(0);
+                  })
+                  .catch((err) => {
+                    toast("Error adding article", { type: err });
+                  });
+              });
+            }
+          );
+
+
+        
     }
     return (
         <div className="w-full  mx-auto text-center ">
@@ -53,13 +108,13 @@ export default function AddArticle(){
                             />
                 </label>
                 
-                <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">     
-                Tags
+                <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
+                <div className="text-left text-xl py-2">Tags</div>       
                 <select name="tags" className="w-full border rounded-md p-2"  value={formData.tags} onChange={(e)=>handleChange(e)}> 
+                    <option value="Life">Life</option>
                     <option value="Relationships">Relationships</option>     
                     <option value="Family">Family</option>
-                    <option value="Career">Career</option>
-                    <option value="Life">Life</option>
+                    <option value="Career">Career</option> 
                     <option value="Self">Self</option>
                     <option value="Other">Other</option>
                 </select>
@@ -92,8 +147,8 @@ export default function AddArticle(){
                 <button className="w-11/12 md:w-5/6 2xl:w-2/3 btn-next">SUBMIT</button>
               
             </form>
-            <div className="w-11/12 md:w-5/6 2xl:w-2/3 mb-5 h-4 rounded-full bg-mystone-200 my-8 mx-auto">
-                    <div className="h-4 rounded-full bg-myblue-400 w-1/2"></div>
+            <div className="w-11/12 md:w-5/6 2xl:w-2/3 mb-5 h-6 rounded-full bg-mystone-200 my-8 mx-auto">
+                    <div className="h-6 rounded-full bg-myblue-400"  style={{ width: `${progress}%` }}></div>
             </div>
             
             
