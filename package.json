@@ -13,6 +13,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "emailjs": "^4.0.3",
+    "firebase": "^10.7.2",
     "jest-environment-jsdom": "^29.7.0",
     "nanoid": "^5.0.4",
     "react": "^18.2.0",
