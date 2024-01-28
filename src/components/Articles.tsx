@@ -42,8 +42,7 @@ export default function Articles(){
                                     imageUrl,
                                     createdOn,
                                     catalog,
-                                }) =>
-                                
+                                }) => 
                                     <div key={id} className="flex flex-col justify-center items-start lg:flex-row lg:justify-start gap-8 w-11/12 md:w-5/6 2xl:w-2/3 mx-auto bg-mystone-200 p-8 mb-8 h-auto">
                                         <img src={imageUrl} className="lg:w-1/2 2xl:w-1/3 object-cover" />
                                         <div>
@@ -51,8 +50,7 @@ export default function Articles(){
                                             <h3>{title}</h3>
                                             <p  className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
                                             <p>{content}</p> 
-                                        </div>
-                                            
+                                        </div>              
                                     </div> 
                                 
                                     
