@@ -147,8 +147,8 @@ export default function AddArticle(){
                 <button className="w-11/12 md:w-5/6 2xl:w-2/3 btn-next">SUBMIT</button>
               
             </form>
-            <div className="w-11/12 md:w-5/6 2xl:w-2/3 mb-5 h-6 rounded-full bg-mystone-200 my-8 mx-auto">
-                    <div className="h-6 rounded-full bg-myblue-400"  style={{ width: `${progress}%` }}></div>
+            <div className="w-11/12 md:w-5/6 2xl:w-2/3 mb-5 h-6 rounded-full bg-transparent my-8 mx-auto">
+                    <div className="h-6 rounded-full bg-myblue-300"  style={{ width: `${progress}%` }}></div>
             </div>
             
             
