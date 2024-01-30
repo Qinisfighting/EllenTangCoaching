@@ -110,12 +110,12 @@ export default function AddArticle(){
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                 <div className="text-left text-xl py-2">Tags</div>       
                 <select name="tags" className="w-full border rounded-md p-2"  value={formData.tags} onChange={(e)=>handleChange(e)}> 
-                    <option value="Life">Life</option>
-                    <option value="Relationships">Relationships</option>     
                     <option value="Family">Family</option>
+                    <option value="Relationships">Relationships</option>        
                     <option value="Career">Career</option> 
-                    <option value="Self">Self</option>
-                    <option value="Other">Other</option>
+                    <option value="Thoughts">Self</option>
+                    <option value="Other">Thougts</option>
+                    
                 </select>
                 </label>
             
