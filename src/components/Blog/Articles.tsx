@@ -42,9 +42,7 @@ export default function Articles(){
             </div>
             
             <div className='mx-auto w-full flex flex-wrap gap-8 px-4 justify-evenly items-start'>
-                { articles.length === 0 ? (
-                    <p>No Articles Found</p>
-                ):(articles.map (({
+                {articles.map (({
                                     id,
                                     title,
                                     content,
@@ -65,10 +63,7 @@ export default function Articles(){
                                             </div>  
                                         </div>
                                                        
-                                    </div> 
-                                
-                                    
-                                )
+                                    </div>         
                                 
                     )
                 }
