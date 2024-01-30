@@ -108,7 +108,7 @@ export default function AddArticle(){
                 </label>
                 
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
-                <div className="text-left text-xl py-2">Tags</div>       
+                <div className="text-left text-lg py-2">Tags</div>       
                 <select name="tags" className="w-full border rounded-md p-2"  value={formData.tags} onChange={(e)=>handleChange(e)}> 
                     <option value="Family">Family</option>
                     <option value="Relationships">Relationships</option>        

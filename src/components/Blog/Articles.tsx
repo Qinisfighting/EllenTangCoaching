@@ -50,14 +50,16 @@ export default function Articles(){
                                     createdOn,
                                     catalog,
                                 }) => 
-                                    <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-start  lg:justify-start gap-8 mx-auto bg-mystone-200 p-8 mb-8 h-auto">
+                                    <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 mb-10 h-auto">
                                         <img src={imageUrl} className="h-48 w-full object-cover" />
-                                        <div className="w-full h-72">
-                                            <p className='bg-mystone-200 text-mystone-500 w-fit h-fit px-4 py-1 border rounded-md'>{catalog}</p>
-                                            <h3>{title}</h3>
-                                            <p  className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
-                                            <p className=''>{content.slice(0,30)} ...</p> 
-                                            <div className="flex justify-end items-end gap-4 mt-8">
+                                        <div className="w-full h-fit lg:h-72 flex flex-col items-and justify-between">
+                                            <div>
+                                                <p className='bg-mystone-200 text-mystone-500 w-fit h-fit px-4 py-1 border rounded-md'>{catalog}</p>
+                                                <h3>{title}</h3>
+                                                <p  className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
+                                                <p className=''>{content.slice(0,30)} ...</p> 
+                                            </div>
+                                            <div className="flex justify-end items-end gap-4 py-4">
                                               { isLogged && <Link to={`/blog/edit/${id}`}><img src={edit} className="w-8" /></Link>}
                                               { isLogged && <button><img src={trash_bin} className="w-8" /></button>}
                                             </div>  
