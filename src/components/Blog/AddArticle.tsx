@@ -1,7 +1,7 @@
 
 import { useState, ChangeEvent, FormEvent } from "react";
 import { Timestamp,collection, addDoc } from "firebase/firestore"; 
-import { storage, db } from "../firebase";
+import { storage, db } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 
@@ -78,7 +78,7 @@ export default function AddArticle(){
                   content: formData.content,
                 })
                   .then(() => {
-                    alert("Blog added successfully!")
+                    alert("Your new blog is online!")
                     setProgress(0);
                   })
                   .catch((err) => {
@@ -92,9 +92,8 @@ export default function AddArticle(){
         
     }
     return (
-        <div className="w-full  mx-auto text-center ">
-            <h3 className="text-mystone-700 m-4 p-0 text-center">Add New Blog?</h3>
-            <button className="btn-next">LOG IN</button>
+      <div className='w-screen mx-auto px-4 md:px-20 my-20'>
+        <h2 className="text-center my-10">Edit Blog</h2>    
             <form className="flex flex-col justify-center items-center gap-4" onSubmit={handleSubmit}>
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                     <p className="text-left">Title</p>

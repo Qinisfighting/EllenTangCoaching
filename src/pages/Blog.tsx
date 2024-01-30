@@ -3,8 +3,8 @@ import thriveglobal from "../assets/thriveglobal.webp";
 import outwittrade from "../assets/outwittrade.webp";
 import godates from "../assets/godates.webp";
 import upjourney from "../assets/upjourney.webp";
-import Articles from "../components/Articles";
-import AddArticle from "../components/AddArticle";
+import Articles from "../components/Blog/Articles";
+
 
 
 
@@ -13,13 +13,8 @@ import AddArticle from "../components/AddArticle";
 export default function Blog() {
     
     return (
-      <div className="w-screen">
-      
-        
-        
+      <div className="w-screen">   
         <Articles />
-        <AddArticle />
-
         <h2 className="w-11/12 xl:w-2/3 mx-auto px-4 text-center mt-24">Published Articles</h2>
         <div className="w-11/12 xl:w-2/3 mx-auto my-4 border-y mb-40">
           <div className="my-10 flex flex-col justify-start items-center lg:gap-16 lg:flex-row lg:justify-between">

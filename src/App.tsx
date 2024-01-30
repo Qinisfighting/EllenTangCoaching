@@ -15,6 +15,7 @@ import Pricing from "./pages/Work/Pricing";
 import Service from "./pages/Work/Service";
 import Booking from "./pages/Work/Booking";
 import Blog from "./pages/Blog";
+import AddArticle from "./components/Blog/AddArticle";
 import FAQ from "./pages/FAQ";
 import Wo from "./pages/CN/Wo";
 import FuWu from "./pages/CN/FuWu";
@@ -24,6 +25,7 @@ import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Practice from "./pages/Practice";
+
 
 
 
@@ -39,6 +41,7 @@ const router = createBrowserRouter(
       <Route path="work/pricing" element={<Pricing />} /> 
       <Route path="work/booking" element={<Booking />} />
       <Route path="blog" element={<Blog />} />
+      <Route path="blog/add" element={<AddArticle />} />
       <Route path="faq" element={<FAQ />} />
       <Route path="Contact" element={<Contact />} /> 
       <Route path="cn" element={<Wo />} />   
