@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import edit from '../../assets/edit.png';
-import trash_bin from '../../assets/trash_bin.png';
+import DeleteArticle from "./DeleteArticle";
 
 import { Timestamp, collection, onSnapshot, orderBy, query } from "firebase/firestore"; 
 import { db } from "../../firebase";
@@ -54,16 +54,16 @@ export default function Articles(){
                                         <img src={imageUrl} className="h-48 w-full object-cover" />
                                         <div className={`w-full h-fit ${isLogged?"lg:h-72":"lg:h-52"} flex flex-col items-and justify-between`}>
                                             <div>
-                                                <button className='bg-mystone-200 text-mystone-600 w-fit h-fit px-3 border rounded-md text-lg'>{catalog}</button>
+                                                <button className='hover:text-white bg-mystone-200 text-mystone-700 w-fit h-fit px-3 border rounded-md text-lg'>{catalog}</button>
                                                 <h3>{title}</h3>
                                                 <p  className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
                                                 <p className=''>{content.slice(0,30)} ...... <Link to={`/blog/${id}`} className='text-3xl text-mystone-800'>➩</Link></p>
                                             </div>
                                             { 
                                             isLogged && 
-                                              <div className="flex justify-end items-end gap-4 py-4">
+                                              <div className="flex justify-end items-center gap-4 py-4">
                                                  <Link to={`/blog/edit/${id}`}><img src={edit} className="w-8" /></Link>
-                                                 <button><img src={trash_bin} className="w-8" /></button>
+                                                 <DeleteArticle id={id} imageUrl={imageUrl} />
                                               </div> 
                                             }  
                                         </div>
