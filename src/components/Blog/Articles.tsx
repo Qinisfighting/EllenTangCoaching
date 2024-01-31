@@ -14,13 +14,16 @@ interface Article {
     imageUrl: string;
     createdOn: Timestamp;
     catalog: string;
-  }
+}
   
 
 
 export default function Articles(){
     const [articles, setArticles] = useState<Article[]>([]);
-    const [isLogged] = useState(true);
+    const [isLogged] = useState(false);
+    // const [searchParams, setSearchParams] = useSearchParams()
+
+    // const tagFilter = searchParams.get("catalog")
 
     useEffect(() => {
         const articleRef = collection(db, "Articles");
@@ -31,9 +34,28 @@ export default function Articles(){
             ...doc.data(),
           }));
           setArticles(articles as unknown as Article[]);
-        //   console.log(articles);
         });
-      }, []);
+    }, []);
+
+    // function handleFilterChange(key:string, value:string | null) {
+    //     setSearchParams(prevParams => {
+    //         if (value === null) {
+    //             prevParams.delete(key)
+    //         } else {
+    //             prevParams.set(key, value)
+    //         }
+    //         return prevParams
+    //     })
+    //     const filteredArticles = tagFilter ? articles.filter((article: Article) => article.catalog === tagFilter) : articles;
+    //     setArticles(filteredArticles as unknown as Article[]);
+        
+    // }
+
+    function handleFilterTag({catalog}:{catalog:string}){
+        const filteredArticles = articles.filter((article: Article)=>article.catalog===catalog);
+        setArticles(filteredArticles as unknown as Article[]);
+    } 
+
     return (
         <div className="w-screen">
             <div className='mx-auto px-6 py-16 text-center'>
@@ -51,23 +73,24 @@ export default function Articles(){
                                     catalog,
                                 }) => 
                                     <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 mb-10 h-auto">
-                                        <img src={imageUrl} className="h-48 w-full object-cover" />
-                                        <div className={`w-full h-fit ${isLogged?"lg:h-72":"lg:h-52"} flex flex-col items-and justify-between`}>
-                                            <div>
-                                                <button className='hover:text-white bg-mystone-200 text-mystone-700 w-fit h-fit px-3 border rounded-md text-lg'>{catalog}</button>
-                                                <h3>{title}</h3>
-                                                <p  className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
-                                                <p className=''>{content.slice(0,30)} ...... <Link to={`/blog/${id}`} className='text-3xl text-mystone-800'>➩</Link></p>
+                                                   
+                                            <img src={imageUrl} className="h-48 w-full object-cover" />
+                                            <div className={`w-full h-fit ${isLogged?"lg:h-72":"lg:h-52"} flex flex-col items-and justify-between`}>
+                                                <div>
+                                                    <button onClick={() => handleFilterTag({catalog})} className='hover:text-white bg-mystone-200 text-mystone-700 w-fit h-fit px-3 border rounded-md text-lg'>{catalog}</button>
+                                                    <h3>{title}</h3>
+                                                    <p  className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
+                                                    <p className=''>{content.slice(0,30)} ...... <Link to={`/blog/${id}`} className='text-3xl text-mystone-800'>➩</Link></p>
+                                                </div>
+                                                { 
+                                                isLogged && 
+                                                <div className="flex justify-end items-center gap-4 py-4">
+                                                    <Link to={`/blog/edit/${id}`}><img src={edit} className="w-8" /></Link>
+                                                    <DeleteArticle id={id} imageUrl={imageUrl} />
+                                                </div> 
+                                                }  
                                             </div>
-                                            { 
-                                            isLogged && 
-                                              <div className="flex justify-end items-center gap-4 py-4">
-                                                 <Link to={`/blog/edit/${id}`}><img src={edit} className="w-8" /></Link>
-                                                 <DeleteArticle id={id} imageUrl={imageUrl} />
-                                              </div> 
-                                            }  
-                                        </div>
-                                                       
+                                             
                                     </div>         
                                 
                     )
@@ -77,6 +100,6 @@ export default function Articles(){
             
         </div>
     )
-    
+    } 
  
- }
+ 
