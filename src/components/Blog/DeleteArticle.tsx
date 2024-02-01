@@ -9,7 +9,6 @@ export default function DeleteArticle({ id, imageUrl }: { id: string, imageUrl: 
         if (window.confirm("Are you sure you want to delete this blog?")) {
           try {
             await deleteDoc(doc(db, "Articles", id));
-            alert("Article deleted successfully");
             const storageRef = ref(storage, imageUrl);
             await deleteObject(storageRef);
           } catch (error) {
@@ -18,7 +17,7 @@ export default function DeleteArticle({ id, imageUrl }: { id: string, imageUrl: 
         }
       };
       return (
-        <div>
+        <div className="">
           <button><img src={trash_bin} className="w-8" onClick={handleDelete} /></button>
         </div>
       );

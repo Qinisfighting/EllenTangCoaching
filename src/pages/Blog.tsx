@@ -1,20 +1,65 @@
+import { useState, useEffect } from 'react';
 import { BlogBanner } from "../components/Banners";
 import thriveglobal from "../assets/thriveglobal.webp";
 import outwittrade from "../assets/outwittrade.webp";
 import godates from "../assets/godates.webp";
 import upjourney from "../assets/upjourney.webp";
 import Articles from "../components/Blog/Articles";
+import { Timestamp, collection, onSnapshot, orderBy, query } from "firebase/firestore"; 
+import { db } from "../firebase";
 
 
 
-
-
+interface Article {
+   id: string;
+   title: string;
+   content: string;
+   imageUrl: string;
+   createdOn: Timestamp;
+   catalog: string;
+}
+ 
 
 export default function Blog() {
+
+   const [articles, setArticles] = useState<Article[]>([]);
+   const [clickedArticle, setClickedArticle] = useState<Article | null>(null);
+   const [clickedTag, setClickedTag] = useState<Article | null>(null);
+   const [isLogged] = useState(true);
+
+  
+
+   useEffect(() => {
+       const articleRef = collection(db, "Articles");
+       const q = query(articleRef, orderBy("createdOn", "desc"));
+       onSnapshot(q, (snapshot) => {
+         const articles = snapshot.docs.map((doc) => ({
+           id: doc.id,
+           ...doc.data(),
+         }));
+         setArticles(articles as unknown as Article[]);
+       });
+   }, []);
+
+    const handleFilterTag = (catalog:string) => {
+         const filteredArticles = articles.filter((article: Article)=>article.catalog===catalog);
+         setArticles(filteredArticles);
+         setClickedTag(filteredArticles[0]);
+    }
+
+    const handleClickedArticle = (id:string) => {
+      const clickedArticle = articles.find((article: Article)=>article.id===id);
+      if (clickedArticle) {
+         setArticles([clickedArticle]);
+         setClickedArticle(clickedArticle);
+      }
+ }
+
+
     
     return (
       <div className="w-screen">   
-        <Articles />
+      <Articles articles={articles} isLogged={isLogged} handleFilterTag={handleFilterTag} handleClickedArticle={handleClickedArticle} clickedArticle={clickedArticle} clickedTag={clickedTag} />
         <h2 className="w-11/12 xl:w-2/3 mx-auto px-4 text-center mt-24">Published Articles</h2>
         <div className="w-11/12 xl:w-2/3 mx-auto my-4 border-y mb-40">
           <div className="my-10 flex flex-col justify-start items-center lg:gap-16 lg:flex-row lg:justify-between">

@@ -16,12 +16,12 @@ interface FormData {
 
 
 
-export default function AddArticle(){
+export default function EditArticle({catalog, title, imageUrl, content}: { imageUrl: string, catalog:string, title:string, content:string}){
     const [formData, setFormData] = useState<FormData>({
-        title: "",
-        tags: "",
-        image: "",
-        content: "",
+        title: title,
+        tags: catalog,
+        image: imageUrl,
+        content: content,
         createdOn: Timestamp.now().toDate(),
     });
     const [progress, setProgress] = useState(0);
@@ -78,8 +78,9 @@ export default function AddArticle(){
                   content: formData.content,
                 })
                   .then(() => {
-                    alert("Your new blog is online!")
+                    alert("Your blog is updated!")
                     setProgress(0);
+                    window.location.reload();
                   })
                   .catch((err) => {
                     console.log(err);
@@ -93,7 +94,7 @@ export default function AddArticle(){
     }
     return (
       <div className='w-screen mx-auto px-4 md:px-20 my-20'>
-        <h2 className="text-center my-10">New Blog</h2>    
+        <h2 className="text-center my-10">Edit Blog</h2>    
             <form className="flex flex-col justify-center items-center gap-4" onSubmit={handleSubmit}>
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                     <p className="text-left">Title</p>
@@ -109,19 +110,18 @@ export default function AddArticle(){
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                 <div className="text-left text-lg py-2">Tags</div>       
                 <select name="tags" className="w-full border rounded-md p-2"  value={formData.tags} onChange={(e)=>handleChange(e)}> 
-                    <option value="Family">Family</option>
+                <option value="Family">Family</option>
                     <option value="Relationships">Relationships</option>        
                     <option value="Career">Career</option> 
                     <option value="Self">Self</option>
                     <option value="Life">Life</option>
-                    <option value="Other">Other</option>
-                    
+                    <option value="Other">Other</option>         
                 </select>
                 </label>
             
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                     <p className="text-left">Image</p>
-                    <input 
+                    <input                      
                        onChange={(e)=>handleImageChange(e)}
                        className="w-full border rounded-md p-2" 
                        type="file"
@@ -132,7 +132,7 @@ export default function AddArticle(){
                 </label>
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                     <p className="text-left">Content</p>
-                    <textarea 
+                    <textarea       
                        onChange={(e)=>handleChange(e)}
                        className="w-full border rounded-md p-2" 
                        rows={10}  

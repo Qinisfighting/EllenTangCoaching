@@ -40,7 +40,7 @@ const router = createBrowserRouter(
       <Route path="work/service" element={<Service />} />
       <Route path="work/pricing" element={<Pricing />} /> 
       <Route path="work/booking" element={<Booking />} />
-      <Route path="blog" element={<Blog />} />
+      <Route path="blog" element={<Blog />} /> 
       <Route path="blog/add" element={<AddArticle />} />
       <Route path="faq" element={<FAQ />} />
       <Route path="Contact" element={<Contact />} /> 
@@ -56,5 +56,5 @@ const router = createBrowserRouter(
 );
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} /> 
 }
