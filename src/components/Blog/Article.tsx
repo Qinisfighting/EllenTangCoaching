@@ -23,16 +23,16 @@ export default function VanDetail() {
 //  } 
 
     return (
-    <div className="van-detail-container">   
+    <div className="mt-8  md:mt-16">   
       <Suspense fallback={<Loader />}> 
          <Await resolve={dataPromise.article}>
           {({id, imageUrl, title, content, catalog,createdOn }) => (
                 <div key={id} className="w-full md:w-2/3 xl:w-1/2 flex flex-col justify-center items-center gap-8 mx-auto p-8  h-auto">                                                  
-                    <img src={imageUrl} className="w-full object-cover" />
+                    <img src={imageUrl} className="w-full px-8 md:px-0 object-cover" />
                     
                     <div className="w-full h-fit flex flex-col items-center justify-between">
                         
-                       <div className="w-full h-fit flex flex-col items-start justify-between"> 
+                       <div className="w-full px-8 md:px-0 h-fit flex flex-col items-start justify-between"> 
                        <Link to={`..${search}`}><div className='bg-myrouge-300 text-white w-fit h-fit px-3 border rounded-md text-lg'>⪡ {catalogLocation}</div></Link>
                             <h3>{title}</h3>
                             <p  className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>  

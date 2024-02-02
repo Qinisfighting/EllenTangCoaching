@@ -88,7 +88,7 @@ export default function EditArticle({catalog, title, imageUrl, content}: { image
     return (
       <div className='w-screen mx-auto px-4 md:px-20 my-20'>
         <h2 className="text-center my-10">New Blog</h2>    
-            <form className="flex flex-col justify-center items-center gap-4" onSubmit={handleSubmit}>
+            <form className="mx-auto w-full xl:w-5/6 xl:px-8 flex flex-col justify-center items-center gap-4" onSubmit={handleSubmit}>
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                     <p className="text-left">Title</p>
                     <input  onChange={(e)=>handleChange(e)}
@@ -135,11 +135,11 @@ export default function EditArticle({catalog, title, imageUrl, content}: { image
                 </label>
                 
                 <button className="w-11/12 md:w-5/6 2xl:w-2/3 btn-next text-lg">Publish</button>
-              
+                <div className="w-11/12 md:w-5/6 2xl:w-2/3 rounded-full bg-mystone-100 my-8 mx-auto">
+                    <div className="w-11/12 md:w-5/6 2xl:w-2/3 h-6 rounded-full bg-myrouge-200"  style={{ width: `${progress}%` }}></div>
+                </div>
             </form>
-            <div className="w-11/12 md:w-5/6 2xl:w-2/3 mb-5 h-6 rounded-full bg-mystone-100 my-8 mx-auto">
-                    <div className="h-6 rounded-full bg-myrouge-200"  style={{ width: `${progress}%` }}></div>
-            </div>
+            
             
             
         </div>
