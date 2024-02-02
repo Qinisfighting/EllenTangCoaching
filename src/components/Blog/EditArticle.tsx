@@ -87,7 +87,7 @@ export default function EditArticle({catalog, title, imageUrl, content}: { image
     }
     return (
       <div className='w-screen mx-auto px-4 md:px-20 my-20'>
-        <h2 className="text-center my-10">New Blog</h2>    
+        <h2 className="text-center my-10">Update Blog</h2>    
             <form className="mx-auto w-full xl:w-5/6 xl:px-8 flex flex-col justify-center items-center gap-4" onSubmit={handleSubmit}>
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                     <p className="text-left">Title</p>
