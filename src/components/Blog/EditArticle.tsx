@@ -3,16 +3,8 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import { Timestamp,collection, addDoc } from "firebase/firestore"; 
 import { storage, db } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-
-
-
-interface FormData {
-    title: string;
-    tags: string;
-    image?: any;
-    content: string;
-    createdOn?: Date;
-  }
+import { FormData } from "../../../types";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -24,6 +16,7 @@ export default function EditArticle({catalog, title, imageUrl, content}: { image
         content: content,
         createdOn: Timestamp.now().toDate(),
     });
+    const navigate = useNavigate();
     const [progress, setProgress] = useState(0);
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData((prev) => ({
@@ -78,9 +71,9 @@ export default function EditArticle({catalog, title, imageUrl, content}: { image
                   content: formData.content,
                 })
                   .then(() => {
-                    alert("Your blog is updated!")
-                    setProgress(0);
-                    window.location.reload();
+                    alert("Your new blog is online!")
+                    setProgress(0);   
+                    navigate('/blog');
                   })
                   .catch((err) => {
                     console.log(err);
@@ -94,7 +87,7 @@ export default function EditArticle({catalog, title, imageUrl, content}: { image
     }
     return (
       <div className='w-screen mx-auto px-4 md:px-20 my-20'>
-        <h2 className="text-center my-10">Edit Blog</h2>    
+        <h2 className="text-center my-10">New Blog</h2>    
             <form className="flex flex-col justify-center items-center gap-4" onSubmit={handleSubmit}>
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                     <p className="text-left">Title</p>

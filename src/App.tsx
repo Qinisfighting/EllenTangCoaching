@@ -14,7 +14,8 @@ import General from "./pages/Work/General";
 import Pricing from "./pages/Work/Pricing";
 import Service from "./pages/Work/Service";
 import Booking from "./pages/Work/Booking";
-import Blog from "./pages/Blog";
+import Blog, {loader as articlesLoader} from "./pages/Blog";
+import Article, { loader as articleLoader } from "./components/Blog/Article";
 import AddArticle from "./components/Blog/AddArticle";
 import FAQ from "./pages/FAQ";
 import Wo from "./pages/CN/Wo";
@@ -40,7 +41,8 @@ const router = createBrowserRouter(
       <Route path="work/service" element={<Service />} />
       <Route path="work/pricing" element={<Pricing />} /> 
       <Route path="work/booking" element={<Booking />} />
-      <Route path="blog" element={<Blog />} /> 
+      <Route path="blog" element={<Blog />} loader={articlesLoader} /> 
+      <Route path="blog/:id" element={<Article />} loader={articleLoader} />
       <Route path="blog/add" element={<AddArticle />} />
       <Route path="faq" element={<FAQ />} />
       <Route path="Contact" element={<Contact />} /> 

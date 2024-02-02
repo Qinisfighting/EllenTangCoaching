@@ -1,65 +1,109 @@
-import { useState, useEffect } from 'react';
+
 import { BlogBanner } from "../components/Banners";
 import thriveglobal from "../assets/thriveglobal.webp";
 import outwittrade from "../assets/outwittrade.webp";
 import godates from "../assets/godates.webp";
 import upjourney from "../assets/upjourney.webp";
-import Articles from "../components/Blog/Articles";
-import { Timestamp, collection, onSnapshot, orderBy, query } from "firebase/firestore"; 
-import { db } from "../firebase";
-
-
-
-interface Article {
-   id: string;
-   title: string;
-   content: string;
-   imageUrl: string;
-   createdOn: Timestamp;
-   catalog: string;
+import { useState, Suspense } from 'react';
+import { Link, useSearchParams, useLoaderData, defer, Await } from 'react-router-dom';
+import DeleteArticle from "../components/Blog/DeleteArticle";
+import { getArticles } from '../firebase';
+import { Article } from "../../types";
+import Loader from "../components/Loader";
+export function loader() {
+   return defer({ articles: getArticles() })
 }
+
+
+
+function Articles() {
+   const [searchParams, setSearchParams] = useSearchParams()
+   const dataPromise = useLoaderData() as {articles: Article[]}
+   const catalogFilter = searchParams.get("catalog")
+   const [isLogged] = useState(true);
+
+   
  
+   function renderArticles(articles: Article[]) {
+
+       const displayedCatalog = catalogFilter
+                   ? articles.filter(article => article.catalog === catalogFilter)
+                   : articles
+                   
+               const articlesElements = displayedCatalog.map(({id, title, content, imageUrl, createdOn, catalog}) => {
+                   
+                   return (
+
+                       <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 mb-10 h-auto">
+                        
+                       <img src={imageUrl} className="h-48 w-full object-cover" />
+                       <div className={`w-full h-fit ${isLogged?"lg:h-72":"lg:h-52"} flex flex-col items-center justify-between`}>
+                         <div>
+                          <div className='bg-mystone-200 text-mystone-700 w-fit h-fit px-3 border rounded-md text-lg'>{catalog}</div>
+                          
+                            <h3>{title}</h3>
+                          <p className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
+                            <p className=''>{content.slice(0,35)} ... <Link to={id} state={{ filter: `/blog/?${searchParams.toString()}`, catalog: catalogFilter }}  className='text-mystone-700 text-4xl' >➫</Link></p>
+                           
+                        </div>
+                          { 
+                          isLogged && 
+                          <div className="flex justify-end items-center gap-4 py-4">
+                              <DeleteArticle id={id} imageUrl={imageUrl} />
+                          </div> 
+                         } 
+                        
+                    </div> 
+                               
+                </div>    
+                )
+               }) 
+
+
+   return (
+       <div className="w-screen">
+           <div className="mx-auto px-6 pt-16 pb-10 text-center">
+              <h1 className="text-mystone-700 p-0">BLOG   { isLogged && <Link to="/blog/add"><button className="text-6xl font-thin text-mystone-400">+</button></Link>}</h1>     
+           </div>
+           
+           <div className="mx-auto w-11/12 flex flex-wrap justify-center items-center gap-4  pt-6 pb-10">
+                   <button className="btn-next"  onClick={() => setSearchParams({catalog: "Family"})}>Family</button>
+                   <button className="btn-next"  onClick={() => setSearchParams({catalog: "Relationship"})}>Relationship</button>
+                   <button className="btn-next"  onClick={() => setSearchParams({catalog: "Career"})}>Career</button>
+                   <button className="btn-next"  onClick={() => setSearchParams({catalog: "Self"})}>Self</button>
+                   <button className="btn-next"  onClick={() => setSearchParams({catalog: "Life"})}>Life</button>
+                   <button className="btn-next"  onClick={() => setSearchParams({catalog: "Other"})}>Other</button>
+                   { catalogFilter && <button className="bg-myrouge-300 text-white w-10 h-10 text-lg rounded-full ml-8" onClick={() => setSearchParams({})}>All</button> }
+                   {/*or can wrap or replace the buttons here in/with <Link>, and e.g give path to="?type=simple" for switching filter, and to="." to clear filter, in this way setSearchParams will not be used*/}             
+           </div> 
+               
+
+           <div className='mx-auto w-full flex flex-wrap gap-8 px-4 justify-center items-start'>       
+                   {articlesElements}                                                          
+           </div>               
+     </div>
+   )
+}
+   return (
+       <div className="relative">
+         <Suspense fallback= {<Loader />}> 
+           <Await resolve={dataPromise.articles}>
+              {renderArticles}                  
+           </Await>  
+         </Suspense>  
+       </div>
+   )
+   } 
+
+
+
 
 export default function Blog() {
 
-   const [articles, setArticles] = useState<Article[]>([]);
-   const [clickedArticle, setClickedArticle] = useState<Article | null>(null);
-   const [clickedTag, setClickedTag] = useState<Article | null>(null);
-   const [isLogged] = useState(true);
-
-  
-
-   useEffect(() => {
-       const articleRef = collection(db, "Articles");
-       const q = query(articleRef, orderBy("createdOn", "desc"));
-       onSnapshot(q, (snapshot) => {
-         const articles = snapshot.docs.map((doc) => ({
-           id: doc.id,
-           ...doc.data(),
-         }));
-         setArticles(articles as unknown as Article[]);
-       });
-   }, []);
-
-    const handleFilterTag = (catalog:string) => {
-         const filteredArticles = articles.filter((article: Article)=>article.catalog===catalog);
-         setArticles(filteredArticles);
-         setClickedTag(filteredArticles[0]);
-    }
-
-    const handleClickedArticle = (id:string) => {
-      const clickedArticle = articles.find((article: Article)=>article.id===id);
-      if (clickedArticle) {
-         setArticles([clickedArticle]);
-         setClickedArticle(clickedArticle);
-      }
- }
-
-
-    
+   
     return (
       <div className="w-screen">   
-      <Articles articles={articles} isLogged={isLogged} handleFilterTag={handleFilterTag} handleClickedArticle={handleClickedArticle} clickedArticle={clickedArticle} clickedTag={clickedTag} />
+        <Articles />
         <h2 className="w-11/12 xl:w-2/3 mx-auto px-4 text-center mt-24">Published Articles</h2>
         <div className="w-11/12 xl:w-2/3 mx-auto my-4 border-y mb-40">
           <div className="my-10 flex flex-col justify-start items-center lg:gap-16 lg:flex-row lg:justify-between">

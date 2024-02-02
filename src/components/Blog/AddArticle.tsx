@@ -3,17 +3,8 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import { Timestamp,collection, addDoc } from "firebase/firestore"; 
 import { storage, db } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-
-
-
-interface FormData {
-    title: string;
-    tags: string;
-    image?: any;
-    content: string;
-    createdOn?: Date;
-  }
-
+import { useNavigate } from "react-router-dom";
+import { FormData } from "../../../types";
 
 
 export default function AddArticle(){
@@ -25,6 +16,7 @@ export default function AddArticle(){
         createdOn: Timestamp.now().toDate(),
     });
     const [progress, setProgress] = useState(0);
+    const navigate = useNavigate();
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData((prev) => ({
             ...prev,
@@ -80,10 +72,12 @@ export default function AddArticle(){
                   .then(() => {
                     alert("Your new blog is online!")
                     setProgress(0);
+                    navigate('/blog');
                   })
                   .catch((err) => {
                     console.log(err);
                   });
+                
               });
             }
           );

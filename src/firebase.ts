@@ -2,9 +2,10 @@
 
 
 import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getStorage } from "firebase/storage";
 import { getAuth } from 'firebase/auth';
+ 
 
 // import { getDatabase } from 'firebase/database';
 
@@ -17,11 +18,26 @@ const firebaseConfig = {
   appId: "1:820521381752:web:5978faa7a2aaa1a1a3228d"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const storage = getStorage(app);
-export const db = getFirestore(app);
-// export const database = getDatabase(app);
+//const isLoggedIn = localStorage.getItem("loggedin")
+
+//export const user = auth.currentUser;
+export default app;
 export const auth = getAuth(app);
+export const db = getFirestore(app)
+export const storage = getStorage(app);
+const articleRef = collection(db, "Articles")
 
+export async function getArticles(id?: string) {
 
+    const querySnapshot = await getDocs(articleRef)
+    const dataArr = querySnapshot.docs.map(doc => ({
+      ...doc.data(),
+      id: doc.id,
+      
+    }))
+    // console.log(dataArr)
+    return id? dataArr.filter(item => item.id === id)[0] : dataArr
+  }
+  
+ 
