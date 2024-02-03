@@ -41,7 +41,7 @@ export default function VanDetail() {
                         { 
                         isLogged && 
                        <div className="">
-                            <EditArticle imageUrl={imageUrl} catalog={catalog} title={title} content={content} />
+                            <EditArticle imageUrl={imageUrl} catalog={catalog} title={title} content={content} id={id} />
                        </div> 
                         }            
                     </div>                                 
@@ -52,5 +52,3 @@ export default function VanDetail() {
         </Suspense>          
 </div>)
 }
-
-

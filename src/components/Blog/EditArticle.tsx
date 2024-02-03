@@ -1,6 +1,6 @@
 
 import { useState, ChangeEvent, FormEvent } from "react";
-import { Timestamp,collection, addDoc } from "firebase/firestore"; 
+import { Timestamp, doc, updateDoc } from "firebase/firestore"; 
 import { storage, db } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { FormData } from "../../../types";
@@ -8,10 +8,10 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export default function EditArticle({catalog, title, imageUrl, content}: { imageUrl: string, catalog:string, title:string, content:string}){
+export default function EditArticle({catalog, title, imageUrl, content, id}: { imageUrl: string, catalog:string, title:string, content:string, id:string}){
     const [formData, setFormData] = useState<FormData>({
         title: title,
-        tags: catalog,
+        catalog: catalog,
         image: imageUrl,
         content: content,
         createdOn: Timestamp.now().toDate(),
@@ -56,22 +56,22 @@ export default function EditArticle({catalog, title, imageUrl, content}: { image
             () => {
               setFormData({
                 title: "",
-                tags: "",
+                catalog: "",
                 image: "",
                 content: "",
               });
       
               getDownloadURL(uploadImage.snapshot.ref).then((url) => {
-                const articleRef = collection(db, "Articles");
-                addDoc(articleRef, {
+                const articleRef = doc(db, "Articles", id);
+                updateDoc(articleRef, {
                   title: formData.title,
-                  catalog: formData.tags,
+                  catalog: formData.catalog,
                   imageUrl: url,
                   createdOn: Timestamp.now().toDate(),
                   content: formData.content,
                 })
                   .then(() => {
-                    alert("Your new blog is online!")
+                    alert("Your blog is updated!")
                     setProgress(0);   
                     navigate('/blog');
                   })
@@ -101,8 +101,8 @@ export default function EditArticle({catalog, title, imageUrl, content}: { image
                 </label>
                 
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
-                <div className="text-left text-lg py-2">Tags</div>       
-                <select name="tags" className="w-full border rounded-md p-2"  value={formData.tags} onChange={(e)=>handleChange(e)}> 
+                <div className="text-left text-lg py-2">Catalog</div>       
+                <select name="tags" className="w-full border rounded-md p-2"  value={formData.catalog} onChange={(e)=>handleChange(e)}> 
                 <option value="Family">Family</option>
                     <option value="Relationships">Relationships</option>        
                     <option value="Career">Career</option> 

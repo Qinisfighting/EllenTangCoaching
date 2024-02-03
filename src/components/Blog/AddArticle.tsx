@@ -10,7 +10,7 @@ import { FormData } from "../../../types";
 export default function AddArticle(){
     const [formData, setFormData] = useState<FormData>({
         title: "",
-        tags: "",
+        catalog: "",
         image: "",
         content: "",
         createdOn: Timestamp.now().toDate(),
@@ -55,7 +55,7 @@ export default function AddArticle(){
             () => {
               setFormData({
                 title: "",
-                tags: "",
+                catalog: "",
                 image: "",
                 content: "",
               });
@@ -64,7 +64,7 @@ export default function AddArticle(){
                 const articleRef = collection(db, "Articles");
                 addDoc(articleRef, {
                   title: formData.title,
-                  catalog: formData.tags,
+                  catalog: formData.catalog,
                   imageUrl: url,
                   createdOn: Timestamp.now().toDate(),
                   content: formData.content,
@@ -101,8 +101,8 @@ export default function AddArticle(){
                 </label>
                 
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
-                <div className="text-left text-lg py-2">Tags</div>       
-                <select name="tags" className="w-full border rounded-md p-2"  value={formData.tags} onChange={(e)=>handleChange(e)}> 
+                <div className="text-left text-lg py-2">Catalog</div>       
+                <select name="catalog" className="w-full border rounded-md p-2"  value={formData.catalog} onChange={(e)=>handleChange(e)}> 
                     <option value="Family">Family</option>
                     <option value="Relationships">Relationships</option>        
                     <option value="Career">Career</option> 

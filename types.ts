@@ -3,7 +3,7 @@ import { Timestamp } from '@firebase/firestore-types';
 
 export interface FormData {
     title: string;
-    tags: string;
+    catalog: string;
     image?: any;
     content: string;
     createdOn?: Date;
