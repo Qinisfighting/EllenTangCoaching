@@ -5,8 +5,6 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getStorage } from "firebase/storage";
 import { getAuth } from 'firebase/auth';
- 
-
 // import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {

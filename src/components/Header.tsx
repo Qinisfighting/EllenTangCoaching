@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../src/assets/logo.png";
+import signin from "../../src/assets/signin.png";
+// import signout from "../../src/assets/signout.png";
 
 
 interface ActiveStyles {
@@ -81,7 +83,13 @@ export default function Header() {
         <div
           className="flex flex-col absolute mx-auto my-4 z-10  w-full bg-myblue-100 text-lg font-medium text-myblue-800 p-4 gap-5 opacity-95"
          
-        >
+        > <NavLink to="login">
+            <img
+              src={signin}
+              alt="Sign in"
+              className="w-6"
+            />
+          </NavLink>
           <NavLink
             to="/"
             end
@@ -326,6 +334,7 @@ export default function Header() {
               )}
             </div>
           </NavLink>
+          
         </div>
       ) : (
         <nav className="hidden md:flex 2xl:w-1/2 lg:w-2/3 w-11/12 justify-between items-center mx-auto text-lg font-medium text-myblue-900">
@@ -556,6 +565,13 @@ export default function Header() {
                 </div>
               )}
             </div>
+          </NavLink>
+          <NavLink to="login">
+            <img
+              src={signin}
+              alt="Sign in"
+              className="w-6"
+            />
           </NavLink>
         </nav>
       )}

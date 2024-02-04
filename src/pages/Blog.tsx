@@ -4,6 +4,7 @@ import thriveglobal from "../assets/thriveglobal.webp";
 import outwittrade from "../assets/outwittrade.webp";
 import godates from "../assets/godates.webp";
 import upjourney from "../assets/upjourney.webp";
+import login from "../assets/login.png"
 import { useState, Suspense } from 'react';
 import { Link, useSearchParams, useLoaderData, defer, Await } from 'react-router-dom';
 import DeleteArticle from "../components/Blog/DeleteArticle";
@@ -14,13 +15,11 @@ export function loader() {
    return defer({ articles: getArticles() })
 }
 
-
-
 function Articles() {
    const [searchParams, setSearchParams] = useSearchParams()
    const dataPromise = useLoaderData() as {articles: Article[]}
    const catalogFilter = searchParams.get("catalog")
-   const [isLogged] = useState(true);
+   const [isLogged, setIsLogged] = useState(false);
 
    
  
@@ -62,9 +61,12 @@ function Articles() {
 
    return (
        <div className="w-screen">
-           <div className="mx-auto px-6 pt-16 pb-10 text-center">
-              <h1 className="text-mystone-700 p-0">BLOG   { isLogged && <Link to="/blog/add"><button className="text-6xl font-thin text-mystone-400">+</button></Link>}</h1>     
-           </div>
+          <div className="mx-auto px-6 pt-16 pb-10 text-center flex justify-center items-center gap-4">
+               <h1 className="text-mystone-700 p-0">BLOG</h1>  
+               { isLogged ? <Link to="/blog/add"><button className="text-6xl font-thin text-mystone-400">+</button></Link> 
+                          : <button className=""><img onClick={() => setIsLogged(true)} src={login} alt="login" className="w-8 opacity-80 hover:opacity-100" title="Log in as host."/></button>
+                     }      
+          </div>
            
            <div className="mx-auto w-11/12 flex flex-wrap justify-center items-center gap-4  pt-6 pb-10">
                    <button className="btn-next"  onClick={() => setSearchParams({catalog: "Family"})}>Family</button>

@@ -5,6 +5,9 @@ import { storage, db } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 import { FormData } from "../../../types";
+// import TextEditor from "./TextEditor";
+
+
 
 
 export default function AddArticle(){
@@ -141,7 +144,7 @@ export default function AddArticle(){
             <div className="w-11/12 md:w-5/6 2xl:w-2/3 mb-5 h-6 rounded-full bg-mystone-100 my-8 mx-auto">
                     <div className="h-6 rounded-full bg-myrouge-200"  style={{ width: `${progress}%` }}></div>
             </div>
-            
+            {/* <TextEditor /> */}
             
         </div>
     )

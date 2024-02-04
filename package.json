@@ -12,22 +12,27 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "draft-js": "^0.11.7",
     "emailjs": "^4.0.3",
     "firebase": "^10.7.2",
     "jest-environment-jsdom": "^29.7.0",
     "nanoid": "^5.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-draft-wysiwyg": "^1.15.0",
     "react-router-dom": "^6.18.0",
-    "react-slideshow-image": "^4.3.0"
+    "react-slideshow-image": "^4.3.0",
+    "react-toastify": "^10.0.4"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.23.3",
     "@testing-library/jest-dom": "^6.1.6",
     "@testing-library/react": "^14.1.2",
+    "@types/draft-js": "^0.11.17",
     "@types/jest": "^29.5.11",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@types/react-draft-wysiwyg": "^1.13.8",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
