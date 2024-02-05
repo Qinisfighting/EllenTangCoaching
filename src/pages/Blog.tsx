@@ -4,8 +4,7 @@ import thriveglobal from "../assets/thriveglobal.webp";
 import outwittrade from "../assets/outwittrade.webp";
 import godates from "../assets/godates.webp";
 import upjourney from "../assets/upjourney.webp";
-import login from "../assets/login.png"
-import { useState, Suspense } from 'react';
+import { Suspense } from 'react';
 import { Link, useSearchParams, useLoaderData, defer, Await } from 'react-router-dom';
 import DeleteArticle from "../components/Blog/DeleteArticle";
 import { getArticles } from '../firebase';
@@ -15,11 +14,15 @@ export function loader() {
    return defer({ articles: getArticles() })
 }
 
+const isHostLogged = JSON.parse(localStorage.getItem("isHostLogged")!) 
+
+// const isHostLogged = true
+
 function Articles() {
    const [searchParams, setSearchParams] = useSearchParams()
    const dataPromise = useLoaderData() as {articles: Article[]}
    const catalogFilter = searchParams.get("catalog")
-   const [isLogged, setIsLogged] = useState(false);
+   
 
    
  
@@ -36,7 +39,7 @@ function Articles() {
                        <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 mb-10 h-auto">
                         
                        <img src={imageUrl} className="h-48 w-full object-cover" />
-                       <div className={`w-full h-fit ${isLogged?"lg:h-72":"lg:h-52"} flex flex-col items-center justify-between`}>
+                       <div className={`w-full h-fit ${isHostLogged?"lg:h-72":"lg:h-52"} flex flex-col items-center justify-between`}>
                          <div>
                           <div className='bg-mystone-200 text-mystone-700 w-fit h-fit px-3 border rounded-md text-lg'>{catalog}</div>
                           
@@ -46,7 +49,7 @@ function Articles() {
                            
                         </div>
                           { 
-                          isLogged && 
+                          isHostLogged && 
                           <div className="flex justify-end items-center gap-4 py-4">
                               <DeleteArticle id={id} imageUrl={imageUrl} />
                           </div> 
@@ -62,10 +65,7 @@ function Articles() {
    return (
        <div className="w-screen">
           <div className="mx-auto px-6 pt-16 pb-10 text-center flex justify-center items-center gap-4">
-               <h1 className="text-mystone-700 p-0">BLOG</h1>  
-               { isLogged ? <Link to="/blog/add"><button className="text-6xl font-thin text-mystone-400">+</button></Link> 
-                          : <button className=""><img onClick={() => setIsLogged(true)} src={login} alt="login" className="w-8 opacity-80 hover:opacity-100" title="Log in as host."/></button>
-                     }      
+               <h1 className="text-mystone-700 p-0">BLOG { isHostLogged && <Link to="/blog/add"><button className="text-5xl font-thin text-mystone-400">+</button></Link> }</h1>                 
           </div>
            
            <div className="mx-auto w-11/12 flex flex-wrap justify-center items-center gap-4  pt-6 pb-10">

@@ -16,7 +16,7 @@ export default function VanDetail() {
     const location = useLocation()
     const search = location.state?.filter || ""   //optional chaining, same like const search = location.state && location.state.filter || ""
     const catalogLocation = location.state?.catalog || "All"
-    const isLogged = true
+    const isHostLogged = JSON.parse(localStorage.getItem("isHostLogged")!) 
 
 //  function handleClick() {
 //     !isLoggedIn && alert("Please sign in first.")
@@ -36,10 +36,10 @@ export default function VanDetail() {
                        <Link to={`..${search}`}><div className='bg-myrouge-300 text-white w-fit h-fit px-3 border rounded-md text-lg'>⪡ {catalogLocation}</div></Link>
                             <h3>{title}</h3>
                             <p  className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>  
-                            <p className=''>{content}</p>        
+                            <p className={!isHostLogged?"mb-20":"mb-0"}>{content}</p>        
                        </div>          
                         { 
-                        isLogged && 
+                        isHostLogged && 
                        <div className="">
                             <EditArticle imageUrl={imageUrl} catalog={catalog} title={title} content={content} id={id} />
                        </div> 

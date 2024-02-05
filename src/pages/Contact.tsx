@@ -6,19 +6,13 @@ import email from "../assets/email.png";
 import navi from "../assets/navi.png";
 import time from "../assets/time.png";
 import phone from "../assets/phone.png";
+import { ContactFormData } from "../../types";
 
 
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-  privacy: boolean;
-}
 
 export default function Contact() {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     phone: "",

@@ -23,6 +23,7 @@ import FuWu from "./pages/CN/FuWu";
 import WenTi from "./pages/CN/WenTi";
 import YuYue from "./pages/CN/YuYue";
 import Contact from "./pages/Contact";
+import Login from "./pages/Login";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Practice from "./pages/Practice";
@@ -49,7 +50,8 @@ const router = createBrowserRouter(
       <Route path="cn" element={<Wo />} />   
       <Route path="cn/fuwu" element={<FuWu />} />  
       <Route path="cn/wenti" element={<WenTi />} />  
-      <Route path="cn/yuyue" element={<YuYue />} />   
+      <Route path="cn/yuyue" element={<YuYue />} /> 
+      <Route path="login" element={<Login />} />    
       <Route path="terms" element={<Terms />} />
       <Route path="privacy" element={<Privacy />} />
       <Route path="practice" element={<Practice />} />

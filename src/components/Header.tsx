@@ -1,9 +1,9 @@
 
 import { useState, useEffect, useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../src/assets/logo.png";
 import signin from "../../src/assets/signin.png";
-// import signout from "../../src/assets/signout.png";
+import signout from "../../src/assets/signout.png";
 
 
 interface ActiveStyles {
@@ -21,6 +21,13 @@ export default function Header() {
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
   const [clickedContent, setClickedContent] = useState<string>("");
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isHostLogged, setIsHostLogged] = useState<boolean>(() => JSON.parse(localStorage.getItem("isHostLogged")!) );
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    localStorage.setItem('isHostLogged', JSON.stringify(isHostLogged));
+  }, [isHostLogged]);
 
   const activeStyles: ActiveStyles = {
     fontSize: "1.15em",
@@ -69,27 +76,45 @@ export default function Header() {
           className="w-11/12 md:w-3/4 xl:w-1/2 mx-auto my-6 "
         />
       </Link>
-      <div className="md:hidden flex justify-center items-center">
+      <div className="md:hidden flex justify-between items-center">
         <button
-          className="max-w-1/4 mx-auto my-2 bg-myblue-300 text-white font-bold py-2 px-4 rounded-md shadow-lg hover:bg-myblue-400 transition duration-300 ease-in-out"
+          className="mx-auto my-2 bg-myblue-300 text-white font-bold py-2 px-4 rounded-md shadow-lg hover:bg-myblue-400 transition duration-300 ease-in-out"
           onClick={() => setIsMenu(!isMenu)}
         >
           {" "}
           {isMenu ? "CLOSE ▲" : "MENU ▼"}
         </button>
+        <div className="mx-auto">
+        {isHostLogged ? 
+          <button onClick={() => {setIsHostLogged(false); navigate(0) 
+          }}>
+            <img
+              src={signout}
+              alt="Sign out"
+              className="w-7"
+              title="logout"
+            />
+          </button>
+         :       
+          <button  onClick={() => {navigate("/login")
+          }}>
+            <img
+              src={signin}
+              alt="Sign in"
+              className="w-7"
+              title="login"
+            />
+          </button>   
+        }  
+       
+        </div>
       </div>
 
       {isMenu ? (
         <div
           className="flex flex-col absolute mx-auto my-4 z-10  w-full bg-myblue-100 text-lg font-medium text-myblue-800 p-4 gap-5 opacity-95"
          
-        > <NavLink to="login">
-            <img
-              src={signin}
-              alt="Sign in"
-              className="w-6"
-            />
-          </NavLink>
+        > 
           <NavLink
             to="/"
             end
@@ -566,13 +591,24 @@ export default function Header() {
               )}
             </div>
           </NavLink>
-          <NavLink to="login">
+          {isHostLogged ? 
+          <button onClick={() => {setIsHostLogged(false); navigate(0) 
+          }}>
+            <img
+              src={signout}
+              alt="Sign out"
+              className="w-7"
+            />
+          </button>
+         :       
+          <button  onClick={() => { navigate("/login") }}>
             <img
               src={signin}
               alt="Sign in"
-              className="w-6"
+              className="w-7"
             />
-          </NavLink>
+          </button>   
+        }  
         </nav>
       )}
     </header>
