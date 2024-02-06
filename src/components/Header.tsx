@@ -21,14 +21,11 @@ export default function Header() {
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
   const [clickedContent, setClickedContent] = useState<string>("");
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [isHostLogged, setIsHostLogged] = useState<boolean>(() => JSON.parse(localStorage.getItem("isHostLogged")!) );
+  const isHostLogged =  JSON.parse(localStorage.getItem("isHostLogged")!);
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    localStorage.setItem('isHostLogged', JSON.stringify(isHostLogged));
-  }, [isHostLogged]);
-
+  
   const activeStyles: ActiveStyles = {
     fontSize: "1.15em",
     fontWeight: "600",
@@ -86,8 +83,8 @@ export default function Header() {
         </button>
         <div className="mx-auto">
         {isHostLogged ? 
-          <button onClick={() => {setIsHostLogged(false); navigate(0) 
-          }}>
+          <button onClick={() => {navigate("/login")
+        }}>
             <img
               src={signout}
               alt="Sign out"
@@ -592,8 +589,8 @@ export default function Header() {
             </div>
           </NavLink>
           {isHostLogged ? 
-          <button onClick={() => {setIsHostLogged(false); navigate(0) 
-          }}>
+          <button onClick={() => {navigate("/login")
+        }}>
             <img
               src={signout}
               alt="Sign out"

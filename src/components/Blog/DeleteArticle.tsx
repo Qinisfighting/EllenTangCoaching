@@ -12,6 +12,7 @@ export default function DeleteArticle({ id, imageUrl }: { id: string, imageUrl: 
             await deleteDoc(doc(db, "Articles", id));
             const storageRef = ref(storage, imageUrl);
             await deleteObject(storageRef);
+            alert("The blog has been deleted successfully.");
             navigate('/blog');
           } catch (error) {
             console.log(error);
