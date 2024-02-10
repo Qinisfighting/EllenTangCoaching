@@ -38,15 +38,15 @@ export default function VanDetail() {
 
             return (
                 <div key={id} className="w-full md:w-2/3 xl:w-1/2 flex flex-col justify-center items-center gap-8 mx-auto p-8  h-auto">                                                  
-                    <img src={imageUrl} className="w-full px-8 md:px-0 object-cover" />
+                    <img src={imageUrl} className={`w-full md:px-0 object-cover ${isHostLogged?"px-8":"px-0"}`} />
                     
                     <div className="w-full h-fit flex flex-col items-center justify-between">
                         
-                       <div className="w-full px-8 md:px-0 h-fit flex flex-col items-start justify-between"> 
+                       <div className={`w-full  md:px-0 h-fit flex flex-col items-start justify-between ${isHostLogged?"px-8":"px-0"}`}> 
                        <Link to={`..${search}`}><div className='bg-myrouge-300 text-white w-fit h-fit px-3 border rounded-md text-lg'>⪡ {catalogLocation}</div></Link>
                             <h2>{title}</h2>
                             <p  className='m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>  
-                            <div className="pt-8" dangerouslySetInnerHTML={createMarkup(JSON.parse(content))}></div>        
+                            <div className={`pt-10 ${isHostLogged?"pb-0":"pb-20"}`} dangerouslySetInnerHTML={createMarkup(JSON.parse(content))}></div>        
                        </div>          
                         { 
                         isHostLogged && 
