@@ -25,7 +25,6 @@ export default function Header() {
 
   const navigate = useNavigate();
 
-  
   const activeStyles: ActiveStyles = {
     fontSize: "1.15em",
     fontWeight: "600",

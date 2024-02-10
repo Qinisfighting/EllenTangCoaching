@@ -1,33 +1,59 @@
 
-import { useState, ChangeEvent, FormEvent } from "react";
-import { Timestamp,collection, addDoc } from "firebase/firestore"; 
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import { Timestamp, collection, addDoc } from "firebase/firestore"; 
 import { storage, db } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 import { FormData } from "../../../types";
-// import TextEditor from "./TextEditor";
-
+import { Editor } from 'react-draft-wysiwyg';
+import { EditorState } from 'draft-js';
+import { convertToHTML } from 'draft-convert';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 
 
 export default function AddArticle(){
+  
+    const [editorState, setEditorState] = useState(
+      () => EditorState.createEmpty(),
+    );
+    const [convertedContent, setConvertedContent] = useState<string | null>(null);
+
+    useEffect(() => {
+      let html = convertToHTML(editorState.getCurrentContent());
+      setConvertedContent(html);
+      setFormData((prev) => ({
+        ...prev,
+        content: JSON.stringify(convertedContent),
+    }));
+    console.log(formData);
+    }, [editorState]);
+
+  
+
+
+    // console.log(convertedContent);
     const [formData, setFormData] = useState<FormData>({
-        title: "",
-        catalog: "",
-        image: "",
-        content: "",
-        createdOn: Timestamp.now().toDate(),
+      title: "",
+      catalog: "",
+      image: "",
+      content: "", 
+      createdOn: Timestamp.now().toDate(),
     });
 
     const isHostLogged = JSON.parse(localStorage.getItem("isHostLogged")!) 
     const [progress, setProgress] = useState(0);
     const navigate = useNavigate();
+
+    
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        setFormData((prev) => ({
+        
+      setFormData((prev) => ({
             ...prev,
             [e.target.name]: e.target.value,
         }));
         console.log(formData);
+   
     };
 
     const handleImageChange = (e: ChangeEvent<HTMLInputElement | any >) => {   
@@ -86,8 +112,6 @@ export default function AddArticle(){
               });
             }
           );
-
-
         
     }
     return (
@@ -103,12 +127,13 @@ export default function AddArticle(){
                             name="title"
                             value={formData.title} 
                             required
+                            onFocus={(e)=>e.target.value=""}
                             />
                 </label>
                 
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                 <div className="text-left text-lg py-2">Catalog</div>       
-                <select name="catalog" className="w-full border rounded-md p-2"  value={formData.catalog} onChange={(e)=>handleChange(e)}> 
+                <select name="catalog" className="w-full border rounded-md p-2"  value={formData.catalog} onChange={(e)=>handleChange(e)} required> 
                     <option value="Family">Family</option>
                     <option value="Relationships">Relationships</option>        
                     <option value="Career">Career</option> 
@@ -127,17 +152,25 @@ export default function AddArticle(){
                        type="file"
                        name="image"
                        accept="image/*" 
+                       required
                       
                        />
                 </label>
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                     <p className="text-left">Content</p>
-                    <textarea 
+                    <Editor
+                        editorState={editorState}
+                        onEditorStateChange={setEditorState}
+                        wrapperStyle={{ marginBottom: "2em",fontSize: "calc(10px + 1.5vmin)"}}
+                        editorStyle={{padding:"0px 20px", border: "1px solid gray", borderRadius: "0.3em"}}
+                        toolbarStyle={{border: "1px solid gray", borderRadius: "0.3em",}}
+                    />
+                    {/* <textarea 
                        onChange={(e)=>handleChange(e)}
                        className="w-full border rounded-md p-2" 
                        rows={10}  
                        value={formData.content}
-                       name="content"/>
+                       name="content"/> */}
                        
                 </label>
                 
@@ -147,7 +180,7 @@ export default function AddArticle(){
             <div className="w-11/12 md:w-5/6 2xl:w-2/3 mb-5 h-6 rounded-full bg-mystone-100 my-8 mx-auto">
                     <div className="h-6 rounded-full bg-myrouge-200"  style={{ width: `${progress}%` }}></div>
             </div>
-            {/* <TextEditor /> */}
+            
             
         </div>
         :

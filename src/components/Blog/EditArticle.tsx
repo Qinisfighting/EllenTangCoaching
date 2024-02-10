@@ -1,11 +1,14 @@
 
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { Timestamp, doc, updateDoc } from "firebase/firestore"; 
 import { storage, db } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { FormData } from "../../../types";
 import { useNavigate } from "react-router-dom";
-
+import { Editor } from 'react-draft-wysiwyg';
+import { EditorState } from 'draft-js';
+import { convertToHTML } from 'draft-convert';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 
 export default function EditArticle({catalog, title, imageUrl, content, id}: { imageUrl: string, catalog:string, title:string, content:string, id:string}){
@@ -16,6 +19,20 @@ export default function EditArticle({catalog, title, imageUrl, content, id}: { i
         content: content,
         createdOn: Timestamp.now().toDate(),
     });
+    const [editorState, setEditorState] = useState(
+      () => EditorState.createEmpty(),
+    );
+    const [convertedContent, setConvertedContent] = useState<string | null>(null);
+
+    useEffect(() => {
+      let html = convertToHTML(editorState.getCurrentContent());
+      setConvertedContent(html);
+      setFormData((prev) => ({
+        ...prev,
+        content: JSON.stringify(convertedContent),
+    }));
+    }, [editorState]);
+
     const navigate = useNavigate();
     const [progress, setProgress] = useState(0);
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -102,8 +119,8 @@ export default function EditArticle({catalog, title, imageUrl, content, id}: { i
                 
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                 <div className="text-left text-lg py-2">Catalog</div>       
-                <select name="tags" className="w-full border rounded-md p-2"  value={formData.catalog} onChange={(e)=>handleChange(e)}> 
-                <option value="Family">Family</option>
+                <select name="catalog" className="w-full border rounded-md p-2"  value={formData.catalog} onChange={(e)=>handleChange(e)} required> 
+                    <option value="Family">Family</option>
                     <option value="Relationships">Relationships</option>        
                     <option value="Career">Career</option> 
                     <option value="Self">Self</option>
@@ -120,17 +137,19 @@ export default function EditArticle({catalog, title, imageUrl, content, id}: { i
                        type="file"
                        name="image"
                        accept="image/*" 
+                       required
                       
                        />
                 </label>
                 <label className="w-11/12 md:w-5/6 2xl:w-2/3 mx-auto">
                     <p className="text-left">Content</p>
-                    <textarea       
-                       onChange={(e)=>handleChange(e)}
-                       className="w-full border rounded-md p-2" 
-                       rows={10}  
-                       value={formData.content}
-                       name="content"/>
+                    <Editor
+                        editorState={editorState}
+                        onEditorStateChange={setEditorState}
+                        wrapperStyle={{ marginBottom: "2em",fontSize: "calc(10px + 1.5vmin)"}}
+                        editorStyle={{padding:"0px 20px", border: "1px solid gray", borderRadius: "0.3em"}}
+                        toolbarStyle={{border: "1px solid gray", borderRadius: "0.3em",}}
+                    />
                        
                 </label>
                 

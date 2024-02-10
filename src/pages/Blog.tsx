@@ -32,25 +32,25 @@ function Articles() {
                    ? articles.filter(article => article.catalog === catalogFilter)
                    : articles
                    
-               const articlesElements = displayedCatalog.map(({id, title, content, imageUrl, createdOn, catalog}) => {
+               const articlesElements = displayedCatalog.map(({id, title, imageUrl, createdOn, catalog}) => {
                    
                    return (
 
-                       <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 mb-10 h-auto">
+                       <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 mb-6 h-auto">
                         
                        <img src={imageUrl} className="h-48 w-full object-cover" />
-                       <div className={`w-full h-fit ${isHostLogged?"lg:h-72":"lg:h-52"} flex flex-col items-center justify-between`}>
+                       <div className={`w-full h-fit ${isHostLogged?"lg:h-52":"lg:h-46"} flex flex-col items-start justify-between`}>
                          <div>
                           <div className='bg-mystone-200 text-mystone-700 w-fit h-fit px-3 border rounded-md text-lg'>{catalog}</div>
-                          
-                            <h3>{title}</h3>
+                          <div className="w-full flex justify-center items-center text-left gap-4">
+                            <h3 className="w-full ">{title}</h3>
+                            <Link to={id} state={{ filter: `/blog/?${searchParams.toString()}`, catalog: catalogFilter }}  className='text-mystone-700 text-4xl' >➫</Link>
+                          </div>    
                           <p className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
-                            <p className=''>{content.slice(0,35)} ... <Link to={id} state={{ filter: `/blog/?${searchParams.toString()}`, catalog: catalogFilter }}  className='text-mystone-700 text-4xl' >➫</Link></p>
-                           
                         </div>
                           { 
                           isHostLogged && 
-                          <div className="flex justify-end items-center gap-4 py-4">
+                          <div className="mt-6 self-end">
                               <DeleteArticle id={id} imageUrl={imageUrl} />
                           </div> 
                          } 
