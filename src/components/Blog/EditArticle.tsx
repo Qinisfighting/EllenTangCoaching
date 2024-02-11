@@ -6,8 +6,8 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { FormData } from "../../../types";
 import { useNavigate } from "react-router-dom";
 import { Editor } from 'react-draft-wysiwyg';
-import { EditorState } from 'draft-js';
-import { convertToHTML } from 'draft-convert';
+import { EditorState, convertToRaw } from 'draft-js';
+import draftToHtml from 'draftjs-to-html';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 
@@ -25,7 +25,8 @@ export default function EditArticle({catalog, title, imageUrl, content, id}: { i
     const [convertedContent, setConvertedContent] = useState<string | null>(null);
 
     useEffect(() => {
-      let html = convertToHTML(editorState.getCurrentContent());
+      const rawContentState = convertToRaw(editorState.getCurrentContent());
+      let html = draftToHtml(rawContentState);
       setConvertedContent(html);
       setFormData((prev) => ({
         ...prev,
