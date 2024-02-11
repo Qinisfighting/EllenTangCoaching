@@ -14,7 +14,8 @@ export function loader() {
    return defer({ articles: getArticles() })
 }
 
-const isHostLogged = JSON.parse(localStorage.getItem("isHostLogged")!) 
+const isHostLogged = JSON.parse(localStorage.getItem("user")!) 
+console.log(isHostLogged)
 
 // const isHostLogged = true
 
@@ -66,9 +67,9 @@ function Articles() {
        <div className="w-screen">
           <div className="mx-auto px-6 pt-16 pb-10 text-center flex justify-center items-center">
                <div className="text-mystone-700 p-0 flex flex-col justify-center items-center gap-4"><h1 className="p-0 md:p-6">BLOG</h1>  
-               { isHostLogged ? <Link to="/blog/add"><button className="text-5xl font-thin text-mystone-400">+</button></Link> 
-                              : <Link to="/login"><button className="text-mystone-800 border text-lg px-2 rounded-md hover:bg-mystone-100  transition duration-500 ease-in-out">Login ➢</button></Link>}</div>                 
-               </div>
+                 { isHostLogged && <Link to="/blog/add"><button className="text-5xl font-thin text-mystone-400">+</button></Link>}
+              </div>                 
+          </div>
            
            <div className="mx-auto w-11/12 flex flex-wrap justify-center items-center gap-4  md:pt-2 pb-10">
                    <button className="btn-next"  onClick={() => setSearchParams({catalog: "Family"})}>Family</button>
