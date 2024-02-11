@@ -14,10 +14,12 @@ export function loader() {
    return defer({ articles: getArticles() })
 }
 
-const isHostLogged = JSON.parse(localStorage.getItem("user")!) 
+const isHostLogged = JSON.parse(localStorage.getItem("isHostLogged")!); 
 console.log(isHostLogged)
 
-// const isHostLogged = true
+// if(isHostLogged) { 
+//   window.location.reload(1);
+//  }
 
 function Articles() {
    const [searchParams, setSearchParams] = useSearchParams()
@@ -50,7 +52,7 @@ function Articles() {
                           <p className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
                         </div>
                           { 
-                          isHostLogged && 
+                          isHostLogged  && 
                           <div className="mt-6 self-end">
                               <DeleteArticle id={id} imageUrl={imageUrl} />
                           </div> 
@@ -67,7 +69,7 @@ function Articles() {
        <div className="w-screen">
           <div className="mx-auto px-6 pt-16 pb-10 text-center flex justify-center items-center">
                <div className="text-mystone-700 p-0 flex flex-col justify-center items-center gap-4"><h1 className="p-0 md:p-6">BLOG</h1>  
-                 { isHostLogged && <Link to="/blog/add"><button className="text-5xl font-thin text-mystone-400">+</button></Link>}
+                 {isHostLogged&&<Link to="/blog/add"><button className="text-5xl font-thin text-mystone-400">+</button></Link>}
               </div>                 
           </div>
            

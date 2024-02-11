@@ -22,6 +22,7 @@ export default function Header() {
   const [clickedContent, setClickedContent] = useState<string>("");
   const dropdownRef = useRef<HTMLDivElement>(null);
   const isHostLogged =  JSON.parse(localStorage.getItem("isHostLogged")!);
+  const isGastLogged =  JSON.parse(localStorage.getItem("isGastLogged")!);
 
   const navigate = useNavigate();
 
@@ -81,7 +82,7 @@ export default function Header() {
           {isMenu ? "CLOSE ▲" : "MENU ▼"}
         </button>
         <div className="mx-auto">
-        {isHostLogged ? 
+        {isHostLogged || isGastLogged ? 
           <button onClick={() => {navigate("/login")
         }}>
             <img
@@ -587,7 +588,7 @@ export default function Header() {
               )}
             </div>
           </NavLink>
-          {isHostLogged ? 
+          {isHostLogged || isGastLogged ?  
           <button onClick={() => {navigate("/login")
         }}>
             <img
