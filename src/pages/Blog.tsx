@@ -39,7 +39,7 @@ function Articles() {
                        <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 mb-6 h-auto">
                         
                        <img src={imageUrl} className="h-48 w-full object-cover" />
-                       <div className={`w-full h-fit ${isHostLogged?"lg:h-52":"lg:h-46"} flex flex-col items-start justify-between`}>
+                       <div className={`w-full min-h-52 flex flex-col items-start justify-between`}>
                          <div>
                           <div className='bg-mystone-200 text-mystone-700 w-fit h-fit px-3 border rounded-md text-lg'>{catalog}</div>
                           <div className="w-full flex justify-center items-center text-left gap-4">
@@ -64,11 +64,13 @@ function Articles() {
 
    return (
        <div className="w-screen">
-          <div className="mx-auto px-6 pt-16 pb-10 text-center flex justify-center items-center gap-4">
-               <h1 className="text-mystone-700 p-0">BLOG { isHostLogged && <Link to="/blog/add"><button className="text-5xl font-thin text-mystone-400">+</button></Link> }</h1>                 
-          </div>
+          <div className="mx-auto px-6 pt-16 pb-10 text-center flex justify-center items-center">
+               <div className="text-mystone-700 p-0 flex flex-col justify-center items-center gap-4"><h1 className="p-0 md:p-6">BLOG</h1>  
+               { isHostLogged ? <Link to="/blog/add"><button className="text-5xl font-thin text-mystone-400">+</button></Link> 
+                              : <Link to="/login"><button className="text-mystone-800 border text-lg px-2 rounded-md hover:bg-mystone-100  transition duration-500 ease-in-out">Login ➢</button></Link>}</div>                 
+               </div>
            
-           <div className="mx-auto w-11/12 flex flex-wrap justify-center items-center gap-4  pt-6 pb-10">
+           <div className="mx-auto w-11/12 flex flex-wrap justify-center items-center gap-4  md:pt-2 pb-10">
                    <button className="btn-next"  onClick={() => setSearchParams({catalog: "Family"})}>Family</button>
                    <button className="btn-next"  onClick={() => setSearchParams({catalog: "Relationship"})}>Relationship</button>
                    <button className="btn-next"  onClick={() => setSearchParams({catalog: "Career"})}>Career</button>

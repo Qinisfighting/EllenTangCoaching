@@ -162,7 +162,7 @@ export default function AddArticle(){
                         editorState={editorState}
                         onEditorStateChange={setEditorState}
                         wrapperStyle={{ marginBottom: "2em",fontSize: "calc(10px + 1.5vmin)"}}
-                        editorStyle={{padding:"0px 20px", border: "1px solid gray", borderRadius: "0.3em"}}
+                        editorStyle={{padding:"10px 20px", border: "1px solid gray", borderRadius: "0.3em", height:200}}
                         toolbarStyle={{border: "1px solid gray", borderRadius: "0.3em",}}
                     />
                     {/* <textarea 

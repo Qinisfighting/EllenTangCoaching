@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react"
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { User } from "../../types";
 
@@ -18,9 +19,12 @@ function Greeting({name}: {name: string}) {
       timeOfDay = "night";
     }
     return (
-      <div className="w-screen h-fit my-20 text-center bg-mystone-100 py-28">
+      <div className="w-screen h-fit my-20 text-center bg-mystone-100 py-28 flex flex-col justify-center items-center">
           <h2 className="px-6">Good {timeOfDay}, {name}! You are now logged in.</h2>
-          <button className="btn-next mt-8 w-28 tracking-wide" onClick={() => {localStorage.removeItem("isHostLogged"); window.location.reload();}}>Logout</button>
+          <div className="flex gap-4">
+            <button className="btn-next mt-8 w-28 tracking-wide"><Link to="/blog">Blog ➢</Link></button>
+            <button className="btn-next mt-8 w-28 tracking-wide" onClick={() => {localStorage.removeItem("isHostLogged"); window.location.reload();}}>Logout</button>
+          </div>
       </div>
     );
   }
@@ -78,8 +82,8 @@ export default function Login() {
     return (
         !isHostLogged?
         <div className="w-screen bg-mystone-100 flex flex-col justify-start items-center h-view  pt-12 pb-12 my-20">
-            <h2 className="text-2xl text-mystone-600 tracking-wide">Login with Google Account</h2>
-            <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center gap-6 px-2">
+            <h2 className="text-2xl text-mystone-600 md:tracking-wide px-6 md:px-0">Login with Google Account</h2>
+            <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center gap-6 px-6 md:px-0">
                 <input
                 type="email"
                 name="email"
