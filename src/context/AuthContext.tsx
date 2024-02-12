@@ -16,7 +16,8 @@ export const AuthContextProvider = ({ children }: { children: React.ReactNode })
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
     // signInWithPopup(auth, provider);
-    signInWithRedirect(auth, provider)
+    signInWithRedirect(auth, provider)  // recommended for mobile devices
+    
   };
 
   const logOut = () => {
@@ -25,13 +26,13 @@ export const AuthContextProvider = ({ children }: { children: React.ReactNode })
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      console.log('User', currentUser)
+        setUser(currentUser);
+        console.log('User', currentUser) 
     });
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [user]);
 
 
   return (

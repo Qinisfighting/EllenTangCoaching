@@ -10,8 +10,6 @@ import { EditorState, convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-// Remove the unused import statement for 'draftToHtml'
-
 export default function AddArticle(){
     
     const [editorState, setEditorState] = useState(
@@ -31,9 +29,6 @@ export default function AddArticle(){
     }, [editorState]);
 
   
-
-
-    // console.log(convertedContent);
     const [formData, setFormData] = useState<FormData>({
       title: "",
       catalog: "",

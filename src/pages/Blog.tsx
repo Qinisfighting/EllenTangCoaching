@@ -10,22 +10,19 @@ import DeleteArticle from "../components/Blog/DeleteArticle";
 import { getArticles } from '../firebase';
 import { Article } from "../../types";
 import Loader from "../components/Loader";
+import { UserAuth } from '../../src/context/AuthContext';
+
+
 export function loader() {
    return defer({ articles: getArticles() })
 }
 
-const isHostLogged = JSON.parse(localStorage.getItem("isHostLogged")!); 
-console.log(isHostLogged)
-
-// if(isHostLogged) { 
-//   window.location.reload(1);
-//  }
 
 function Articles() {
    const [searchParams, setSearchParams] = useSearchParams()
    const dataPromise = useLoaderData() as {articles: Article[]}
    const catalogFilter = searchParams.get("catalog")
-   
+   const { user }: {user: any } = UserAuth() as { user: any };
 
    
  
@@ -33,14 +30,10 @@ function Articles() {
 
        const displayedCatalog = catalogFilter
                    ? articles.filter(article => article.catalog === catalogFilter)
-                   : articles
-                   
-               const articlesElements = displayedCatalog.map(({id, title, imageUrl, createdOn, catalog}) => {
-                   
+                   : articles                  
+               const articlesElements = displayedCatalog.map(({id, title, imageUrl, createdOn, catalog}) => {               
                    return (
-
                        <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 mb-6 h-auto">
-                        
                        <img src={imageUrl} className="h-48 w-full object-cover" />
                        <div className={`w-full min-h-52 flex flex-col items-start justify-between`}>
                          <div>
@@ -52,7 +45,7 @@ function Articles() {
                           <p className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
                         </div>
                           { 
-                          isHostLogged  && 
+                          user?.email==="yq.qualmann@gmail.com" && 
                           <div className="mt-6 self-end">
                               <DeleteArticle id={id} imageUrl={imageUrl} />
                           </div> 
@@ -68,12 +61,13 @@ function Articles() {
    return (
        <div className="w-screen">
           <div className="mx-auto px-6 pt-16 pb-10 text-center flex justify-center items-center">
-               <div className="text-mystone-700 p-0 flex flex-col justify-center items-center gap-4"><h1 className="p-0 md:p-6">BLOG</h1>  
-                 {isHostLogged&&<Link to="/blog/add"><button className="text-5xl font-thin text-mystone-400">+</button></Link>}
-              </div>                 
+               <div className="text-mystone-700 p-0 flex flex-col justify-center items-center gap-4">
+                   <h1 className="p-0 md:p-6">BLOG</h1>  
+                   {user?.email==="yq.qualmann@gmail.com"&&<Link to="/blog/add"><button className="text-5xl font-thin text-mystone-400">+</button></Link>}
+               </div>                 
           </div>
            
-           <div className="mx-auto w-11/12 flex flex-wrap justify-center items-center gap-4  md:pt-2 pb-10">
+          <div className="mx-auto w-11/12 flex flex-wrap justify-center items-center gap-4  md:pt-2 pb-10">
                    <button className="btn-next"  onClick={() => setSearchParams({catalog: "Family"})}>Family</button>
                    <button className="btn-next"  onClick={() => setSearchParams({catalog: "Relationship"})}>Relationship</button>
                    <button className="btn-next"  onClick={() => setSearchParams({catalog: "Career"})}>Career</button>
@@ -82,7 +76,7 @@ function Articles() {
                    <button className="btn-next"  onClick={() => setSearchParams({catalog: "Other"})}>Other</button>
                    { catalogFilter && <button className="bg-myrouge-300 text-white w-10 h-10 text-lg rounded-full ml-8" onClick={() => setSearchParams({})}>All</button> }
                    {/*or can wrap or replace the buttons here in/with <Link>, and e.g give path to="?type=simple" for switching filter, and to="." to clear filter, in this way setSearchParams will not be used*/}             
-           </div> 
+          </div> 
                
 
            <div className='mx-auto w-full flex flex-wrap gap-8 px-4 justify-center items-start'>       

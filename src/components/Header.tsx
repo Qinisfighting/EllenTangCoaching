@@ -4,6 +4,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../src/assets/logo.png";
 import signin from "../../src/assets/signin.png";
 import signout from "../../src/assets/signout.png";
+import { UserAuth } from '../../src/context/AuthContext';
 
 
 interface ActiveStyles {
@@ -21,8 +22,7 @@ export default function Header() {
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
   const [clickedContent, setClickedContent] = useState<string>("");
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const isHostLogged =  JSON.parse(localStorage.getItem("isHostLogged")!);
-  const isGastLogged =  JSON.parse(localStorage.getItem("isGastLogged")!);
+  const { user }: {user: any } = UserAuth() as { user: any };
 
   const navigate = useNavigate();
 
@@ -82,7 +82,7 @@ export default function Header() {
           {isMenu ? "CLOSE ▲" : "MENU ▼"}
         </button>
         <div className="mx-auto">
-        {isHostLogged || isGastLogged ? 
+        {user ? 
           <button onClick={() => {navigate("/login")
         }}>
             <img
@@ -588,7 +588,7 @@ export default function Header() {
               )}
             </div>
           </NavLink>
-          {isHostLogged || isGastLogged ?  
+          {user ?  
           <button onClick={() => {navigate("/login")
         }}>
             <img
