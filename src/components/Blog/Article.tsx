@@ -8,6 +8,7 @@ import EditArticle from './EditArticle';
 import Loader from "../../components/Loader";
 import DOMPurify from 'dompurify';
 import { UserAuth } from '../../context/AuthContext';
+import Comment from './Comment';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export function loader( { params }: { params: any }) {
@@ -20,7 +21,7 @@ export default function ArticleDetail() {
     const search = location.state?.filter || ""   //optional chaining, same like const search = location.state && location.state.filter || ""
     const catalogLocation = location.state?.catalog || "All"
     const { user }: {user: any } = UserAuth() as { user: any };
-    // const isHostLogged = JSON.parse(localStorage.getItem("isHostLogged")!) 
+   
 
 //  function handleClick() {
 //     !isLoggedIn && alert("Please sign in first.")
@@ -49,9 +50,13 @@ export default function ArticleDetail() {
                             <h2>{title}</h2>
                             <p  className='m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>  
                             <div className={`pt-10 ${user?.email==="yq.qualmann@gmail.com"?"pb-0":"pb-20"}`} dangerouslySetInnerHTML={createMarkup(JSON.parse(content))}></div>        
-                       </div>          
+                       </div>  
+                       <div  className={`mt-20 px-7 md:px-0 w-full ${user?.email==="yq.qualmann@gmail.com"?"mb-5":"mb-40"}`}>
+                          <Comment id={id} />
+                       </div>       
                         { 
                         user?.email==="yq.qualmann@gmail.com" && 
+                        
                        <div className="">
                             <EditArticle imageUrl={imageUrl} catalog={catalog} title={title} content={content} id={id} />
                        </div> 

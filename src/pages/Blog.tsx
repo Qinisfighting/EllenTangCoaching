@@ -1,6 +1,6 @@
 
 import { BlogBanner } from "../components/Banners";
-import comments from '../assets/comments.png';
+import commentsimg from '../assets/commentsimg.png';
 import likes from '../assets/likes.png';
 import thriveglobal from "../assets/thriveglobal.webp";
 import outwittrade from "../assets/outwittrade.webp";
@@ -33,7 +33,7 @@ function Articles() {
        const displayedCatalog = catalogFilter
                    ? articles.filter(article => article.catalog === catalogFilter)
                    : articles                  
-               const articlesElements = displayedCatalog.map(({id, title, imageUrl, createdOn, catalog}) => {               
+               const articlesElements = displayedCatalog.map(({id, title, imageUrl, createdOn, catalog, comments}) => {               
                    return (
                        <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 pb-6 mb-6 h-auto">
                        <img src={imageUrl} className="h-48 w-full object-cover" />
@@ -46,9 +46,9 @@ function Articles() {
                           </div>    
                           <p className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
                         </div>
-                        <div className="mt-6 self-end flex gap-2 text-mystone-400 text-xl">
-                           <img src={comments} className="w-6 h-6" alt="comments" />2
-                           <img src={likes} className="w-6 h-6" alt="likes"/> 2
+                        <div className="mt-6 self-end flex gap-2 text-mystone-500 text-xl">
+                           <img src={commentsimg} className="w-6 h-6" alt="comments" />{comments && comments.length > 0 && comments?.length}
+                           <img src={likes} className="w-6 h-6" alt="likes"/> 
                         </div> 
                           { 
                           user?.email==="yq.qualmann@gmail.com" && 
