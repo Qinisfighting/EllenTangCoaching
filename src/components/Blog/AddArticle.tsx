@@ -37,7 +37,7 @@ export default function AddArticle(){
       createdOn: Timestamp.now().toDate(),
     });
 
-    const isHostLogged = JSON.parse(localStorage.getItem("isHostLogged")!) 
+  
     const [progress, setProgress] = useState(0);
     const navigate = useNavigate();
 
@@ -111,7 +111,7 @@ export default function AddArticle(){
         
     }
     return (
-      isHostLogged ?
+    
       <div className='w-screen mx-auto px-4 md:px-20 my-20'>
         <h2 className="text-center my-10">New Blog</h2>    
             <form className="flex flex-col justify-center items-center gap-4" onSubmit={handleSubmit}>
@@ -178,10 +178,6 @@ export default function AddArticle(){
             </div>
             
             
-        </div>
-        :
-        <div className="w-screen h-view pt-60 pb-60 flex justify-center items-center">
-            <h1 className="text-4xl">Please log in as host</h1>
         </div>
     )
 
