@@ -1,5 +1,7 @@
 
 import { BlogBanner } from "../components/Banners";
+import comments from '../assets/comments.png';
+import likes from '../assets/likes.png';
 import thriveglobal from "../assets/thriveglobal.webp";
 import outwittrade from "../assets/outwittrade.webp";
 import godates from "../assets/godates.webp";
@@ -33,9 +35,9 @@ function Articles() {
                    : articles                  
                const articlesElements = displayedCatalog.map(({id, title, imageUrl, createdOn, catalog}) => {               
                    return (
-                       <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 mb-6 h-auto">
+                       <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 pb-6 mb-6 h-auto">
                        <img src={imageUrl} className="h-48 w-full object-cover" />
-                       <div className={`w-full min-h-52 flex flex-col items-start justify-between`}>
+                       <div className={`w-full ${user?.email==="yq.qualmann@gmail.com"?"min-h-72":"min-h-52"} flex flex-col items-start justify-between`}>
                          <div>
                           <div className='bg-mystone-200 text-mystone-700 w-fit h-fit px-3 border rounded-md text-lg'>{catalog}</div>
                           <div className="w-full flex justify-center items-center text-left gap-4">
@@ -44,9 +46,13 @@ function Articles() {
                           </div>    
                           <p className='p-0 m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>
                         </div>
+                        <div className="mt-6 self-end flex gap-2 text-mystone-400 text-xl">
+                           <img src={comments} className="w-6 h-6" alt="comments" />2
+                           <img src={likes} className="w-6 h-6" alt="likes"/> 2
+                        </div> 
                           { 
                           user?.email==="yq.qualmann@gmail.com" && 
-                          <div className="mt-6 self-end">
+                          <div className="mt-6 text-center w-full border-t pt-4">
                               <DeleteArticle id={id} imageUrl={imageUrl} />
                           </div> 
                          } 
