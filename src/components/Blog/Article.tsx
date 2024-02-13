@@ -51,7 +51,7 @@ export default function ArticleDetail() {
                             <p  className='m-0 text-sm text-mystone-400'>{createdOn.toDate().toDateString()}</p>  
                             <div className={`pt-10 ${user?.email==="yq.qualmann@gmail.com"?"pb-0":"pb-20"}`} dangerouslySetInnerHTML={createMarkup(JSON.parse(content))}></div>        
                        </div>  
-                       <div  className={`mt-20 px-7 md:px-0 w-full ${user?.email==="yq.qualmann@gmail.com"?"mb-5":"mb-40"}`}>
+                       <div  className={`md:px-0 w-full ${user?.email==="yq.qualmann@gmail.com"?"mb-5 mt-20 px-7":"mb-40"}`}>
                           <Comment id={id} />
                        </div>       
                         { 
