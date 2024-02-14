@@ -76,7 +76,7 @@ console.log(user)
                 
                  {/* {user?.email==="yq.qualmann@gmail.com" && ( */}
                  
-                  {(userId === user.uid || user?.email==="yq.qualmann@gmail.com") && (
+                  {(userId === user?.uid || user?.email==="yq.qualmann@gmail.com") && (
                     <p
                       className="text-sm self-end"
                       style={{ cursor: "pointer" }}
