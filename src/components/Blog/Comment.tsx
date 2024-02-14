@@ -24,7 +24,7 @@ const handleChangeComment = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
         updateDoc(commentRef, {
             comments: arrayUnion({
-                user: user.uid,
+                userId: user.uid,
                 userName: user.displayName,
                 comment: comment,
                 profilePic: user.photoURL,
@@ -50,37 +50,39 @@ const handleDeleteComment = (comment: any) => {
             console.log(error);
     })
 };
+console.log(user)
   return (
     <div className="">
       <p className="">Comment</p>
       <div className="">
-        {comments?.map(({ commentId, user, comment, userName , createdOn, profilePic}) => (
+        {comments?.map(({ commentId, userId, comment, userName , createdOn, profilePic}) => (
             <div key={commentId}>
               <div className="flex flex-col bg-myblue-100 p-4 border-b border-mystone-300">
                 <div className="flex justify-between items-center">
-                <div className="flex gap-2 justify-center items-center">
-                  <img
-                    src={profilePic}
-                    alt="profile"
-                    className="w-5 h-5" />
-                 <p className="text-base text-mystone-400"> {userName}</p>    
-                </div> 
+                  <div className="flex gap-2 justify-center items-center">
+                    <img
+                      src={profilePic}
+                      alt="profile"
+                      className="w-5 h-5" />
+                    <p className="text-base text-mystone-400"> {userName}</p>    
+                  </div> 
                  
-                 <p className="text-sm text-mystone-400">{createdOn.toDate().toDateString()} </p>  
-                 
+                  <p className="text-xs text-mystone-400 italic">{createdOn.toDate().toDateString()} </p>     
                 </div>
                 <div>
                 {comment}
                 </div>  
                 <div className="flex justify-end items-end">
+                
                  {/* {user?.email==="yq.qualmann@gmail.com" && ( */}
-                  {user === user.uid && (
+                 
+                  {(userId === user.uid || user?.email==="yq.qualmann@gmail.com") && (
                     <p
                       className="text-sm self-end"
                       style={{ cursor: "pointer" }}
-                      onClick={() => handleDeleteComment({ commentId, user, comment, userName , createdOn})}
+                      onClick={() => handleDeleteComment({commentId, userId, comment, userName , createdOn, profilePic})}
                     >❌</p>
-                   ) } 
+                   )} 
                 </div>
               </div>
             </div>

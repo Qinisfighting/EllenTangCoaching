@@ -8,6 +8,7 @@ import { UserAuth } from '../context/AuthContext';
 
 
 function Greeting({name, handleSignOut}: {name: string; handleSignOut: () => void}) {
+    const { user }: {user: any } = UserAuth() as { user: any };
     const date = new Date();
     const hours = date.getHours();
     // console.log(hours);
@@ -23,7 +24,7 @@ function Greeting({name, handleSignOut}: {name: string; handleSignOut: () => voi
     }
     return (
       <div className="w-screen h-fit my-20 text-center bg-mystone-100 py-28 flex flex-col justify-center items-center">
-          <h2 className="px-6">Good {timeOfDay}, {name}! You are now logged in.</h2>
+          <h2 className="px-6">Good {timeOfDay}, {name}! You are now logged in as {user?.email==="yq.qualmann@gmail.com"?"host":"gast"}.</h2>
           <div className="flex gap-4">
             <button className="btn-next mt-8 w-28 tracking-wide"><Link to="/blog">Blog ➢</Link></button>
             <button className="btn-next mt-8 w-28 tracking-wide" onClick={() => handleSignOut()}>Logout</button>
@@ -35,8 +36,7 @@ function Greeting({name, handleSignOut}: {name: string; handleSignOut: () => voi
 
 export default function Login() {
 
-  const { googleSignIn, logOut, user }: { googleSignIn: () => Promise<void>, logOut: () => Promise<void>,user: any } = UserAuth() as { googleSignIn: () => Promise<void>, logOut: () => Promise<void>, user: any };
-  
+  const { googleSignIn, logOut, user }: { googleSignIn: () => Promise<void>, logOut: () => Promise<void>,user: any } = UserAuth() as { googleSignIn: () => Promise<void>, logOut: () => Promise<void>, user: any }; 
   const navigate = useNavigate();
   const handleGoogleSignIn = async () => {
     try {

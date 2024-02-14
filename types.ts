@@ -5,7 +5,7 @@ export interface Comment {
   user: string,
   userName: string,
   comment: string,
-  profilePic: string,
+  profilePic?: string,
   createdOn: Date,
   commentId: string,
 }
@@ -26,8 +26,9 @@ export interface Article {
   imageUrl: string;
   createdOn: Timestamp;
   catalog: string;
-  comments: Comment[];
+  comments?: Comment[];
   likes?: number;
+  isLiked?: boolean;
 }
 
 
@@ -40,7 +41,7 @@ export interface Article {
   privacy: boolean;
 }
 
-export interface User {
-  email: string;
-  password: string;
-}
+// export interface User {
+//   email: string;
+//   password: string;
+// }
