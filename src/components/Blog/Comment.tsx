@@ -54,7 +54,7 @@ const handleDeleteComment = (comment: any) => {
 console.log(user)
   return (
     <div className="">
-      <p className="">Comment</p>
+      <p className="">{comments && "Comment"}</p>
       <div className="">
         {comments?.map(({ commentId, userId, comment, userName , createdOn, profilePic}) => (
             <div key={commentId}>
@@ -103,7 +103,7 @@ console.log(user)
             required
           />
         ) : (
-            <p className="text-mystone-400 text-right pt-4">Comment? Please<Link to="/login"><span className="underline text-myblue-400"> sign in</span>.</Link></p>        
+            <p className="text-mystone-400 text-right pt-4"><Link to="/login"><span className="underline text-myblue-400 text-2xl font-semibold">sign in</span> to share your thoughts. . .</Link></p>        
         )}
       </div>
     </div>
