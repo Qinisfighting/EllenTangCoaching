@@ -66,7 +66,7 @@ export default function Login() {
         <div className="w-screen  flex flex-col justify-start items-center h-view  pt-24 pb-12 my-24">
             <GoogleButton onClick={()=>handleGoogleSignIn()}
                                         />     
-            <p className="px-8 py-10">Don't have an Google account? Register <a className="text-myblue-400 underline"  href="https://support.google.com/mail/answer/56256?hl=en" target="_blank">here</a></p>
+            <p className="px-8 py-10">Don't have an Google account? Register <a className="text-myblue-400 underline"  href="https://support.google.com/mail/answer/56256?hl=en" target="_blank">here</a>.</p>
         </div>
         :
         <Greeting name={user?.displayName} handleSignOut={handleSignOut}/>

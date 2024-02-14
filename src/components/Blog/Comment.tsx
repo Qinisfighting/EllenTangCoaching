@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { db } from "../../firebase";
 import { UserAuth } from '../../context/AuthContext';
 import { v4 as uuidv4 } from "uuid";
+import { Link } from 'react-router-dom';
 
 
 export default function Comment({ id }: { id: string }) {
@@ -87,7 +88,7 @@ console.log(user)
               </div>
             </div>
           ))}
-        {user && (
+        {user ? (
           <input
             type="text"   
             className="border w-full p-3 mt-8 rounded-md"
@@ -101,6 +102,8 @@ console.log(user)
               }}
             required
           />
+        ) : (
+            <p className="text-mystone-400 text-right pt-4">Comment? Please<Link to="/login"><span className="underline text-myblue-400"> sign in</span>.</Link></p>        
         )}
       </div>
     </div>
