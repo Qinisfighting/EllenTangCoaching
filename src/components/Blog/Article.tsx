@@ -9,6 +9,7 @@ import Loader from "../../components/Loader";
 import DOMPurify from 'dompurify';
 import { UserAuth } from '../../context/AuthContext';
 import Comment from './Comment';
+import Like from './Like';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export function loader( { params }: { params: any }) {
@@ -31,7 +32,7 @@ export default function ArticleDetail() {
     <div className="mt-8  md:mt-16">   
       <Suspense fallback={<Loader />}> 
          <Await resolve={dataPromise.article}>
-          {({id, imageUrl, title, content, catalog,createdOn }) => { 
+          {({id, imageUrl, title, content, catalog, createdOn, likes}) => { 
             
             function createMarkup(html:any) {
                 return {
@@ -52,6 +53,7 @@ export default function ArticleDetail() {
                             <div className={`pt-10 ${user?.email==="yq.qualmann@gmail.com"?"pb-0":"pb-20"}`} dangerouslySetInnerHTML={createMarkup(JSON.parse(content))}></div>        
                        </div>  
                        <div  className={`md:px-0 w-full ${user?.email==="yq.qualmann@gmail.com"?"mb-5 mt-20 px-7":"mb-40"}`}>
+                          {user && <Like id={id} likes={likes} />}
                           <Comment id={id} />
                        </div>       
                         { 

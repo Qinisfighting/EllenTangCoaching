@@ -27,8 +27,8 @@ export interface Article {
   createdOn: Timestamp;
   catalog: string;
   comments?: Comment[];
-  likes?: number;
-  isLiked?: boolean;
+  likes?: string[];
+  
 }
 
 
