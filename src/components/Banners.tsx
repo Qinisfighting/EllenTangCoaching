@@ -14,7 +14,7 @@ import phone from "../assets/phone.png";
  function HomeBanner(){
     return (      
         <div  className="xl:relative my-24 text-mystone-100">
-        <img className="brightness-50 w-full" src={homebanner} />  
+        <img className="brightness-50 w-full" src={homebanner} alt="banner" />  
             <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-center items-start xl:items-center gap-4 bg-myblue-700 xl:bg-opacity-0">
                 <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Ellen Tang</h1>        
@@ -56,7 +56,7 @@ import phone from "../assets/phone.png";
 function StoryBanner(){
     return (       
         <div  className="xl:relative my-24 text-mystone-100">
-        <img className="brightness-50 w-full" src={storybanner} />  
+        <img className="brightness-50 w-full" src={storybanner} alt="banner"/>  
             <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
                   <h1 className="text-2xl lg:text-5xl xl:my-16 font-semibold">Want to tell me your story?</h1>             
                   <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
@@ -68,7 +68,7 @@ function StoryBanner(){
 function PhiloBanner(){
     return (      
         <div  className="xl:relative my-24 text-mystone-100">
-        <img className="brightness-50 w-full" src={philobanner} />  
+        <img className="brightness-50 w-full" src={philobanner} alt="banner"/>  
             <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
                   <h1 className="text-2xl lg:text-5xl xl:my-16 font-semibold">Let’s start the journey together.</h1>             
                   <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
@@ -81,7 +81,7 @@ function PhiloBanner(){
 function ServiceBanner(){
     return (      
         <div  className="xl:relative my-24 text-mystone-100">
-        <img className="brightness-50 w-full" src={servicebanner} />  
+        <img className="brightness-50 w-full" src={servicebanner} alt="banner"/>  
             <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
                   <h1 className="text-2xl px-4 lg:text-5xl xl:my-16 font-semibold">"What I am is good enough if only I would be it openly." </h1>             
                   <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
@@ -93,7 +93,7 @@ function ServiceBanner(){
 function PricingBanner(){
     return (      
         <div  className="xl:relative my-24 text-mystone-100">
-        <img className="brightness-50 w-full" src={pricingbanner} />  
+        <img className="brightness-50 w-full" src={pricingbanner} alt="banner"/>  
             <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
                   <h1 className="text-2xl lg:text-5xl xl:my-16 font-semibold">Book your discovery session today.</h1>             
                   <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
@@ -106,7 +106,7 @@ function PricingBanner(){
 function FaqBanner(){
     return (      
         <div  className="xl:relative my-24 text-mystone-100">
-        <img className="brightness-50 w-full" src={faqbanner} />  
+        <img className="brightness-50 w-full" src={faqbanner} alt="banner"/>  
             <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
                   <h1 className="text-2xl px-4 lg:text-5xl xl:my-16 font-semibold">Success is easy, once you find the motivation.</h1>             
                   <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
@@ -118,7 +118,7 @@ function FaqBanner(){
 function HomeBannerCN(){
   return (      
       <div  className="xl:relative my-24 text-mystone-100">
-      <img className="brightness-50 w-full" src={homebannercn} />  
+      <img className="brightness-50 w-full" src={homebannercn} alt="banner"/>  
           <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-center items-start xl:items-center gap-4 bg-myblue-700 xl:bg-opacity-0">
               <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                 <h1 className="text-left text-3xl 2xl:text-4xl font-semibold">关于我</h1>        
@@ -164,7 +164,7 @@ function BlogBanner(){
       <div className="h-10 text-center md:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center md:gap-16  bg-myblue-700 md:bg-opacity-0 md:h-auto">             
             <h1 className="text-xl md:text-4xl xl:text-5xl xl:my-16 font-semibold">Thoughts. Ideas. Inspiration.</h1>                                          
       </div>
-      <img className="w-full" src={blogbanner}></img>     
+      <img className="w-full" src={blogbanner} alt="banner"></img>     
     </div>
   )
 }
