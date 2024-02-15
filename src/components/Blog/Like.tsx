@@ -11,12 +11,10 @@ export default function Like({ id, likes }: { id: string; likes: Likes[]}) {
 
   const likeUserIdArr = likes?.map((like) => like.likedUser);
 
-
   const handleLike = () => {
     if (likeUserIdArr?.includes(user.uid)) {
       updateDoc(likesRef, {
-        likes: arrayRemove({likedUser:user.uid, photoURL: user.photoURL, displayName: user.displayName }),
-        
+        likes: arrayRemove({likedUser:user.uid, photoURL: user.photoURL, displayName: user.displayName }),  
       }).then(() => {
           console.log("unliked");
           window.location.reload();
@@ -26,8 +24,7 @@ export default function Like({ id, likes }: { id: string; likes: Likes[]}) {
     }
     else{
       updateDoc(likesRef,{
-        likes:arrayUnion({likedUser:user.uid, photoURL: user.photoURL, displayName: user.displayName }),
-     
+        likes:arrayUnion({likedUser:user.uid, photoURL: user.photoURL, displayName: user.displayName }),  
       }).then(() => {
         console.log("liked");
         window.location.reload();
@@ -36,8 +33,6 @@ export default function Like({ id, likes }: { id: string; likes: Likes[]}) {
       });
     }
   };
-
-
 
     function showLikes(){
       if(!likes?.length){
@@ -51,8 +46,8 @@ export default function Like({ id, likes }: { id: string; likes: Likes[]}) {
 
     function showLikesProfilePic(){
       if(likes?.length){
-        return likes.map(({likedUser,photoURL, displayName }) => { 
-          return <img key={likedUser} src={photoURL} alt="userWhoLiked" className="w-6 h-6 rounded-full" title={displayName} /> // Update the key and title attributes accordingly
+        return likes.map(({likedUser, photoURL, displayName }) => { 
+          return <img key={likedUser} src={photoURL} alt="userWhoLiked" className="w-6 h-6 rounded-full" title={displayName} /> 
         })
       }
     }
@@ -64,8 +59,8 @@ export default function Like({ id, likes }: { id: string; likes: Likes[]}) {
     <div className="flex flex-col items-end gap-2 mb-4">
       <div className="flex gap-4">
           <p>{showLikes()} </p>
-          <button className={!likes?.includes(user.uid) ? "btn-next bg-myrouge-300 w-fit h-fit" : "btn-next w-fit h-fit"} onClick={handleLike}>
-            {!likes?.includes(user.uid) ? "Like" : "Dislike"}    
+          <button className={!likeUserIdArr?.includes(user.uid) ? "btn-next bg-myrouge-300 w-fit h-fit" : "btn-next w-fit h-fit"} onClick={handleLike}>
+            {!likeUserIdArr?.includes(user.uid) ? "Like" : "Dislike"}    
           </button>
       </div>
       <div className="flex gap-2">
