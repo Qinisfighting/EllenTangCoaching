@@ -42,6 +42,11 @@ export interface Article {
   privacy: boolean;
 }
 
+
+export interface  LikesProfilePic {
+  photoURL: string;
+  displayName: string;
+}
 // export interface User {
 //   email: string;
 //   password: string;

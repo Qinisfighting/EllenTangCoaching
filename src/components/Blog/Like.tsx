@@ -2,16 +2,21 @@
 import { arrayRemove, arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { UserAuth } from '../../context/AuthContext';
 import { db } from "../../firebase";
+import { Likes } from "../../../types";
 
-export default function Like({ id, likes,likesProfilePic }: { id: string; likes: string[]; likesProfilePic: string[]}) {
+
+export default function Like({ id, likes }: { id: string; likes: Likes[]}) {
   const { user }: {user: any } = UserAuth() as { user: any };
   const likesRef = doc(db, "Articles", id);
 
+  const likeUserIdArr = likes?.map((like) => like.likedUser);
+
+
   const handleLike = () => {
-    if (likes?.includes(user.uid)) {
+    if (likeUserIdArr?.includes(user.uid)) {
       updateDoc(likesRef, {
-        likes: arrayRemove(user.uid),
-        likesProfilePic: arrayRemove(user.photoURL),
+        likes: arrayRemove({likedUser:user.uid, photoURL: user.photoURL, displayName: user.displayName }),
+        
       }).then(() => {
           console.log("unliked");
           window.location.reload();
@@ -20,15 +25,15 @@ export default function Like({ id, likes,likesProfilePic }: { id: string; likes:
       });
     }
     else{
-        updateDoc(likesRef,{
-            likes:arrayUnion(user.uid),
-            likesProfilePic:arrayUnion(user.photoURL),
-        }).then(() => {
-            console.log("liked");
-            window.location.reload();
-        }).catch((e) => {
-              console.log(e);
-        });
+      updateDoc(likesRef,{
+        likes:arrayUnion({likedUser:user.uid, photoURL: user.photoURL, displayName: user.displayName }),
+     
+      }).then(() => {
+        console.log("liked");
+        window.location.reload();
+      }).catch((e) => {
+          console.log(e);
+      });
     }
   };
 
@@ -45,9 +50,9 @@ export default function Like({ id, likes,likesProfilePic }: { id: string; likes:
     }
 
     function showLikesProfilePic(){
-      if(likesProfilePic?.length){
-        return likesProfilePic.map((pic, index) => {
-          return <img key={index} src={pic} alt="userWhoLiked" className="w-6 h-6 rounded-full" title={user.displayName} />
+      if(likes?.length){
+        return likes.map(({likedUser,photoURL, displayName }) => { 
+          return <img key={likedUser} src={photoURL} alt="userWhoLiked" className="w-6 h-6 rounded-full" title={displayName} /> // Update the key and title attributes accordingly
         })
       }
     }
