@@ -51,10 +51,21 @@ const handleDeleteComment = (comment: any) => {
             console.log(error);
     })
 };
+
+function showComments(){
+  if(!comments?.length){
+    return "0 Comments"
+  } else if(comments.length === 1){
+    return "1 Comment"
+  } else {
+    return `${comments.length} Comments`
+  }
+}
+
 console.log(user)
   return (
     <div className="">
-      <p className="">{comments && "Comment"}</p>
+      <p className="">{showComments()}</p>
       <div className="">
         {comments?.map(({ commentId, userId, comment, userName , createdOn, profilePic}) => (
             <div key={commentId}>
