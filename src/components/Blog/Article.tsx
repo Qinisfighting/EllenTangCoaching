@@ -10,6 +10,7 @@ import DOMPurify from 'dompurify';
 import { UserAuth } from '../../context/AuthContext';
 import Comment from './Comment';
 import Like from './Like';
+// import { useState } from "react";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export function loader( { params }: { params: any }) {
@@ -22,11 +23,7 @@ export default function ArticleDetail() {
     const search = location.state?.filter || ""   //optional chaining, same like const search = location.state && location.state.filter || ""
     const catalogLocation = location.state?.catalog || "All"
     const { user }: {user: any } = UserAuth() as { user: any };
-   
-
-//  function handleClick() {
-//     !isLoggedIn && alert("Please sign in first.")
-//  } 
+  
 
     return (
     <div className="mt-8  md:mt-16">   
@@ -53,7 +50,7 @@ export default function ArticleDetail() {
                             <div className={`pt-10 ${user?.email==="yq.qualmann@gmail.com"?"pb-0":"pb-20"}`} dangerouslySetInnerHTML={createMarkup(JSON.parse(content))}></div>        
                        </div>  
                        <div  className={`md:px-0 w-full ${user?.email==="yq.qualmann@gmail.com"?"mb-5 mt-20 px-7":"mb-40"}`}>
-                          {user && <Like id={id} likes={likes} />}
+                          {user && <Like id={id} likes={likes}/>}
                           <Comment id={id} />
                        </div>       
                         { 

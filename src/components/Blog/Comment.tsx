@@ -11,6 +11,7 @@ export default function Comment({ id }: { id: string }) {
   const [comments, setComments] = useState<any[]>([]);
   const { user }: {user: any } = UserAuth() as { user: any };
   const commentRef = doc(db, "Articles", id);
+
 useEffect(() => {
     const articleRef = doc(db, "Articles", id);
     onSnapshot(articleRef, (snapshot) => {
@@ -70,13 +71,13 @@ console.log(user)
         {comments?.map(({ commentId, userId, comment, userName , createdOn, profilePic}) => (
             <div key={commentId}>
               <div className="flex flex-col bg-myblue-100 p-4 border-b border-mystone-300">
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col items-end justify-center md:flex-row md:justify-between md:items-center mb-4">
                   <div className="flex gap-2 justify-center items-center">
                     <img
                       src={profilePic}
                       alt="profile"
                       className="w-5 h-5" />
-                    <p className="text-base text-mystone-400"> {userName}</p>    
+                    <p className="text-base text-mystone-400 py-0">{userName}</p>    
                   </div> 
                  
                   <p className="text-xs text-mystone-400 italic">{createdOn.toDate().toDateString()} </p>     

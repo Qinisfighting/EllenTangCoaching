@@ -5,19 +5,22 @@ import { db } from "../../firebase";
 import { Likes } from "../../../types";
 
 
-export default function Like({ id, likes }: { id: string; likes: Likes[]}) {
+
+export default function Like({ id, likes}: { id: string; likes: Likes[]} ) {
   const { user }: {user: any } = UserAuth() as { user: any };
   const likesRef = doc(db, "Articles", id);
 
   const likeUserIdArr = likes?.map((like) => like.likedUser);
+
+
 
   const handleLike = () => {
     if (likeUserIdArr?.includes(user.uid)) {
       updateDoc(likesRef, {
         likes: arrayRemove({likedUser:user.uid, photoURL: user.photoURL, displayName: user.displayName }),  
       }).then(() => {
-          console.log("unliked");
-          window.location.reload();
+          console.log("unliked");    
+          window.location.reload(); //this is a workaround to refresh the page after a like or dislike, fails to only rerender the like component
       }).catch((e) => {
             console.log(e);
       });
@@ -30,7 +33,7 @@ export default function Like({ id, likes }: { id: string; likes: Likes[]}) {
         window.location.reload();
       }).catch((e) => {
           console.log(e);
-      });
+      }); 
     }
   };
 
