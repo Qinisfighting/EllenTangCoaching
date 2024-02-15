@@ -28,6 +28,7 @@ export interface Article {
   catalog: string;
   comments?: Comment[];
   likes?: string[];
+  likesProfilePic?: string[];
   
 }
 
