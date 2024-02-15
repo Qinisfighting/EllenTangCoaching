@@ -50,7 +50,7 @@ export default function ArticleDetail() {
                             <div className={`pt-10 ${user?.email==="yq.qualmann@gmail.com"?"pb-0":"pb-20"}`} dangerouslySetInnerHTML={createMarkup(JSON.parse(content))}></div>        
                        </div>  
                        <div  className={`md:px-0 w-full ${user?.email==="yq.qualmann@gmail.com"?"mb-5 mt-20 px-7":"mb-40"}`}>
-                          {user && <Like id={id} likes={likes}/>}
+                        <Like id={id} likes={likes}/>
                           <Comment id={id} />
                        </div>       
                         { 

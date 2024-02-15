@@ -62,9 +62,9 @@ export default function Like({ id, likes }: { id: string; likes: Likes[]} ) {
     <div className="flex flex-col items-end gap-2 mb-4">
       <div className="flex gap-4">
           <p>{showLikes()} </p>
-          <button className={!likeUserIdArr?.includes(user.uid) ? "btn-next bg-myrouge-300 w-fit h-fit" : "btn-next w-fit h-fit"} onClick={handleLike}>
-            {!likeUserIdArr?.includes(user.uid) ? "Like" : "Dislike"}    
-          </button>
+          {user&&<button className={!likeUserIdArr?.includes(user?.uid) ? "btn-next bg-myrouge-300 w-fit h-fit" : "btn-next w-fit h-fit"} onClick={handleLike}>
+            {!likeUserIdArr?.includes(user?.uid) ? "Like" : "Dislike"}    
+          </button>}
       </div>
       <div className="flex gap-2">
         {showLikesProfilePic()}
