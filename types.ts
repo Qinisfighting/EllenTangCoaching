@@ -43,11 +43,8 @@ export interface Article {
 }
 
 
-export interface  LikesProfilePic {
+export interface  Likes {
+  likedUser: string;
   photoURL: string;
   displayName: string;
 }
-// export interface User {
-//   email: string;
-//   password: string;
-// }

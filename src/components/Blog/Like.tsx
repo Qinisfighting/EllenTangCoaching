@@ -6,7 +6,7 @@ import { Likes } from "../../../types";
 
 
 
-export default function Like({ id, likes}: { id: string; likes: Likes[]} ) {
+export default function Like({ id, likes }: { id: string; likes: Likes[]} ) {
   const { user }: {user: any } = UserAuth() as { user: any };
   const likesRef = doc(db, "Articles", id);
 
