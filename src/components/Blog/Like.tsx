@@ -6,7 +6,7 @@ import { db } from "../../firebase";
 export default function Like({ id, likes,likesProfilePic }: { id: string; likes: string[]; likesProfilePic: string[]}) {
   const { user }: {user: any } = UserAuth() as { user: any };
   const likesRef = doc(db, "Articles", id);
-//   const [like, setLike] = useState<boolean>(true);
+
   const handleLike = () => {
     if (likes?.includes(user.uid)) {
       updateDoc(likesRef, {
@@ -14,7 +14,7 @@ export default function Like({ id, likes,likesProfilePic }: { id: string; likes:
         likesProfilePic: arrayRemove(user.photoURL),
       }).then(() => {
           console.log("unliked");
-        //   setLike(true)
+          window.location.reload();
       }).catch((e) => {
             console.log(e);
       });
@@ -25,7 +25,7 @@ export default function Like({ id, likes,likesProfilePic }: { id: string; likes:
             likesProfilePic:arrayUnion(user.photoURL),
         }).then(() => {
             console.log("liked");
-            // setLike(false)
+            window.location.reload();
         }).catch((e) => {
               console.log(e);
         });
@@ -69,4 +69,3 @@ export default function Like({ id, likes,likesProfilePic }: { id: string; likes:
     </div>
   );
 }
-
