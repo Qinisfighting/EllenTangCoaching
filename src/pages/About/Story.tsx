@@ -30,7 +30,7 @@ export default function Story() {
            <div>
                <h2 className="text-center my-8 mx-auto">Pain</h2>
                <div className="flex flex-col xl:flex-row">
-                  <div className="text-lg order-2 xl:text-xl xl:order-1">
+                  <div className="text-lg order-2 xl:text-xl xl:order-1 xl:w-2/3">
                      <p className="md:text-xl">My parents’ determination to have a second child cost them financially and emotionally. In turn, I had a lot of pressure to live up to the societal standards of ‘excellence’. After all, why would anyone go through all the hardship and ridicule to just have an ‘ordinary’ kid? Fortunately, I did well at school and most excelled academically in my mid-teens even though I was struggling desperately with my emotional world. I kept my despair and horror hidden behind my academic achievements so that others would leave me alone and not ask questions. In a society where parents often valued children’s potential to impress friends and neighbours more than his or her emotional wellbeing, my effort worked ‘well’. I was truly left alone to resolve my own excruciating pain and confusion that often result from the unpredictable behaviours of teenagers.</p>
                      <p className="md:text-xl">A traumatic event happened when I was 13, followed by another at 16, which affected my life in a way that I did not become fully conscious of until nearly 20 years later. The realisation, however, was one of the most profound and empowering. Until then, I was a deeply wounded child who succumbed to the need for validation and acceptance time and time again by allowing unhealthy relationships to continue for far too long.</p>      
                   </div>
