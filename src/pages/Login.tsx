@@ -24,7 +24,7 @@ function Greeting({name, handleSignOut}: {name: string; handleSignOut: () => voi
     }
     return (
       <div className="w-screen h-fit my-20 text-center bg-mystone-100 py-28 flex flex-col justify-center items-center">
-          <h2 className="px-6">Good {timeOfDay}, {name}! You are now logged in as {user?.email==="ellen.ltang@gmail.com"?"host":"gast"}.</h2>
+          <h2 className="px-6">Good {timeOfDay}, {name}! You are now logged in as {user?.email==="ellen.ltang@gmail.com"?"host":"guest"}.</h2>
           <div className="flex gap-4">
             <button className="btn-next mt-8 w-28 tracking-wide"><Link to="/blog">Blog ➢</Link></button>
             <button className="btn-next mt-8 w-28 tracking-wide" onClick={() => handleSignOut()}>Logout</button>
