@@ -80,7 +80,7 @@ export default function Booking() {
            <i className="text-xl underline">Mon – Fri: 17:00 – 20:00 (UK)</i>
            <p className="text-xl mt-4 text-left">50 mins per session. </p>
            <button className="mx-auto btn-next mb-6 lg:mb-8 text-lg w-fit"><a href="https://calendly.com/ellen-tang-coaching" target="_blank">Book Your Discovery Session</a></button>    
-           <p className="text-2xl text-left"> Appointments outside these hours may be available. Please fill in the form below to ask me directly.</p>           
+           <p className="text-xl text-left"> Appointments outside these hours may be available. Please fill in the form below to ask me directly.</p>           
         </div>
         <form className="w-11/12 p-8 lg:w-full mx-auto bg-mystone-100 lg:p-20 mb-28" onSubmit={handleSubmit}>
           
