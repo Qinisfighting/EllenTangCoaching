@@ -37,7 +37,7 @@ function Articles() {
                    return (
                        <div key={id} className="w-11/12 lg:w-1/3 xl:w-1/4 flex flex-col justify-center items-center gap-8 mx-auto bg-mystone-200 p-8 pb-6 mb-6 h-auto">
                        <img src={imageUrl} className="h-48 w-full object-cover" />
-                       <div className={`w-full ${user?.email==="yq.qualmann@gmail.com"?"min-h-72":"min-h-52"} flex flex-col items-start justify-between`}>
+                       <div className={`w-full ${user?.email==="ellen.ltang@gmail.com"?"min-h-72":"min-h-52"} flex flex-col items-start justify-between`}>
                          <div>
                           <div className='bg-mystone-200 text-mystone-700 w-fit h-fit px-3 border rounded-md text-lg'>{catalog}</div>
                           <div className="w-full flex justify-center items-center text-left gap-4">
@@ -51,7 +51,7 @@ function Articles() {
                            <img src={likesimg} className="w-6 h-6" alt="likes"/> {likes && likes.length > 0 && likes?.length}
                         </div> 
                           { 
-                          user?.email==="yq.qualmann@gmail.com" && 
+                          user?.email==="ellen.ltang@gmail.com" && 
                           <div className="mt-6 text-center w-full border-t pt-4">
                               <DeleteArticle id={id} imageUrl={imageUrl} />
                           </div> 
@@ -69,7 +69,7 @@ function Articles() {
           <div className="mx-auto px-6 pt-16 pb-10 text-center flex justify-center items-center">
                <div className="text-mystone-700 p-0 flex flex-col justify-center items-center gap-4">
                    <h1 className="p-0 md:p-6">BLOG</h1>  
-                   {user?.email==="yq.qualmann@gmail.com"&&<Link to="/blog/add"><button className="text-5xl font-thin text-mystone-400">+</button></Link>}
+                   {user?.email==="ellen.ltang@gmail.com"&&<Link to="/blog/add"><button className="text-5xl font-thin text-mystone-400">+</button></Link>}
                </div>                 
           </div>
            

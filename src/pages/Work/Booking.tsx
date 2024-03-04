@@ -73,12 +73,14 @@ export default function Booking() {
   }
 
     return (
-      <div className="w-full">
+      <div className="w-full flex flex-col justify-center items-center">
         <h1 className="text-3xl lg:text-4xl text-myblue-400 border-y w-1/2 my-12 lg:w-1/2 lg:my-20 mx-auto">Book Appointment</h1>
-        <div className="w-11/12 mb-10 px-4 lg:w-full mx-auto lg:mb-16">       
-           <h2 className="text-xl">Standard Appointment Hours: </h2>
+        <div className="w-11/12 mb-10 px-4 lg:w-full mx-auto lg:mb-16">  
+           <p className="text-xl">My Standard Appointment Hours: </p>
            <i className="text-xl underline">Mon – Fri: 17:00 – 20:00 (UK)</i>
-           <p className="text-xl mt-4 text-left">50 mins per session. Appointments outside these hours may be available. Please fill in the form below to ask me directly.</p>           
+           <p className="text-xl mt-4 text-left">50 mins per session. </p>
+           <button className="mx-auto btn-next mb-6 lg:mb-8 text-lg w-fit"><a href="https://calendly.com/ellen-tang-coaching" target="_blank">Book Your Discovery Session</a></button>    
+           <p className="text-2xl text-left"> Appointments outside these hours may be available. Please fill in the form below to ask me directly.</p>           
         </div>
         <form className="w-11/12 p-8 lg:w-full mx-auto bg-mystone-100 lg:p-20 mb-28" onSubmit={handleSubmit}>
           

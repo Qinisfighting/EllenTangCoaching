@@ -87,7 +87,7 @@ console.log(user)
                 </div>  
                 <div className="flex justify-end items-end">
                 
-                  {(userId === user?.uid || user?.email==="yq.qualmann@gmail.com") && (
+                  {(userId === user?.uid || user?.email==="ellen.ltang@gmail.com") && (
                     <p
                       className="text-sm self-end"
                       style={{ cursor: "pointer" }}
