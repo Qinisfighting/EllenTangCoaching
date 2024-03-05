@@ -2,6 +2,7 @@ import { useState, useEffect, ChangeEvent, FormEvent } from "react"
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
+
 interface FormData {
   name: string;
   email: string;
@@ -72,6 +73,13 @@ export default function Booking() {
     }
   }
 
+
+
+  function openBookingWindow() {
+    window.open('https://calendly.com/ellentang','Booking','resizable height=600 width=350px'); 
+    return false;
+  }
+
     return (
       <div className="w-full flex flex-col justify-center items-center">
         <h1 className="text-3xl lg:text-4xl text-myblue-400 border-y w-1/2 my-12 lg:w-1/2 lg:my-20 mx-auto">Book Appointment</h1>
@@ -79,7 +87,9 @@ export default function Booking() {
            <p className="text-xl">My Standard Appointment Hours: </p>
            <i className="text-xl underline">Mon – Fri: 17:00 – 20:00 (UK)</i>
            <p className="text-xl mt-4 text-left">50 mins per session. </p>
-           <button className="mx-auto btn-next mb-6 lg:mb-8 text-lg w-fit"><a href="https://calendly.com/ellentang" target="_blank">Book Your Discovery Session</a></button>    
+           {/* <button className="mx-auto btn-next mb-6 lg:mb-8 text-lg w-fit"><a href="https://calendly.com/ellentang" target="_blank">Book Your Discovery Session</a></button> */}
+           <button className="mx-auto btn-next mb-6 lg:mb-8 text-lg w-fit" onClick={openBookingWindow}>Book Your Discovery Session</button>
+           <div id="calendly-embed" style={{minWidth:320, height:"auto"}}></div>    
            <p className="text-xl text-left"> Appointments outside these hours may be available. Please fill in the form below to ask me directly.</p>           
         </div>
         <form className="w-11/12 p-8 lg:w-full mx-auto bg-mystone-100 lg:p-20 mb-28" onSubmit={handleSubmit}>
