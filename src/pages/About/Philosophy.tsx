@@ -39,7 +39,7 @@ export default function Philosophy() {
             <br/>
             <p>Finally, I want to congratulate you on taking an important step towards growth and thank you for reading my page. No matter where you go next, I wish you a thrilling journey ahead!</p>      
          </div>
-         <button className="btn-next float-right my-10"><Link to="/about/philosophy">ME AS AN INFP ➣</Link></button> 
+         <button className="btn-next float-right my-10"><Link to="/about/infp">ME AS AN INFP ➣</Link></button> 
            <h2 className="mt-40 mb-4 text-3xl">Reading List for Better Understanding Humanity</h2>
            <div className="flex flex-col border-y py-4 justify-center items-center gap-8 xl:flex-row xl:justify-between xl:items-center">
     
