@@ -2,7 +2,7 @@ import { useState, useEffect, ChangeEvent, FormEvent } from "react"
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import close from "../../assets/close.png";
-
+import Loader from "../../components/Loader";
 
 interface FormData {
   name: string;
@@ -26,8 +26,11 @@ export default function Booking() {
   })
   
   const [loading, setLoading] = useState(false);
+  const [isIframeMounted, setIsIframeMounted] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
   useEffect(() => emailjs.init("lBynZS3CdHPm1Mbhm"), []);
+
+  console.log(isIframeMounted)
 
   function handleChange(
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -78,6 +81,7 @@ export default function Booking() {
 
     return (
       <div className="w-full flex flex-col justify-center items-center relative">
+        {showCalendar && !isIframeMounted && <Loader />}
         <h1 className="text-3xl lg:text-4xl text-myblue-400 border-y w-1/2 my-12 lg:w-1/2 lg:my-20 mx-auto">Book Appointment</h1>
         <div className="w-11/12 mb-10 px-4 lg:w-full mx-auto lg:mb-16">  
            <p className="text-xl">My Standard Appointment Hours: </p>
@@ -85,10 +89,14 @@ export default function Booking() {
            <p className="text-xl mt-4 text-left">50 mins per session. </p>
            {/* <button className="mx-auto btn-next mb-6 lg:mb-8 text-lg w-fit"><a href="https://calendly.com/ellentang" target="_blank">Book Your Discovery Session</a></button> */}
            <button className="mx-auto btn-next mb-6 lg:mb-8 text-lg w-fit" onClick={()=>setShowCalendar(true)}>Book Your Discovery Session</button>
-           { showCalendar && <div className="flex justify-center items-end mx-auto" >
-              <div className="z-10 absolute top-0 left-0" id="loading">Loading</div>
+           
+           {showCalendar && <div className="flex justify-center items-end mx-auto" >
+              
               <button className="z-30 p-10 md:-mb-6 text-2xl" onClick={()=>setShowCalendar(false)}><img src={close} width="25px"></img></button>
-              <iframe src="https://calendly.com/ellentang"  className="absolute w-11/12 md:w-3/5 h-1/3 border-2 border-mystone-100 rounded-lg bg-white drop-shadow-lg z-20" ></iframe>
+              <iframe src="https://calendly.com/ellentang"  
+                      className="absolute w-11/12 md:w-3/5 h-1/3 border-2 border-mystone-100 rounded-lg bg-white drop-shadow-lg z-20"
+                      onLoad={()=>setIsIframeMounted(true)} >
+              </iframe>
            </div>  
            }  
            <p className="text-xl text-left"> Appointments outside these hours may be available. Please fill in the form below to ask me directly.</p>           
