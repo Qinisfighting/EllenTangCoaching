@@ -6,8 +6,6 @@ import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { getStorage } from "firebase/storage";
 import { getAuth } from 'firebase/auth';
 
-// require('dotenv').config();
-
 
 
 // import { getDatabase } from 'firebase/database';
