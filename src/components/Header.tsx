@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import { useState, useEffect, useRef } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -22,7 +23,7 @@ export default function Header() {
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
   const [clickedContent, setClickedContent] = useState<string>("");
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const { user }: {user: any } = UserAuth() as { user: any };
+  const { user }: {user: unknown } = UserAuth() as { user: unknown };
 
   const navigate = useNavigate();
 

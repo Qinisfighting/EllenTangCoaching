@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { useState, useEffect, ChangeEvent, FormEvent } from "react"
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";

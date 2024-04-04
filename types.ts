@@ -13,7 +13,7 @@ export interface Comment {
 export interface FormData {
     title: string;
     catalog: string;
-    image?: any;
+    image?: string;
     content: string;
     createdOn?: Date;
   }

@@ -12,16 +12,15 @@ const AuthContext = createContext({});
 
 export const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState({} || null);
-
-  const googleSignIn = () => {
+  const googleSignIn = async () => {
     const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider);
+    await signInWithPopup(auth, provider);
     // signInWithRedirect(auth, provider)  // recommended for mobile devices
     
   };
-
-  const logOut = () => {
-      signOut(auth)
+// console.log('User', user)
+  const logOut = async () => {
+      await signOut(auth);
   }
 
   useEffect(() => {
