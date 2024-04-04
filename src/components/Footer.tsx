@@ -34,8 +34,8 @@ export default function Footer() {
           </Link>
         </div>
   
-        <a href="https://www.yanqin.de" target="_blank">
-          <p className="text-base text-center bg-mystone-300 w-fit h-fit text-white  mx-auto my-4 rounded-full py-0 px-4 drop-shadow-md hover:translate-x-1">2024 ♡ QIN's code</p>
+        <a href="https://www.yanqin.de" target="_blank" rel="noreferrer">
+          <p className="text-base text-center bg-mystone-300 w-fit h-fit text-white  mx-auto my-4 rounded-full py-0 px-4 drop-shadow-md hover:translate-x-1">2024 ♡ QIN&apos;s code</p>
         </a>
       </footer>
     );

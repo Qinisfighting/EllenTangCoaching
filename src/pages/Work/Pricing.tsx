@@ -1,5 +1,6 @@
 import pricing from '../../assets/pricing.webp'
 import { PricingBanner } from "../../components/Banners";
+import { Link } from "react-router-dom";
 
 export default function Pricing() {
     
@@ -10,7 +11,9 @@ export default function Pricing() {
             <img className="w-2/3 lg:w-1/4 rounded-full" src={pricing}/>
             <div className='w-5/6 lg:w-1/2 flex flex-col justify-center items-center lg:block'>
               <h2 className='text-center lg:text-justify text-xl lg:text-2xl xl:text-3xl md:leading-relaxed  xl:leading-loose'>Invest in a partner who wholeheartedly supports and commits to your journey towards a happier, more fulfilling life.</h2>
+              <Link to="/work/booking">
               <button className='flex btn-next mt-10 lg:float-right lg:mt-15'>Book Your Discovery Session ➣</button>
+              </Link>
             </div>
         </div>
         <div className=" w-5/6  mx-auto flex flex-col gap-10 mb-20 justify-center items-center lg:flex-row lg:justify-between lg:items-start ">

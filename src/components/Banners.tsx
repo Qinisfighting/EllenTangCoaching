@@ -18,21 +18,21 @@ import phone from "../assets/phone.png";
             <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-center items-start xl:items-center gap-4 bg-myblue-700 xl:bg-opacity-0">
                 <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Ellen Tang</h1>        
-                  <div className="socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" title="Facebook"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" title="Youtube"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a></span></div> 
+                  <div className="socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" title="Facebook" rel="noreferrer"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" title="Youtube" rel="noreferrer"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" title="LinkedIn" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a></span></div> 
                   <p className="text-xl  text-left">Life coach, therapist, thought partner, artist, investor, auditor, law graduate, astronomy enthusiast</p>
                   <Link to="/about"><button className="btn-trans my-6">More About Me ➣</button></Link>
                 </div>
                 <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Partnering with</h1>
-                  <p className="text-xl  text-left">Personal Growth from <a className="underline text-white" href="https://www.selfgrowth.com/" target="_blank">SelfGrowth.com</a></p>
-                  <p className="text-xl"><a className="underline text-white" href="https://www.bodymindspiritdirectory.org/" target="_blank">Mind Body Spirit Directory</a></p>
+                  <p className="text-xl  text-left">Personal Growth from <a className="underline text-white" href="https://www.selfgrowth.com/" target="_blank" rel="noreferrer">SelfGrowth.com</a></p>
+                  <p className="text-xl"><a className="underline text-white" href="https://www.bodymindspiritdirectory.org/" target="_blank" rel="noreferrer">Mind Body Spirit Directory</a></p>
                   <Link to="/work"><button className="btn-trans my-6">About My Work ➣</button></Link>
                 </div>
                 <div className="w-full px-8 xl:w-1/3 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Contact & Hours</h1>
                   <div className="flex items-center">
                   <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={navi} alt="navi"/>
-                  <a className="text-lg md:text-xl underline" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">Greenwich, London, United Kingdom</a>
+                  <a className="text-lg md:text-xl underline" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank" rel="noreferrer">Greenwich, London, United Kingdom</a>
                 </div>
                 <div className="flex items-center">
                   <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={phone} alt="phone"/>
@@ -79,15 +79,15 @@ function PhiloBanner(){
 
 
 function ServiceBanner(){
-    return (      
-        <div  className="xl:relative my-24 text-mystone-100">
-        <img className="brightness-50 w-full" src={servicebanner} alt="banner"/>  
-            <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
-                  <h1 className="text-2xl px-4 lg:text-5xl xl:my-16 font-semibold">"What I am is good enough if only I would be it openly." </h1>             
-                  <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
-            </div>
-    </div>
-    )
+  return (      
+    <div  className="xl:relative my-24 text-mystone-100">
+    <img className="brightness-50 w-full" src={servicebanner} alt="banner"/>  
+      <div className="text-center xl:absolute  flex flex-col bottom-0 right-0 top-0 left-0 mx-auto justify-center items-center xl:gap:16  bg-myblue-700 xl:bg-opacity-0">             
+          <h1 className="text-2xl px-4 lg:text-5xl xl:my-16 font-semibold">&quot;What I am is good enough if only I would be it openly.&quot; </h1>             
+          <Link to="/work/booking"><button className="btn-trans mb-12">Schedule Appointment ➣</button></Link>                  
+      </div>
+  </div>
+  )
 }
 
 function PricingBanner(){
@@ -122,21 +122,21 @@ function HomeBannerCN(){
           <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-center items-start xl:items-center gap-4 bg-myblue-700 xl:bg-opacity-0">
               <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                 <h1 className="text-left text-3xl 2xl:text-4xl font-semibold">关于我</h1>        
-                <div className="socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" title="Facebook"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" title="Youtube"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a></span></div> 
+                <div className="socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" title="Facebook" rel="noreferrer"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" title="Youtube" rel="noreferrer"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" title="LinkedIn" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a></span></div> 
                 <p className="text-xl  text-left">心理咨询师，个人成长教练，画家，法律学士，审计经理，投资人，天文爱好者</p>
                 <Link to="/cn/fuwu"><button className="btn-trans my-6">我的服务 ➣</button></Link>
               </div>
               <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                 <h1 className="text-left text-3xl 2xl:text-4xl font-semibold">合作伙伴</h1>
-                <p className="text-xl  text-left">Personal Growth from <a className="underline text-white" href="https://www.selfgrowth.com/" target="_blank">SelfGrowth.com</a></p>
-                <p className="text-xl"><a className="underline text-white" href="https://www.bodymindspiritdirectory.org/" target="_blank">Mind Body Spirit Directory</a></p>
+                <p className="text-xl  text-left">Personal Growth from <a className="underline text-white" href="https://www.selfgrowth.com/" target="_blank" rel="noreferrer">SelfGrowth.com</a></p>
+                <p className="text-xl"><a className="underline text-white" href="https://www.bodymindspiritdirectory.org/" target="_blank" rel="noreferrer">Mind Body Spirit Directory</a></p>
                 <Link to="/cn/wenti"><button className="btn-trans my-6">常见问题 ➣</button></Link>
               </div>
               <div className="w-full px-8 xl:w-1/3 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                 <h1 className="text-left text-3xl 2xl:text-4xl font-semibold">与我联系</h1>
                 <div className="flex items-center">
                 <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={navi} alt="navi"/>
-                <a className="text-lg md:text-xl underline" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">Greenwich, London, United Kingdom</a>
+                <a className="text-lg md:text-xl underline" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank" rel="noreferrer">Greenwich, London, United Kingdom</a>
               </div>
               <div className="flex items-center">
                 <img className="w-7 h-7 p-1 mr-2 bg-mystone-100 rounded-full" src={phone} alt="phone"/>
