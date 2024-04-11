@@ -88,7 +88,7 @@ export default function Booking() {
            <p className="text-xl">My Standard Appointment Hours: </p>
            <i className="text-xl underline">Mon – Fri: 17:00 – 20:00 (UK)</i>
            <p className="text-xl mt-4 text-left">50 mins per session. </p>
-           {/* <button className="mx-auto btn-next mb-6 lg:mb-8 text-lg w-fit"><a href="https://calendly.com/ellentang" target="_blank">Book Your Discovery Session</a></button> */}
+           {/* <button className="mx-auto btn-next mb-6 lg:mb-8 text-lg w-fit"><a href="https://calendly.com/ellentang" target="_blank" rel="noreferrer">Book Your Discovery Session</a></button> */}
            <button className="mx-auto btn-next mb-6 lg:mb-8 text-lg w-fit" onClick={()=>setShowCalendar(true)}>Book Your Discovery Session</button>
            
            {showCalendar && <div className="flex justify-center items-end mx-auto" >

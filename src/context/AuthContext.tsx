@@ -18,7 +18,7 @@ export const AuthContextProvider = ({ children }: { children: React.ReactNode })
     // signInWithRedirect(auth, provider)  // recommended for mobile devices
     
   };
-// console.log('User', user)
+ console.log('User', user)
   const logOut = async () => {
       await signOut(auth);
   }

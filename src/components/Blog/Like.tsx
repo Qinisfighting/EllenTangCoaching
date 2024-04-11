@@ -2,14 +2,14 @@ import { useState } from "react";
 import { arrayRemove, arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { UserAuth } from '../../context/AuthContext';
 import { db } from "../../firebase";
-import { Likes } from "../../../types";
+import { Likes, User } from "../../../types";
 
 
 
 export default function Like({ id, likes }: { id: string; likes: Likes[]} ) {
 
   const [likesState, setLikesState] = useState<Likes[]>(likes || []);
-  const { user }: {user: any } = UserAuth() as { user: any };
+  const { user }: {user: User } = UserAuth() as { user: User };
   const likesRef = doc(db, "Articles", id);
 
   const likesStateArr = likesState?.map((like) => like.likedUser);

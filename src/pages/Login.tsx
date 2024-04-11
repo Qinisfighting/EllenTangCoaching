@@ -1,14 +1,18 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 // import { useState, ChangeEvent, FormEvent } from "react"
 import { useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom";
 import  GoogleButton from "react-google-button";
 import { UserAuth } from '../context/AuthContext';
-// import { User } from "../../types";
+import { User } from "../../types";
+
+
+
 
 
 
 function Greeting({name, handleSignOut}: {name: string; handleSignOut: () => void}) {
-    const { user }: {user: any } = UserAuth() as { user: any };
+    const { user }: {user: User | null } = UserAuth() as { user: User | null };
     const date = new Date();
     const hours = date.getHours();
     // console.log(hours);
@@ -36,7 +40,7 @@ function Greeting({name, handleSignOut}: {name: string; handleSignOut: () => voi
 
 export default function Login() {
 
-  const { googleSignIn, logOut, user }: { googleSignIn: () => Promise<void>, logOut: () => Promise<void>,user: any } = UserAuth() as { googleSignIn: () => Promise<void>, logOut: () => Promise<void>, user: any }; 
+  const { googleSignIn, logOut, user }: { googleSignIn: () => Promise<void>, logOut: () => Promise<void>, user: User | null } = UserAuth() as { googleSignIn: () => Promise<void>, logOut: () => Promise<void>, user: User | null }; 
   const navigate = useNavigate();
   const handleGoogleSignIn = async () => {
     try {
@@ -58,18 +62,18 @@ export default function Login() {
     if (user !== null) {
       navigate("/login");
     }
-  }, [user]);
+  }, [user, navigate]);
  
     
     return (
-        user === null ?
-        <div className="w-screen  flex flex-col justify-start items-center h-view  pt-24 pb-12 my-24">
-            <GoogleButton onClick={()=>handleGoogleSignIn()}
-                                        />     
-            <p className="px-8 py-10">Don't have an Google account? Register <a className="text-myblue-400 underline"  href="https://support.google.com/mail/answer/56256?hl=en" target="_blank">here</a>.</p>
-        </div>
-        :
-        <Greeting name={user?.displayName} handleSignOut={handleSignOut}/>
-        
+      user === null ?
+      <div className="w-screen  flex flex-col justify-start items-center h-view  pt-24 pb-12 my-24">
+        <GoogleButton onClick={()=>handleGoogleSignIn()}
+                      />     
+        <p className="px-8 py-10">Don&apos;t have an Google account? Register <a className="text-myblue-400 underline"  href="https://support.google.com/mail/answer/56256?hl=en" target="_blank" rel="noreferrer">here</a>.</p>
+      </div>
+      :
+      <Greeting name={user?.displayName} handleSignOut={handleSignOut}/>
+      
     )
 }

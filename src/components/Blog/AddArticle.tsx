@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { Timestamp, collection, addDoc } from "firebase/firestore"; 
@@ -19,7 +22,7 @@ export default function AddArticle(){
 
     useEffect(() => {
       const rawContentState = convertToRaw(editorState.getCurrentContent());
-      let html = draftToHtml(rawContentState);
+      const html = draftToHtml(rawContentState);
       setConvertedContent(html);
       setFormData((prev) => ({
         ...prev,
@@ -52,21 +55,21 @@ export default function AddArticle(){
    
     };
 
-    const handleImageChange = (e: ChangeEvent<HTMLInputElement | any >) => {   
-        setFormData((prev) => ({
-            ...prev,
-            image: e.target.files[0],
-        }));
+    const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {   
+      setFormData((prev) => ({
+        ...prev,
+        image:  e.target.files![0],
+      }));
     }
 
     const handleSubmit = (e:FormEvent) => {
         e.preventDefault();
-      
+
         const storageRef = ref(
-            storage,
-            `/images/${Date.now()}${formData.image.name}`
-          );
-        const imageBlob = new Blob([formData.image]);
+          storage,
+          `/images/${Date.now()}${(formData.image as File)?.name}`
+        );
+        const imageBlob = new Blob([formData.image as File]);
         const uploadImage = uploadBytesResumable(storageRef, imageBlob);
         uploadImage.on(
             "state_changed",
@@ -97,17 +100,18 @@ export default function AddArticle(){
                   content: formData.content,
                 })
                   .then(() => {
-                    alert("Your new blog is online!")
+                    alert("Your new blog is online!");
                     setProgress(0);
                     navigate('/blog');
                   })
                   .catch((err) => {
                     console.log(err);
                   });
-                
+              })
+              .catch((err) => {
+                console.log(err);
               });
-            }
-          );
+    });
         
     }
     return (

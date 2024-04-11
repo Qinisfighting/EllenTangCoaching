@@ -17,8 +17,8 @@ export default function WenTi() {
               <p>提前24小时以上取消预约不会产生任何费用。如果是在24小时之内取消的话，将收取一次正常咨询的费用。</p>
               <h3 className="text-xl font-bold">你的心理咨询过程是什么样的？</h3>
               <p>我们每周定期通话。视频，电话，或者面对面（仅限伦敦）都可以。把你真实的自己带来就好。我们一起探讨你想要聊的话题，可以是你的某一个情绪，记忆，难题，或者最近遇到的烦心事。任何你主意识或者潜意识觉得重要的话题，无论他们看似大小，我都想要倾听。因为所有这些，都蕴藏着了解你本来的自己的关键信息。我的目的不是要告诉你我的看法或者我认为你该怎么做，因为大部分时候“正确答案”并不存在。在你诉说的过程当中，我会问你关键性的问题，让你思考，让你感受，最终找到你在寻觅的答案。如果在预定的时间之外你有想要跟我说的话，也可以联系我。合理的电话或者邮件（即不花费大量时间的）不会产生额外费用。如果大量的额外通话或邮件有必要的话，费用将按比例收取。 出于对保证对话质量和保护隐私的考虑，请尽量不要用短信与我交流。</p>
-              <p>我鼓励所有的来访者在咨询前先做一个性格特征的测试: <a className="text-myblue-400 underline" href="https://www.16personalities.com/free-personality-test" target="_blank">16种人格</a>。</p>
-              <p>如果你对我的人格测试结果有兴趣的话，可以点击<a href="https://www.16personalities.com/ch/infp-%E4%BA%BA%E6%A0%BC" target="_blank" className="text-myblue-400 underline">这里</a>读一读。</p>
+              <p>我鼓励所有的来访者在咨询前先做一个性格特征的测试: <a className="text-myblue-400 underline" href="https://www.16personalities.com/free-personality-test" target="_blank" rel="noreferrer">16种人格</a>。</p>
+              <p>如果你对我的人格测试结果有兴趣的话，可以点击<a href="https://www.16personalities.com/ch/infp-%E4%BA%BA%E6%A0%BC" target="_blank" rel="noreferrer" className="text-myblue-400 underline">这里</a>读一读。</p>
               <h3 className="text-xl font-bold">我可以向你咨询哪方面的问题？</h3>
               <p>你生活的每一个方面都是互相关联的。你的情感，工作，家庭，社交关系，都与你本来的自己息息相关。所以想要深入的认识本来的自己，我们每一个方面都可以，或者说需要，探讨。有时在某一个方面你也许感到尤其难以启齿，我们可以从另一个看似无关的方面开始分析，很多时候会有超乎想象的效果。</p>
               <h3 className="text-xl font-bold">咨询过程中你是更关注过去还是将来？</h3>

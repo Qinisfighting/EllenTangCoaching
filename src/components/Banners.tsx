@@ -24,7 +24,7 @@ import phone from "../assets/phone.png";
                 <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                   <h1 className="text-left text-3xl md:text-4xl font-semibold">Partnering with</h1>
                   <p className="text-xl  text-left">Personal Growth from <a className="underline text-white" href="https://www.selfgrowth.com/" target="_blank" rel="noreferrer">SelfGrowth.com</a></p>
-                  <p className="text-xl"><a className="underline text-white" href="https://www.bodymindspiritdirectory.org/" target="_blank" rel="noreferrer">Mind Body Spirit Directory</a></p>
+                  <p className="text-xl"><a className="underline text-white" href="https://www.bodymindspiritdirectory.org/" target="_blank" rel="noreferrer" >Mind Body Spirit Directory</a></p>
                   <Link to="/work"><button className="btn-trans my-6">About My Work ➣</button></Link>
                 </div>
                 <div className="w-full px-8 xl:w-1/3 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
@@ -121,7 +121,7 @@ function HomeBannerCN(){
           <div className=" text-left xl:absolute  flex flex-col xl:flex-row bottom-0 right-0 top-0 left-0 mx-auto justify-center items-start xl:items-center gap-4 bg-myblue-700 xl:bg-opacity-0">
               <div className="w-full px-8 xl:w-1/4 border-b-2 border-dotted border-b-mystone-400 pb-8 border-white xl:border-none">
                 <h1 className="text-left text-3xl 2xl:text-4xl font-semibold">关于我</h1>        
-                <div className="socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" title="Facebook" rel="noreferrer"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" title="Youtube" rel="noreferrer"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" title="LinkedIn" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a></span></div> 
+                <div className="socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" rel="noreferrer" title="Facebook"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" rel="noreferrer" title="Youtube"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" rel="noreferrer" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a></span></div> 
                 <p className="text-xl  text-left">心理咨询师，个人成长教练，画家，法律学士，审计经理，投资人，天文爱好者</p>
                 <Link to="/cn/fuwu"><button className="btn-trans my-6">我的服务 ➣</button></Link>
               </div>

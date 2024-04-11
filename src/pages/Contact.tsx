@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { useState, useEffect, ChangeEvent, FormEvent } from "react"
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
@@ -71,12 +72,12 @@ export default function Contact() {
             <img src={contact} className="w-screen h-auto object-cover brightness-50 drop-shadow-xl"></img>
             <Link to="/work/booking"><button className="w-screen rounded-none xl:w-max xl:absolute xl:bottom-16 2xl:bottom-32 xl:right-32 btn-next xl:btn-trans">Schedule Appointment ➣</button></Link>    
             <div className="p-10 xl:p-0 xl:absolute bottom-1/4 2xl:bottom-1/3 left-1/4 xl:text-mystone-100"> 
-                <div className="pl-1 xl:mt-4 socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" title="Facebook"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" title="Youtube"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a></span></div> 
+                <div className="pl-1 xl:mt-4 socializer a sr-32px sr-circle sr-opacity sr-icon-white sr-pad"><span className="sr-facebook"><a href="https://www.facebook.com/ellentangcoaching" target="_blank" rel="noreferrer" title="Facebook"><i className="fab fa-facebook-f"></i></a></span><span className="sr-youtube"><a href="https://www.youtube.com/channel/UCj60CsEEzE_WdepPNLjtR1A" target="_blank" rel="noreferrer" title="Youtube"><i className="fab fa-youtube"></i></a></span><span className="sr-linkedin"><a href="https://www.linkedin.com/in/ellenltang/" target="_blank" rel="noreferrer" title="LinkedIn"><i className="fab fa-linkedin-in"></i></a></span></div> 
                 <h2 className="pl-1 text-3xl 2xl:text-4xl">Contact & Hours</h2>  
                 <br />       
                 <div className="flex items-center">
                   <img className="w-7 h-7 p-1 mr-2 xl:bg-mystone-100 xl:rounded-full" src={navi} alt="navi"/>
-                  <a className="text-lg md:text-xl underline" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank">Greenwich, London, United Kingdom</a>
+                  <a className="text-lg md:text-xl underline" href="https://www.google.com/maps/place/Greenwich,+London,+Vereinigtes+K%C3%B6nigreich/@51.487395,-0.0366549,13z/data=!3m1!4b1!4m6!3m5!1s0x47d8a9cea79975f3:0x1470a7a162e4ca6c!8m2!3d51.4933675!4d0.0098214!16zL20vMG5xdjE?entry=ttu" target="_blank" rel="noreferrer">Greenwich, London, United Kingdom</a>
                 </div>
                 <div className="flex items-center">
                   <img className="w-7 h-7 p-1 mr-2 xl:bg-mystone-100 xl:rounded-full" src={email} alt="email"/>

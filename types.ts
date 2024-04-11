@@ -1,19 +1,20 @@
 
 import { Timestamp } from '@firebase/firestore-types';
 
-export interface Comment {
-  user: string,
+export interface CommentType {
   userName: string,
   comment: string,
   profilePic?: string,
-  createdOn: Date,
+  createdOn: Timestamp,
   commentId: string,
+  userId: string,
+ 
 }
 
 export interface FormData {
     title: string;
     catalog: string;
-    image?: string;
+    image?: string | File | { name: string, url: string };
     content: string;
     createdOn?: Date;
   }
@@ -48,3 +49,12 @@ export interface  Likes {
   photoURL: string;
   displayName: string;
 }
+
+
+export type User = {
+  displayName: string;
+  email: string;
+  id: string;
+  uid: string;
+  photoURL: string;
+};

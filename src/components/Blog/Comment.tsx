@@ -1,46 +1,51 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { Timestamp, arrayRemove, arrayUnion, doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../firebase";
 import { UserAuth } from '../../context/AuthContext';
 import { v4 as uuidv4 } from "uuid";
 import { Link } from 'react-router-dom';
+import { User, CommentType } from "../../../types";
 
 
 export default function Comment({ id }: { id: string }) {
-  const [comment, setComment] = useState("");
-  const [comments, setComments] = useState<any[]>([]);
-  const { user }: {user: any } = UserAuth() as { user: any };
+  const [comment, setComment] = useState<string>("");
+  const [comments, setComments] = useState<CommentType[]>([]);
+  const { user }: {user: User } = UserAuth() as { user: User };
   const commentRef = doc(db, "Articles", id);
 
 useEffect(() => {
-    const articleRef = doc(db, "Articles", id);
-    onSnapshot(articleRef, (snapshot) => {
-        const data = snapshot.data();
-        if (data) {
-            setComments(data.comments);
-        }
-    });
-}, []);
-
-const handleChangeComment = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-        updateDoc(commentRef, {
-            comments: arrayUnion({
-                userId: user.uid,
-                userName: user.displayName,
-                comment: comment,
-                profilePic: user.photoURL,
-                createdOn: Timestamp.now().toDate(),
-                commentId: uuidv4(),
-            }),
-        }).then(() => {
-            setComment("");
-        });
+  const articleRef = doc(db, "Articles", id);
+  onSnapshot(articleRef, (snapshot) => {
+    const data = snapshot.data();
+    if (data) {
+      setComments(data.comments as CommentType[]);
     }
+  });
+}, [id]);
+
+const handleChangeComment = async (e: React.KeyboardEvent<HTMLInputElement>) => {
+  if (e.key === "Enter") {
+    try {
+      await updateDoc(commentRef, {
+        comments: arrayUnion({
+          userId: user.uid,
+          userName: user.displayName,
+          comment: comment,
+          profilePic: user.photoURL,
+          createdOn: Timestamp.now().toDate(),
+          commentId: uuidv4(),
+        }),
+      });
+      setComment("");
+    } catch (error) {
+      console.log(error);
+    }
+  }
 };
 
   // delete comment function
-const handleDeleteComment = (comment: any) => {
+const handleDeleteComment = (comment: CommentType) => {
     console.log(comment);
     updateDoc(commentRef, {
             comments:arrayRemove(comment),
@@ -76,11 +81,12 @@ console.log(user)
                     <img
                       src={profilePic}
                       alt="profile"
-                      className="w-5 h-5" />
-                    <p className="text-base text-mystone-400 py-0">{userName}</p>    
-                  </div> 
-                 
-                  <p className="text-xs text-mystone-400 italic">{createdOn.toDate().toDateString()} </p>     
+                      className="w-5 h-5"
+                    />
+                    <p className="text-base text-mystone-400 py-0">{userName}</p>
+                  </div>
+
+                  <p className="text-xs text-mystone-400 italic">{createdOn.toDate().toDateString()}</p>
                 </div>
                 <div>
                 {comment}
@@ -108,7 +114,7 @@ console.log(user)
             }}
             placeholder="Add a comment"
             onKeyUp={(e) => {
-              handleChangeComment(e);
+              void handleChangeComment(e);
               }}
             required
           />

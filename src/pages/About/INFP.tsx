@@ -28,8 +28,8 @@ export default function INFP() {
           <p>Unlike their Extraverted cousins though, Mediators will focus their attention on just a few people, a single worthy cause – spread too thinly, they’ll run out of energy, and even become dejected and overwhelmed by all the bad in the world that they can’t fix. This is a sad sight for Mediators’ friends, who will come to depend on their rosy outlook.</p>
           <p>If they are not careful, Mediators can lose themselves in their quest for good and neglect the day-to-day upkeep that life demands. Mediators often drift into deep thought, enjoying contemplating the hypothetical and the philosophical more than any other personality type. Left unchecked, Mediators may start to lose touch, withdrawing into “hermit mode”, and it can take a great deal of energy from their friends or partner to bring them back to the real world.</p>
           <p>Luckily, like the flowers in spring, Mediator’s affection, creativity, altruism and idealism will always come back, rewarding them and those they love perhaps not with logic and utility, but with a world view that inspires compassion, kindness and beauty wherever they go.</p>
-          <p>Read the full result <a  className='text-myblue-400 underline' href='https://www.16personalities.com/infp-personality' target="_blank">here</a>.</p>
-          <a href="https://www.16personalities.com/free-personality-test" target="_blank"><button className="btn-next float-right my-12 lg:my-16 text-md ">Free Personality Test ➣</button></a>
+          <p>Read the full result <a  className='text-myblue-400 underline' href='https://www.16personalities.com/infp-personality' target="_blank" rel="noreferrer">here</a>.</p>
+          <a href="https://www.16personalities.com/free-personality-test" target="_blank" rel="noreferrer"><button className="btn-next float-right my-12 lg:my-16 text-md ">Free Personality Test ➣</button></a>
         </div>
         <img src={infp2}  className="mt-16 md:pl-12 mb-20 md:mt-40 md:pt-5 w-3/4 md:w-1/3 mx-auto"/>
       </div>

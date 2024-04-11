@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
 
 import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { Timestamp, doc, updateDoc } from "firebase/firestore"; 
@@ -26,12 +27,13 @@ export default function EditArticle({catalog, title, imageUrl, content, id}: { i
 
     useEffect(() => {
       const rawContentState = convertToRaw(editorState.getCurrentContent());
-      let html = draftToHtml(rawContentState);
+      const html = draftToHtml(rawContentState);
       setConvertedContent(html);
       setFormData((prev) => ({
         ...prev,
         content: JSON.stringify(convertedContent),
     }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [editorState]);
 
     const navigate = useNavigate();
@@ -44,10 +46,10 @@ export default function EditArticle({catalog, title, imageUrl, content, id}: { i
         console.log(formData);
     };
 
-    const handleImageChange = (e: ChangeEvent<HTMLInputElement | any >) => {   
+    const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {   
         setFormData((prev) => ({
             ...prev,
-            image: e.target.files[0],
+            image: e.target.files![0],
         }));
     }
 
@@ -56,9 +58,9 @@ export default function EditArticle({catalog, title, imageUrl, content, id}: { i
       
         const storageRef = ref(
             storage,
-            `/images/${Date.now()}${formData.image.name}`
+            `/images/${Date.now()}${(formData.image as File)?.name}`
           );
-        const imageBlob = new Blob([formData.image]);
+        const imageBlob = new Blob([formData.image as File]);
         const uploadImage = uploadBytesResumable(storageRef, imageBlob);
         uploadImage.on(
             "state_changed",
