@@ -81,7 +81,7 @@ export default function Contact() {
             </button>
           </Link>
 
-          <div className="p-8 md:py-12 xl:px-0 md:top-20 xl:top-24 xl:absolute left-1/4 xl:text-mystone-100">
+          <div className="p-8 md:py-12 xl:px-0 md:top-24 xl:absolute left-1/4 xl:text-mystone-100">
             <div className="flex items-center">
               <img
                 className="w-7 h-7 p-1 mr-2 xl:bg-mystone-100 xl:rounded-full"
