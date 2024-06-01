@@ -8,9 +8,6 @@ import { User } from "../../types";
 
 
 
-
-
-
 function Greeting({name, handleSignOut}: {name: string; handleSignOut: () => void}) {
     const { user }: {user: User | null } = UserAuth() as { user: User | null };
     const date = new Date();
