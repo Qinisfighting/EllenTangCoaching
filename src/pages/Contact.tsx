@@ -76,14 +76,12 @@ export default function Contact() {
           ></img>
 
           <Link to="/work/booking">
-            <button className="w-screen rounded-none xl:w-max xl:absolute xl:bottom-16 2xl:bottom-32 xl:right-48 btn-next xl:btn-trans">
+            <button className="w-screen rounded-none xl:w-max xl:absolute xl:bottom-20 2xl:bottom-32 xl:right-40 btn-next xl:btn-trans">
               Schedule Appointment ➣
             </button>
           </Link>
 
-          <div className="p-10 xl:p-0 xl:absolute bottom-1/4 2xl:bottom-1/3 left-1/4 xl:text-mystone-100">
-            <h2 className="pl-1 text-3xl pb-0">Contact & Hours</h2>
-            <br />
+          <div className="p-8 xl:absolute bottom-1/3 left-1/4 xl:text-mystone-100">
             <div className="flex items-center">
               <img
                 className="w-7 h-7 p-1 mr-2 xl:bg-mystone-100 xl:rounded-full"
